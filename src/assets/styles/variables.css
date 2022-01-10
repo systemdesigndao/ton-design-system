@@ -1,0 +1,56 @@
+:root {
+    --primary-color: #0088CC;
+    --primary-color-hovered: #0072ab;
+    --white-color: #FFFFFF;
+
+    /* gray dark */
+    --gray-dark1: #B7B7B7;
+    --gray-dark2: #A8A8A8;
+    --gray-dark3: #A7A7A7;
+    --gray-dark4: #A4A4A4;
+    --gray-dark5: #9B9B9B;
+    --gray-dark6: #999999;
+    --gray-dark7: #949494;
+    --gray-dark8: #888888;
+    --gray-dark9: #868686;
+    --gray-dark10: #757575;
+    --gray-dark11: #555555;
+    --gray-dark12: #393939;
+    --gray-dark13: #333333;
+    --gray-dark14: #232323;
+    --gray-dark15: #212121;
+    --gray-dark16: #202020;
+    --gray-alpha80: rgba(#444444, .8);
+
+    /* gray light */
+
+    /* white */
+
+    /* black */
+
+    /* red */
+
+    /* yellow */
+
+    /* blue light */
+
+    /* blue semi-light */
+
+    /* blue medium */
+    
+    /* blue dark */
+
+    /* blue blurple */
+
+    /* green light */
+
+    /* green medium */
+
+    /* green bright */
+
+    /* steel gray bright */
+
+    /* steel gray light */
+
+    /* steel gray dark */
+}
