@@ -1,23 +1,20 @@
+<script setup lang="ts">
+import { computed } from "vue";
+
+type Props = { type: string };
+
+const props = withDefaults(defineProps<Props>(), { 
+  type: '',
+});
+
+const btnType = computed(() => `btn-${props.type}`);
+</script>
+
 <template>
   <button :class="`btn ${btnType}`">
     <slot name="content" />
   </button>
 </template>
-
-<script lang="ts">
-import { computed, defineComponent } from "vue";
-
-export default defineComponent({
-  props: {
-      type: { type: String, default: () => '', }
-  },
-  setup(props) {
-    const btnType = computed(() => `btn-${props.type}`);
-
-    return {btnType}
-  }
-});
-</script>
 
 <style lang="css">
 /* default button */

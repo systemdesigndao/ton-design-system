@@ -1,20 +1,14 @@
-<template>
-    <div :class="`${type}-${payload}`"></div>
-</template>
-
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core';
-import { PropType } from 'vue';
+<script setup lang="ts">
 import { SpacingTypes, SpacingValues } from '../types/Spacing';
 
-// TODO: Add setup and working props
-export default defineComponent({
-  props: {
-    type: String as PropType<SpacingTypes>,
-    payload: Number as PropType<SpacingValues>,
-  }
-})
+type Props = { type: SpacingTypes, payload: SpacingValues };
+
+const props = defineProps<Props>();
 </script>
+
+<template>
+    <div :class="`${props.type}-${props.payload}`"></div>
+</template>
 
 <style lang="css">
 /* top */
