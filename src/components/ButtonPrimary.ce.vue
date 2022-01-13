@@ -1,5 +1,5 @@
 <template>
-  <button-custom type="primary">
+  <button-native type="primary">
     <div slot="content">
       <img src="/icons/telegram.svg" alt="telegram-svg">
       <span>
@@ -7,7 +7,7 @@
         <span>Channel</span>
       </span>
     </div>
-  </button-custom>
+  </button-native>
 </template>
 
 <style lang="css">
