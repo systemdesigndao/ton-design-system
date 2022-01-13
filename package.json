@@ -5,8 +5,7 @@
     "dist/fonts",
     "dist/icons",
     "dist/index.es.js",
-    "src/assets/styles",
-    "src/components/WebWallet"
+    "src/assets/styles"
   ],
   "version": "0.0.2",
   "scripts": {
