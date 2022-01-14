@@ -1,2 +1,4 @@
+/* order of css is important */
 @import "./variables.css";
 @import "./fonts.css";
+@import "./base.css";
