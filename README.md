@@ -57,6 +57,26 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <!-- 
+        Если через CSS импорты, тогда порядок важен, должен быть сначала стиль дизайн системы, 
+        так как он провайдит стиль:
+          * { 
+            margin: 0; 
+            padding: 0;
+          }
+
+        Затем можно уже свои стили, дабы переписать дефолтные через кастомные стили:
+          layout-element {
+            width: 0px !important;
+          }
+        Здесь передается important, потому что эти стили через JS задаются.
+
+        Передать кастомный стиль классу, который находится внутри Shadow DOM:
+          layout-element main {
+            width: 0px;
+          }
+        Вложенный элемент можно переписать без important;
+    -->
     <!-- <link rel="stylesheet" href="@designervoid/ton-design-system/assets/styles/global.css"> -->
   </head>
   <body>
