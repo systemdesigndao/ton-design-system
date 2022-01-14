@@ -24,4 +24,7 @@ export default defineConfig({
       external: ['vue', '@vueuse/core'],
     },
   },
+  test: {
+    runtimeEnv: 'dom',
+  },
 })
