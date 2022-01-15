@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <slot name="header" />
-    <slot name="content" />
-    <slot name="footer" />
+    <slot v-bind="$attrs" name="header" />
+    <slot v-bind="$attrs" name="content" />
+    <slot v-bind="$attrs" name="footer" />
 </template>
 
 <style>
