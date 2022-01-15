@@ -1,11 +1,17 @@
+<script>
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <script setup lang="ts">
 
 </script>
 
 <template>
-    <slot v-bind="$attrs" name="header" />
-    <slot v-bind="$attrs" name="content" />
-    <slot v-bind="$attrs" name="footer" />
+    <slot name="header" />
+    <slot name="content" />
+    <slot name="footer" />
 </template>
 
 <style>
