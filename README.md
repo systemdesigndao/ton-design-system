@@ -30,15 +30,20 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
     <link rel="stylesheet" href="./src/assets/styles/global.css">
   </head>
   <body>
-    <button-primary></button-primary>
-    <spacing-block type="top" payload="12"></spacing-block>
-    <button-outline></button-outline>
-    <spacing-block type="top" payload="12"></spacing-block>
+    <layout-element>
+      <main slot="content">
+        <button-primary></button-primary>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <button-outline></button-outline>
+        <spacing-block type="top" payload="12"></spacing-block>
+      </main>
+    </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
     <script type="module">
-      import {registerCustomElements} from '/dist/index.es.js';
+      import {registerCustomElements, getAllCustomElementsNames} from '/dist/index.es.js';
   
-      registerCustomElements()
+      registerCustomElements();
+      getAllCustomElementsNames();
     </script>
   </body>
 </html>
@@ -50,6 +55,27 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 Такой способ используется, когда мы хотим проверить перед сборкой веб-компонент в этом [`package`](https://github.com/designervoid/ton-design-system/packages/1180696).
 Провайдим `vue@next` (в примере используется `CDN`), `tonweb`, `tonweb-mnemonic`, `@designervoid/ton-design-system` из `node_modules`.
 
+1. Если через CSS импорты, тогда порядок важен, должен быть сначала стиль дизайн системы, 
+        так как он провайдит стиль:
+          * { 
+            margin: 0; 
+            padding: 0;
+          }
+
+  Затем можно уже свои стили, дабы переписать дефолтные через кастомные стили:
+    layout-element {
+      width: 0px !important;
+    }
+  Здесь передается important, потому что эти стили через JS задаются.
+
+  Передать кастомный стиль классу, который находится внутри Shadow DOM:
+    layout-element main {
+      width: 0px;
+    }
+  Вложенный элемент можно переписать без important;
+
+2. Тоже самое, что и в пункте 1, только со скриптами и импортами CSS. В примере в дальнейшем импорт используется в скрипте.
+
 ```html
 <html lang="en">
   <head>
@@ -57,39 +83,24 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <!-- 
-        Если через CSS импорты, тогда порядок важен, должен быть сначала стиль дизайн системы, 
-        так как он провайдит стиль:
-          * { 
-            margin: 0; 
-            padding: 0;
-          }
-
-        Затем можно уже свои стили, дабы переписать дефолтные через кастомные стили:
-          layout-element {
-            width: 0px !important;
-          }
-        Здесь передается important, потому что эти стили через JS задаются.
-
-        Передать кастомный стиль классу, который находится внутри Shadow DOM:
-          layout-element main {
-            width: 0px;
-          }
-        Вложенный элемент можно переписать без important;
-    -->
+    <!-- Пункт 1 -->
     <!-- <link rel="stylesheet" href="@designervoid/ton-design-system/assets/styles/global.css"> -->
   </head>
   <body>
-    <button-primary></button-primary>
-    <spacing-block type="top" payload="12"></spacing-block>
-    <button-outline></button-outline>
-    <spacing-block type="top" payload="12"></spacing-block>
+    <layout-element>
+      <main slot="content">
+        <button-primary></button-primary>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <button-outline></button-outline>
+        <spacing-block type="top" payload="12"></spacing-block>
+      </main>
+    </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
     <script type="module">
-      import {registerCustomElements} from "@designervoid/ton-design-system/index.es.js";
-      import "@designervoid/ton-design-system/assets/styles/global.css";
+      import {registerCustomElements, getAllCustomElementsNames} from '/dist/index.es.js';
   
-      registerCustomElements()
+      registerCustomElements();
+      getAllCustomElementsNames();
     </script>
   </body>
 </html>
