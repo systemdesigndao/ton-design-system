@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import {openLinkInNewTab} from '../helpers';
+
+type Props = { link?: string };
+
+defineProps<Props>();
+</script>
+
 <template>
-  <button-native type="primary">
+  <button-native type="primary" @click="openLinkInNewTab(link)">
     <div slot="content">
       <img src="/icons/telegram.svg" alt="telegram-svg">
       <span>
