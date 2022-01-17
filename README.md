@@ -57,6 +57,12 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
         <ton-logo-light></ton-logo-light>
         <spacing-block type="top" payload="12"></spacing-block>
         <ton-symbol></ton-symbol>
+        <spacing-block type="top" :payload="12"></spacing-block>
+        <gem-logo-dark></gem-logo-dark>
+        <spacing-block type="top" :payload="12"></spacing-block>
+        <gem-logo-light></gem-logo-light>
+        <spacing-block type="top" :payload="12"></spacing-block>
+        <gem-symbol></gem-symbol>
       </main>
     </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
@@ -146,6 +152,12 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
           <ton-logo-light></ton-logo-light>
           <spacing-block type="top" payload="12"></spacing-block>
           <ton-symbol></ton-symbol>
+          <spacing-block type="top" :payload="12"></spacing-block>
+          <gem-logo-dark></gem-logo-dark>
+          <spacing-block type="top" :payload="12"></spacing-block>
+          <gem-logo-light></gem-logo-light>
+          <spacing-block type="top" :payload="12"></spacing-block>
+          <gem-symbol></gem-symbol>
       </main>
     </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
