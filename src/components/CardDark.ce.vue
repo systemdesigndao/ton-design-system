@@ -12,6 +12,7 @@
     height: 192px;
     width: 100%;
     max-width: 340px;
+    min-width: 300px;
     border-radius: 24px;
     flex-direction: column;
 }

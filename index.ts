@@ -73,9 +73,9 @@ export function getAllCustomElementsNames() {
         
         for (let customElementName of allCustomElementNames) {
             const customElement = document.querySelector<HTMLElement>(customElementName)!;
-            customElement.style.display = 'flex';
 
             if (customElementName === 'layout-element') {
+                customElement.style.display = 'flex';
                 customElement.style.width = '100%';
                 customElement.style.justifyContent = 'center';
                 customElement.style.alignItems = 'center';

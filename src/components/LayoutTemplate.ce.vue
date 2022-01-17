@@ -13,3 +13,13 @@ export default {
     <slot name="content" />
     <slot name="footer" />
 </template>
+
+<style>
+::slotted(main) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>
