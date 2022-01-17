@@ -32,10 +32,31 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
   <body>
     <layout-element>
       <main slot="content">
-        <button-primary></button-primary>
+        <button-primary link="https://t.me"></button-primary>
         <spacing-block type="top" payload="12"></spacing-block>
-        <button-outline></button-outline>
+        <button-outline link="https://github.com"></button-outline>
         <spacing-block type="top" payload="12"></spacing-block>
+        <text-black>
+          <span slot="text">text black</span>
+        </text-black>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <text-bold>
+          <span slot="text">text bold</span>
+        </text-bold>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <text-regular>
+          <span slot="text">text regular</span>
+        </text-regular>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <text-white>
+          <span slot="text">text white</span>
+        </text-white>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <ton-logo-dark></ton-logo-dark>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <ton-logo-light></ton-logo-light>
+        <spacing-block type="top" payload="12"></spacing-block>
+        <ton-symbol></ton-symbol>
       </main>
     </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
@@ -100,10 +121,31 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
   <body>
     <layout-element>
       <main slot="content">
-        <button-primary></button-primary>
-        <spacing-block type="top" payload="12"></spacing-block>
-        <button-outline></button-outline>
-        <spacing-block type="top" payload="12"></spacing-block>
+          <button-primary link="https://t.me"></button-primary>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <button-outline link="https://github.com"></button-outline>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <text-black>
+            <span slot="text">text black</span>
+          </text-black>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <text-bold>
+            <span slot="text">text bold</span>
+          </text-bold>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <text-regular>
+            <span slot="text">text regular</span>
+          </text-regular>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <text-white>
+            <span slot="text">text white</span>
+          </text-white>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <ton-logo-dark></ton-logo-dark>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <ton-logo-light></ton-logo-light>
+          <spacing-block type="top" payload="12"></spacing-block>
+          <ton-symbol></ton-symbol>
       </main>
     </layout-element>
     <script src="https://unpkg.com/vue@next"></script>
