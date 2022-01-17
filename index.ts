@@ -3,13 +3,27 @@ import ButtonNative from './src/components/ButtonNative.ce.vue';
 import ButtonPrimary from './src/components/ButtonPrimary.ce.vue';
 import ButtonOutline from './src/components/ButtonOutline.ce.vue';
 import SpacingBlock from './src/components/SpacingBlock.ce.vue';
-import LayoutTemplate from './src/components/LayoutTemplate.ce.vue'
+import LayoutTemplate from './src/components/LayoutTemplate.ce.vue';
+import TextBlack from './src/components/TextBlack.ce.vue';
+import TextBold from './src/components/TextBold.ce.vue';
+import TextRegular from './src/components/TextRegular.ce.vue';
+import TextWhite from './src/components/TextWhite.ce.vue';
+import TONLogoDark from './src/components/TONLogoDark.ce.vue';
+import TONLogoLight from './src/components/TONLogoLight.ce.vue';
+import TONSymbol from './src/components/TONSymbol.ce.vue';
 
 const ButtonNativeElement = defineCustomElement(ButtonNative);
 const ButtonPrimaryElement = defineCustomElement(ButtonPrimary);
 const ButtonOutlineElement = defineCustomElement(ButtonOutline);
 const SpacingElement = defineCustomElement(SpacingBlock);
 const LayoutElement = defineCustomElement(LayoutTemplate);
+const TextBlackElement = defineCustomElement(TextBlack);
+const TextBoldElement = defineCustomElement(TextBold);
+const TextRegularElement = defineCustomElement(TextRegular);
+const TextWhiteElement = defineCustomElement(TextWhite);
+const TONLogoDarkElement = defineCustomElement(TONLogoDark);
+const TONLogoLightElement = defineCustomElement(TONLogoLight);
+const TONSymbolElement = defineCustomElement(TONSymbol);
 
 export function registerCustomElements() {
     customElements.define('button-native', ButtonNativeElement);
@@ -17,6 +31,13 @@ export function registerCustomElements() {
     customElements.define('button-outline', ButtonOutlineElement);
     customElements.define('spacing-block', SpacingElement);
     customElements.define('layout-element', LayoutElement);
+    customElements.define('text-black', TextBlackElement);
+    customElements.define('text-bold', TextBoldElement);
+    customElements.define('text-regular', TextRegularElement);
+    customElements.define('text-white', TextWhiteElement);
+    customElements.define('ton-logo-dark', TONLogoDarkElement);
+    customElements.define('ton-logo-light', TONLogoLightElement);
+    customElements.define('ton-symbol', TONSymbolElement);
 }
 
 // https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements

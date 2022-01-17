@@ -10,10 +10,12 @@ defineProps<Props>();
   <button-native type="primary" @click="openLinkInNewTab(link)">
     <div slot="content">
       <img src="/icons/telegram.svg" alt="telegram-svg">
-      <span>
-        <span class="xs-hide">Telegram</span> 
-        <span>Channel</span>
-      </span>
+      <text-white>
+        <span slot="text">
+          <span class="xs-hide">Telegram</span> 
+          <span>Channel</span>
+        </span>
+      </text-white>
     </div>
   </button-native>
 </template>

@@ -39,7 +39,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-*, * > ::slotted(*) {
-    font-family: "mulish";
-}
