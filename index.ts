@@ -14,12 +14,19 @@ import TONSymbol from './src/components/TONSymbol.ce.vue';
 import GemLogoDark from './src/components/GemLogoDark.ce.vue';
 import GemLogoLight from './src/components/GemLogoLight.ce.vue';
 import GemSymbol from './src/components/GemSymbol.ce.vue';
+import CardDark from './src/components/CardDark.ce.vue';
+import CardLight from './src/components/CardLight.ce.vue';
 
 const ButtonNativeElement = defineCustomElement(ButtonNative);
 const ButtonPrimaryElement = defineCustomElement(ButtonPrimary);
 const ButtonOutlineElement = defineCustomElement(ButtonOutline);
-const SpacingElement = defineCustomElement(SpacingBlock);
+const CardDarkElement = defineCustomElement(CardDark);
+const CardLightElement = defineCustomElement(CardLight);
+const GemLogoDarkElement = defineCustomElement(GemLogoDark);
+const GemLogoLightElement = defineCustomElement(GemLogoLight);
+const GemSymbolElement = defineCustomElement(GemSymbol);
 const LayoutElement = defineCustomElement(LayoutTemplate);
+const SpacingElement = defineCustomElement(SpacingBlock);
 const TextBlackElement = defineCustomElement(TextBlack);
 const TextBoldElement = defineCustomElement(TextBold);
 const TextRegularElement = defineCustomElement(TextRegular);
@@ -27,16 +34,18 @@ const TextWhiteElement = defineCustomElement(TextWhite);
 const TONLogoDarkElement = defineCustomElement(TONLogoDark);
 const TONLogoLightElement = defineCustomElement(TONLogoLight);
 const TONSymbolElement = defineCustomElement(TONSymbol);
-const GemLogoDarkElement = defineCustomElement(GemLogoDark);
-const GemLogoLightElement = defineCustomElement(GemLogoLight);
-const GemSymbolElement = defineCustomElement(GemSymbol);
 
 export function registerCustomElements() {
     customElements.define('button-native', ButtonNativeElement);
     customElements.define('button-primary', ButtonPrimaryElement);
     customElements.define('button-outline', ButtonOutlineElement);
-    customElements.define('spacing-block', SpacingElement);
+    customElements.define('card-dark', CardDarkElement);
+    customElements.define('card-light', CardLightElement);
+    customElements.define('gem-logo-dark', GemLogoDarkElement);
+    customElements.define('gem-logo-light', GemLogoLightElement);
+    customElements.define('gem-symbol', GemSymbolElement);
     customElements.define('layout-element', LayoutElement);
+    customElements.define('spacing-block', SpacingElement);
     customElements.define('text-black', TextBlackElement);
     customElements.define('text-bold', TextBoldElement);
     customElements.define('text-regular', TextRegularElement);
@@ -44,9 +53,6 @@ export function registerCustomElements() {
     customElements.define('ton-logo-dark', TONLogoDarkElement);
     customElements.define('ton-logo-light', TONLogoLightElement);
     customElements.define('ton-symbol', TONSymbolElement);
-    customElements.define('gem-logo-dark', GemLogoDarkElement);
-    customElements.define('gem-logo-light', GemLogoLightElement);
-    customElements.define('gem-symbol', GemSymbolElement);
 }
 
 // https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements
@@ -70,8 +76,7 @@ export function getAllCustomElementsNames() {
             customElement.style.display = 'flex';
 
             if (customElementName === 'layout-element') {
-                customElement.style.height = '100vh';
-                customElement.style.width = '100vw';
+                customElement.style.width = '100%';
                 customElement.style.justifyContent = 'center';
                 customElement.style.alignItems = 'center';
             }

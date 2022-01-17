@@ -1,0 +1,19 @@
+<template>
+    <div class="content-parent">
+        <slot name="content"></slot>
+    </div>
+</template>
+
+<style>
+.content-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 192px;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 24px;
+    flex-direction: column;
+    border: 1px solid rgb(48 55 87 / 16%);
+}
+</style>

@@ -13,7 +13,3 @@ export default {
     <slot name="content" />
     <slot name="footer" />
 </template>
-
-<style>
-
-</style>
