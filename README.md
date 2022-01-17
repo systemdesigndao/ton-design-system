@@ -37,13 +37,13 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
             <button-primary link="https://t.me"></button-primary>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <button-outline link="https://github.com"></button-outline>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <text-black>
@@ -51,7 +51,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
             </text-black>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <text-bold>
@@ -59,7 +59,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
             </text-bold>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <text-regular>
@@ -67,7 +67,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
             </text-regular>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-dark>
           <div slot="content">
             <text-white>
@@ -75,37 +75,37 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
             </text-white>
           </div>
         </card-dark>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-dark>
           <div slot="content">
             <ton-logo-dark></ton-logo-dark>
           </div>
         </card-dark>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <ton-logo-light></ton-logo-light>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <ton-symbol></ton-symbol>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-dark>
           <div slot="content">
             <gem-logo-dark></gem-logo-dark>
           </div>
         </card-dark>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <gem-logo-light></gem-logo-light>
           </div>
         </card-light>
-        <spacing-block type="top" :payload="12"></spacing-block>
+        <spacing-block type="top" payload="12"></spacing-block>
         <card-light>
           <div slot="content">
             <gem-symbol></gem-symbol>
@@ -180,13 +180,13 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
               <button-primary link="https://t.me"></button-primary>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <button-outline link="https://github.com"></button-outline>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <text-black>
@@ -194,7 +194,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
               </text-black>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <text-bold>
@@ -202,7 +202,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
               </text-bold>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <text-regular>
@@ -210,7 +210,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
               </text-regular>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-dark>
             <div slot="content">
               <text-white>
@@ -218,37 +218,37 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
               </text-white>
             </div>
           </card-dark>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-dark>
             <div slot="content">
               <ton-logo-dark></ton-logo-dark>
             </div>
           </card-dark>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <ton-logo-light></ton-logo-light>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <ton-symbol></ton-symbol>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-dark>
             <div slot="content">
               <gem-logo-dark></gem-logo-dark>
             </div>
           </card-dark>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <gem-logo-light></gem-logo-light>
             </div>
           </card-light>
-          <spacing-block type="top" :payload="12"></spacing-block>
+          <spacing-block type="top" payload="12"></spacing-block>
           <card-light>
             <div slot="content">
               <gem-symbol></gem-symbol>
