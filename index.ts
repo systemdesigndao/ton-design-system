@@ -11,6 +11,9 @@ import TextWhite from './src/components/TextWhite.ce.vue';
 import TONLogoDark from './src/components/TONLogoDark.ce.vue';
 import TONLogoLight from './src/components/TONLogoLight.ce.vue';
 import TONSymbol from './src/components/TONSymbol.ce.vue';
+import GemLogoDark from './src/components/GemLogoDark.ce.vue';
+import GemLogoLight from './src/components/GemLogoLight.ce.vue';
+import GemSymbol from './src/components/GemSymbol.ce.vue';
 
 const ButtonNativeElement = defineCustomElement(ButtonNative);
 const ButtonPrimaryElement = defineCustomElement(ButtonPrimary);
@@ -24,6 +27,9 @@ const TextWhiteElement = defineCustomElement(TextWhite);
 const TONLogoDarkElement = defineCustomElement(TONLogoDark);
 const TONLogoLightElement = defineCustomElement(TONLogoLight);
 const TONSymbolElement = defineCustomElement(TONSymbol);
+const GemLogoDarkElement = defineCustomElement(GemLogoDark);
+const GemLogoLightElement = defineCustomElement(GemLogoLight);
+const GemSymbolElement = defineCustomElement(GemSymbol);
 
 export function registerCustomElements() {
     customElements.define('button-native', ButtonNativeElement);
@@ -38,6 +44,9 @@ export function registerCustomElements() {
     customElements.define('ton-logo-dark', TONLogoDarkElement);
     customElements.define('ton-logo-light', TONLogoLightElement);
     customElements.define('ton-symbol', TONSymbolElement);
+    customElements.define('gem-logo-dark', GemLogoDarkElement);
+    customElements.define('gem-logo-light', GemLogoLightElement);
+    customElements.define('gem-symbol', GemSymbolElement);
 }
 
 // https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements
