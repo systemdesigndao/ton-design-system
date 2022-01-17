@@ -1,5 +1,5 @@
 <template>
     <div class="logo">
-        <ton-symbol></ton-symbol>
+        <img src="/icons/ton-symbol.svg" alt="ton-symbol">
     </div>
 </template>

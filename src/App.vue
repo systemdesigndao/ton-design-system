@@ -12,17 +12,23 @@ import './assets/styles/global.css';
       <text-black>
         <span slot="text">text black</span>
       </text-black>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <text-bold>
         <span slot="text">text bold</span>
       </text-bold>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <text-regular>
         <span slot="text">text regular</span>
       </text-regular>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <text-white>
         <span slot="text">text white</span>
       </text-white>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <ton-logo-dark></ton-logo-dark>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <ton-logo-light></ton-logo-light>
+      <spacing-block type="top" :payload="12"></spacing-block>
       <ton-symbol></ton-symbol>
     </main>
   </layout-element>
