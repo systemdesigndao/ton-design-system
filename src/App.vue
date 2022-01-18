@@ -84,6 +84,13 @@ import './assets/styles/global.css';
           <gem-symbol></gem-symbol>
         </div>
       </card-light>
+      <spacing-block type="top" :payload="12"></spacing-block>
+      <card-light>
+        <div slot="content">
+          <chart-line></chart-line>
+        </div>
+      </card-light>
+      <spacing-block type="top" :payload="12"></spacing-block>
     </main>
   </layout-element>
 </template>

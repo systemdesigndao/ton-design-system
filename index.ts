@@ -1,39 +1,41 @@
 import { defineCustomElement } from 'vue';
-import ButtonNative from './src/components/ButtonNative.ce.vue';
-import ButtonPrimary from './src/components/ButtonPrimary.ce.vue';
-import ButtonOutline from './src/components/ButtonOutline.ce.vue';
-import SpacingBlock from './src/components/SpacingBlock.ce.vue';
-import LayoutTemplate from './src/components/LayoutTemplate.ce.vue';
-import TextBlack from './src/components/TextBlack.ce.vue';
-import TextBold from './src/components/TextBold.ce.vue';
-import TextRegular from './src/components/TextRegular.ce.vue';
-import TextWhite from './src/components/TextWhite.ce.vue';
-import TONLogoDark from './src/components/TONLogoDark.ce.vue';
-import TONLogoLight from './src/components/TONLogoLight.ce.vue';
-import TONSymbol from './src/components/TONSymbol.ce.vue';
-import GemLogoDark from './src/components/GemLogoDark.ce.vue';
-import GemLogoLight from './src/components/GemLogoLight.ce.vue';
-import GemSymbol from './src/components/GemSymbol.ce.vue';
-import CardDark from './src/components/CardDark.ce.vue';
-import CardLight from './src/components/CardLight.ce.vue';
+import ButtonNativeCeVue from './src/components/ButtonNative.ce.vue';
+import ButtonPrimaryCeVue from './src/components/ButtonPrimary.ce.vue';
+import ButtonOutlineCeVue from './src/components/ButtonOutline.ce.vue';
+import SpacingBlockCeVue from './src/components/SpacingBlock.ce.vue';
+import LayoutTemplateCeVue from './src/components/LayoutTemplate.ce.vue';
+import TextBlackCeVue from './src/components/TextBlack.ce.vue';
+import TextBoldCeVue from './src/components/TextBold.ce.vue';
+import TextRegularCeVue from './src/components/TextRegular.ce.vue';
+import TextWhiteCeVue from './src/components/TextWhite.ce.vue';
+import TONLogoDarkCeVue from './src/components/TONLogoDark.ce.vue';
+import TONLogoLightCeVue from './src/components/TONLogoLight.ce.vue';
+import TONSymbolCeVue from './src/components/TONSymbol.ce.vue';
+import GemLogoDarkCeVue from './src/components/GemLogoDark.ce.vue';
+import GemLogoLightCeVue from './src/components/GemLogoLight.ce.vue';
+import GemSymbolCeVue from './src/components/GemSymbol.ce.vue';
+import CardDarkCeVue from './src/components/CardDark.ce.vue';
+import CardLightCeVue from './src/components/CardLight.ce.vue';
+import ChartLineCeVue from './src/components/ChartLine.ce.vue';
 
-const ButtonNativeElement = defineCustomElement(ButtonNative);
-const ButtonPrimaryElement = defineCustomElement(ButtonPrimary);
-const ButtonOutlineElement = defineCustomElement(ButtonOutline);
-const CardDarkElement = defineCustomElement(CardDark);
-const CardLightElement = defineCustomElement(CardLight);
-const GemLogoDarkElement = defineCustomElement(GemLogoDark);
-const GemLogoLightElement = defineCustomElement(GemLogoLight);
-const GemSymbolElement = defineCustomElement(GemSymbol);
-const LayoutElement = defineCustomElement(LayoutTemplate);
-const SpacingElement = defineCustomElement(SpacingBlock);
-const TextBlackElement = defineCustomElement(TextBlack);
-const TextBoldElement = defineCustomElement(TextBold);
-const TextRegularElement = defineCustomElement(TextRegular);
-const TextWhiteElement = defineCustomElement(TextWhite);
-const TONLogoDarkElement = defineCustomElement(TONLogoDark);
-const TONLogoLightElement = defineCustomElement(TONLogoLight);
-const TONSymbolElement = defineCustomElement(TONSymbol);
+const ButtonNativeElement = defineCustomElement(ButtonNativeCeVue);
+const ButtonPrimaryElement = defineCustomElement(ButtonPrimaryCeVue);
+const ButtonOutlineElement = defineCustomElement(ButtonOutlineCeVue);
+const CardDarkElement = defineCustomElement(CardDarkCeVue);
+const CardLightElement = defineCustomElement(CardLightCeVue);
+const GemLogoDarkElement = defineCustomElement(GemLogoDarkCeVue);
+const GemLogoLightElement = defineCustomElement(GemLogoLightCeVue);
+const GemSymbolElement = defineCustomElement(GemSymbolCeVue);
+const LayoutElement = defineCustomElement(LayoutTemplateCeVue);
+const SpacingElement = defineCustomElement(SpacingBlockCeVue);
+const TextBlackElement = defineCustomElement(TextBlackCeVue);
+const TextBoldElement = defineCustomElement(TextBoldCeVue);
+const TextRegularElement = defineCustomElement(TextRegularCeVue);
+const TextWhiteElement = defineCustomElement(TextWhiteCeVue);
+const TONLogoDarkElement = defineCustomElement(TONLogoDarkCeVue);
+const TONLogoLightElement = defineCustomElement(TONLogoLightCeVue);
+const TONSymbolElement = defineCustomElement(TONSymbolCeVue);
+const ChartLineElement = defineCustomElement(ChartLineCeVue);
 
 export function registerCustomElements() {
     customElements.define('button-native', ButtonNativeElement);
@@ -53,6 +55,7 @@ export function registerCustomElements() {
     customElements.define('ton-logo-dark', TONLogoDarkElement);
     customElements.define('ton-logo-light', TONLogoLightElement);
     customElements.define('ton-symbol', TONSymbolElement);
+    customElements.define('chart-line', ChartLineElement);
 }
 
 // https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements
