@@ -57,32 +57,3 @@ export function registerCustomElements() {
     customElements.define('ton-symbol', TONSymbolElement);
     customElements.define('chart-line', ChartLineElement);
 }
-
-// https://stackoverflow.com/questions/27334365/how-to-get-list-of-registered-custom-elements
-
-export function getAllCustomElementsNames() {
-    document.addEventListener("DOMContentLoaded", function(event) {
-        // Get all elements
-        const elements = document.querySelectorAll('*')
-
-        // Create an array from elements
-        const elementArray = Array.from(elements)
-
-        // Map to node names
-        const nodeNames = elementArray.map(element => element.nodeName.toLowerCase())
-
-        // Filter by which ones are registered
-        const allCustomElementNames = nodeNames.filter(customElements.get.bind(customElements))
-        
-        for (let customElementName of allCustomElementNames) {
-            const customElement = document.querySelector<HTMLElement>(customElementName)!;
-
-            if (customElementName === 'layout-element') {
-                customElement.style.display = 'flex';
-                customElement.style.width = '100%';
-                customElement.style.justifyContent = 'center';
-                customElement.style.alignItems = 'center';
-            }
-        }
-    });
-}
