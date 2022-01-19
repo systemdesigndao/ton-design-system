@@ -16,6 +16,7 @@ import GemLogoLightCeVue from './src/components/GemLogoLight.ce.vue';
 import GemSymbolCeVue from './src/components/GemSymbol.ce.vue';
 import CardDarkCeVue from './src/components/CardDark.ce.vue';
 import CardLightCeVue from './src/components/CardLight.ce.vue';
+import ChartCandleStickCeVue from './src/components/ChartCandleStick.ce.vue';
 import ChartLineCeVue from './src/components/ChartLine.ce.vue';
 
 const ButtonNativeElement = defineCustomElement(ButtonNativeCeVue);
@@ -35,6 +36,7 @@ const TextWhiteElement = defineCustomElement(TextWhiteCeVue);
 const TONLogoDarkElement = defineCustomElement(TONLogoDarkCeVue);
 const TONLogoLightElement = defineCustomElement(TONLogoLightCeVue);
 const TONSymbolElement = defineCustomElement(TONSymbolCeVue);
+const ChartCandleStickElement = defineCustomElement(ChartCandleStickCeVue);
 const ChartLineElement = defineCustomElement(ChartLineCeVue);
 
 export function registerCustomElements() {
@@ -55,5 +57,6 @@ export function registerCustomElements() {
     customElements.define('ton-logo-dark', TONLogoDarkElement);
     customElements.define('ton-logo-light', TONLogoLightElement);
     customElements.define('ton-symbol', TONSymbolElement);
+    customElements.define('chart-candle-stick', ChartCandleStickElement);
     customElements.define('chart-line', ChartLineElement);
 }
