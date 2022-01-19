@@ -1,48 +1,30 @@
-<script>
-export default {
-  name: 'ChartLine',
-  data() {
-    return {
-        width: 100, 
-        height: 100,
-    }
-  },
-  methods: {
-      generatePoints(nbOfPoints) {
-        const pts = [];
-        for (let i = 0; i <= nbOfPoints; i++) {
-            pts.push({
-            x: i * (this.width / nbOfPoints),
-            y: Math.random() * this.height
-        });
-        }
-        return pts;
-      },
-      plotPoints(ctx) {
-        const pts = this.generatePoints(32);
-        // first plot the stroke
-        pts.forEach((pt) => ctx.lineTo(pt.x, pt.y));
-        ctx.stroke();
-        // now define the bottom of the filled area
-        const maxY = this.height; //Math.max.apply(null, pts.map(pt=>pt.y));
-        // draw the missing parts
-        ctx.lineTo(pts[pts.length - 1].x, maxY); // bottom-right
-        ctx.lineTo(pts[0].x, maxY); // bottom-left
-
-        ctx.globalCompositeOperation = "destination-over"; // draw behind
-        ctx.fill(); // will close the path for us
-        ctx.globalCompositeOperation = "source-over"; // normal behavior
-    }
-  },
-  mounted() {
-    const ctx = this.$refs.canvas.getContext('2d');
-    ctx.fillStyle = 'red';
-
-    this.plotPoints(ctx);
-  },
-}
-</script>
-
 <template>
-    <canvas ref="canvas" :width="width" :height="height"></canvas>
+    <svg viewBox="0 0 150 150" class="chart">
+      <polyline
+        fill="url('#myGradient')"
+        stroke="#0074d9"
+        stroke-width="2"
+        points="
+          00,120
+          20,60
+          40,80
+          60,20
+          80,80
+          100,100,
+          120,120,
+          140,10
+        "
+      />
+    </svg>
 </template>
+
+<style>
+.chart {
+  background: white;
+  width: 100%;
+  height: 100px;
+  border-left: 1px dotted #555;
+  border-bottom: 1px dotted #555;
+  padding: 20px 20px 20px 0;
+}
+</style>
