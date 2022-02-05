@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import './assets/styles/global.css';
+import Details from './components/Details.vue';
 </script>
 
 <template>
-  <layout-element>
+  <!-- <layout-element>
     <main slot="content">
       <card-light>
         <div slot="content">
@@ -98,5 +99,6 @@ import './assets/styles/global.css';
       </card-light>
       <spacing-block type="top" :payload="12"></spacing-block>
     </main>
-  </layout-element>
+  </layout-element> -->
+  <Details />
 </template>

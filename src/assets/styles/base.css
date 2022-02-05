@@ -4,6 +4,6 @@
     margin: 0;
 }
 
-layout-element {
-    display: flex;
+html {
+    font-size: 14px;
 }
