@@ -30,6 +30,7 @@
     "cssnano": "^5.0.16",
     "path": "^0.12.7",
     "postcss": "^8.4.6",
+    "postcss-apply-class": "^0.1.6",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
     "postcss-load-config": "^3.1.1",

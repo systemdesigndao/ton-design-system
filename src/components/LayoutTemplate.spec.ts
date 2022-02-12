@@ -1,4 +1,4 @@
-import LayoutTemplate from './LayoutTemplate.ce.vue';
+import LayoutTemplate from './LayoutTemplate.vue';
 import { mount } from '@vue/test-utils';
 import { h, RendererElement, RendererNode, VNode } from 'vue';
 

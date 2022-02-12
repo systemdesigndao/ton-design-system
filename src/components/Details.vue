@@ -35,6 +35,6 @@
 </template>
 
 
-<style scoped>
+<!-- <style scoped>
 @import "../assets/styles/details.css";
-</style>
+</style> -->
