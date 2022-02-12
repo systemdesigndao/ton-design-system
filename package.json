@@ -26,6 +26,7 @@
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/test-utils": "^2.0.0-rc.18",
     "autoprefixer": "^10.4.2",
+    "concurrently": "^7.0.0",
     "cssnano": "^5.0.16",
     "path": "^0.12.7",
     "postcss": "^8.4.6",
