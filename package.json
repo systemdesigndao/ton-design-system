@@ -5,7 +5,8 @@
     "dist/fonts",
     "dist/icons",
     "dist/index.es.js",
-    "src/assets/styles"
+    "src/assets/styles",
+    "src/post.css"
   ],
   "version": "0.0.5",
   "scripts": {

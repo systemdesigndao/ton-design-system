@@ -1,3 +1,8 @@
+prod:
+	npm run build
+	cp src/post.css dist
+	cp index-prod.html dist/index.html
+
 publish:
 	rm -rf ./dist
 	npm version patch
