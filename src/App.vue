@@ -2,9 +2,12 @@
 import Details from './components/Details.vue';
 import Layout from './components/Layout.vue';
 import CardLight from './components/CardLight.vue';
-// import CardDark from './components/CardDark.vue';
-import TextRegular from './components/TextRegular.vue';
+import CardDark from './components/CardDark.vue';
 import Row from './components/Row.vue';
+import TextBlack from './components/TextBlack.vue';
+import TextBold from './components/TextBold.vue';
+import TextRegular from './components/TextRegular.vue';
+import TextWhite from './components/TextWhite.vue';
 </script>
 
 <template>
@@ -20,20 +23,89 @@ import Row from './components/Row.vue';
     </template>
     <template v-slot:content>
       <div class="container">
-        <Row class="d-flex justify-content-center">
+        <Row class="d-flex justify-content-center m-1">
           <template v-slot:content>
-            <CardLight>
+            <CardLight class="m-l-1">
               <template v-slot:content>
-                <Details />
+                <TextBlack>
+                  <template v-slot:text>
+                    Text Black
+                  </template>
+                </TextBlack>
               </template>
             </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextBlack>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Black White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextBlack>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight class="m-l-1">
+              <template v-slot:content>
+                <TextBold>
+                  <template v-slot:text>
+                    Text Bold
+                  </template>
+                </TextBold>
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextBold>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Bold White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextBold>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
             <CardLight class="m-l-1">
               <template v-slot:content>
                 <TextRegular>
                   <template v-slot:text>
-                    Text Regular
+                    Text Regular Black
                   </template>
                 </TextRegular>
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextRegular>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Regular White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextRegular>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <Details />
               </template>
             </CardLight>
           </template>
