@@ -1,6 +1,6 @@
 prod:
 	npm run build
-	cp src/post.css dist
+	cp src/index.css dist
 	cp index-prod.html dist/index.html
 
 publish:

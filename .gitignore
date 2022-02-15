@@ -4,4 +4,4 @@ dist
 dist-ssr
 *.local
 .npmrc
-src/post.css
+src/index.css

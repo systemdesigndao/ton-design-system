@@ -6,12 +6,12 @@
     "dist/icons",
     "dist/index.es.js",
     "src/assets/styles",
-    "src/post.css"
+    "src/index.css"
   ],
   "version": "0.0.5",
   "scripts": {
-    "dev:postcss": "postcss ./src/assets/styles/post.css --output ./src/post.css --env development --watch --verbose",
-    "prod:postcss": "postcss ./src/assets/styles/post.css --output ./src/post.css",
+    "dev:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css --env development --watch --verbose",
+    "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
     "dev": "concurrently --kill-others \"npm run dev:postcss\" \"vite\"",
     "build": "npm run prod:postcss && vue-tsc --noEmit && vite build",
     "serve": "vite preview",
