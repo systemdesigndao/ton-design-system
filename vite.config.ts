@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'index.ts'),
+      entry: path.resolve(__dirname, 'src/main.ts'),
       name: 'Index',
       fileName: format => `index.${format}.js`
     },
