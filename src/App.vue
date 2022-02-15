@@ -8,6 +8,12 @@ import TextBlack from './components/TextBlack.vue';
 import TextBold from './components/TextBold.vue';
 import TextRegular from './components/TextRegular.vue';
 import TextWhite from './components/TextWhite.vue';
+import GemLogoDark from './components/GemLogoDark.vue';
+import GemLogoLight from './components/GemLogoLight.vue';
+import GemSymbol from './components/GemSymbol.vue';
+import TONLogoDark from './components/TONLogoDark.vue';
+import TONLogoLight from './components/TONLogoLight.vue';
+import TONSymbol from './components/TONSymbol.vue';
 </script>
 
 <template>
@@ -111,6 +117,62 @@ import TextWhite from './components/TextWhite.vue';
             <CardDark class="m-l-1">
               <template v-slot:content>
                 <Details />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <GemLogoLight />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <GemLogoDark />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <GemSymbol />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <GemSymbol />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TONLogoLight />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TONLogoDark />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TONSymbol />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TONSymbol />
               </template>
             </CardDark>
           </template>
