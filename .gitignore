@@ -5,4 +5,3 @@ dist-ssr
 *.local
 .npmrc
 src/post.css
-.vercel
