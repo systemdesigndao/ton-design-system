@@ -9,7 +9,8 @@ module.exports = (cfg) => {
       require('autoprefixer')(),
       require('postcss-nested')(),
       devMode ? null : require('cssnano')(),
-      require('postcss-apply-class')
+      require('postcss-apply-class'),
+      require('postcss-simple-vars')({ silent: true })
     ]
   };
 };

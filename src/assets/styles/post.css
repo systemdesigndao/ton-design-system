@@ -1,3 +1,6 @@
+/* core styles */
+@import "./fonts.pcss";
+@import "./base.pcss";
 /* reset margin, padding */
 @import 'reset.pcss';
 /* sizes */
@@ -6,7 +9,10 @@
 /* text */
 @import 'text.pcss';
 /* layout */
+@import 'background.pcss';
 @import 'flex.pcss';
+@import 'container.pcss';
 @import 'layout.pcss';
 /* other */
 @import 'details.pcss';
+@import 'card.pcss';
