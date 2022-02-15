@@ -25,7 +25,7 @@ import TextWhite from './components/TextWhite.vue';
       <div class="container">
         <Row class="d-flex justify-content-center m-1">
           <template v-slot:content>
-            <CardLight class="m-l-1">
+            <CardLight>
               <template v-slot:content>
                 <TextBlack>
                   <template v-slot:text>
@@ -51,7 +51,7 @@ import TextWhite from './components/TextWhite.vue';
         </Row>
         <Row class="d-flex justify-content-center m-1">
           <template v-slot:content>
-            <CardLight class="m-l-1">
+            <CardLight>
               <template v-slot:content>
                 <TextBold>
                   <template v-slot:text>
@@ -77,7 +77,7 @@ import TextWhite from './components/TextWhite.vue';
         </Row>
         <Row class="d-flex justify-content-center m-1">
           <template v-slot:content>
-            <CardLight class="m-l-1">
+            <CardLight>
               <template v-slot:content>
                 <TextRegular>
                   <template v-slot:text>
@@ -108,6 +108,11 @@ import TextWhite from './components/TextWhite.vue';
                 <Details />
               </template>
             </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <Details />
+              </template>
+            </CardDark>
           </template>
         </Row>
       </div>
