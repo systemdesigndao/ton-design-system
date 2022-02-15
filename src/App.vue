@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import './assets/styles/global.css';
 import Details from './components/Details.vue';
-import LayoutTemplate from './components/LayoutTemplate.vue';
+import Layout from './components/Layout.vue';
 </script>
 
 <template>
-  <LayoutTemplate>
+  <Layout>
     <template v-slot:header>
-      <a class="header-logo"><div class="header-logo__name">TON Creation</div></a>
+      <a><span class="text-default">TON Creation</span></a>
     </template>
     <template v-slot:content>
       <Details />
     </template>
-  </LayoutTemplate>
+    <template v-slot:footer>
+      <a className="d-flex center-align center-items"><span class="text-default">Based on</span><img class="w-20 m-l-1" src="/icons/ton-logo-light.svg" alt="Logo" /></a>
+    </template>
+  </Layout>
 </template>

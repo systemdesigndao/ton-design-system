@@ -1,4 +1,12 @@
+/* reset margin, padding */
 @import 'reset.pcss';
-@import 'layout.pcss';
-@import 'details.pcss';
+/* sizes */
+@import 'width.pcss';
 @import 'height.pcss';
+/* text */
+@import 'text.pcss';
+/* layout */
+@import 'flex.pcss';
+@import 'layout.pcss';
+/* other */
+@import 'details.pcss';

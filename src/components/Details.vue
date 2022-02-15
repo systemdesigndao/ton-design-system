@@ -1,5 +1,5 @@
 <template>
-    <details class="details-holder">
+    <details class="details-holder m-1">
       <summary
         ><div class="holder-tg-nickname">
           <span class="holders-header-text text-bold">Previous owners</span>
