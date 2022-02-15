@@ -24,7 +24,7 @@ npm run dev
 
 ```zsh
 make prod
-npm run preview
+npm run serve -- --host
 ```
 
 `
