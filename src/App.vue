@@ -1,102 +1,193 @@
 <script setup lang="ts">
-import './assets/styles/global.css';
+import Details from './components/Details.vue';
+import Layout from './components/Layout.vue';
+import CardLight from './components/CardLight.vue';
+import CardDark from './components/CardDark.vue';
+import Row from './components/Row.vue';
+import TextBlack from './components/TextBlack.vue';
+import TextBold from './components/TextBold.vue';
+import TextRegular from './components/TextRegular.vue';
+import TextWhite from './components/TextWhite.vue';
+import GemLogoDark from './components/GemLogoDark.vue';
+import GemLogoLight from './components/GemLogoLight.vue';
+import GemSymbol from './components/GemSymbol.vue';
+import TONLogoDark from './components/TONLogoDark.vue';
+import TONLogoLight from './components/TONLogoLight.vue';
+import TONSymbol from './components/TONSymbol.vue';
 </script>
 
 <template>
-  <layout-element>
-    <main slot="content">
-      <card-light>
-        <div slot="content">
-          <button-primary link="https://t.me"></button-primary>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <button-outline link="https://github.com"></button-outline>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <text-black>
-            <span slot="text">text black</span>
-          </text-black>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <text-bold>
-            <span slot="text">text bold</span>
-          </text-bold>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <text-regular>
-            <span slot="text">text regular</span>
-          </text-regular>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-dark>
-        <div slot="content">
-          <text-white>
-            <span slot="text">text white</span>
-          </text-white>
-        </div>
-      </card-dark>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-dark>
-        <div slot="content">
-          <ton-logo-dark></ton-logo-dark>
-        </div>
-      </card-dark>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <ton-logo-light></ton-logo-light>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-       <card-light>
-        <div slot="content">
-          <ton-symbol></ton-symbol>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-dark>
-        <div slot="content">
-          <gem-logo-dark></gem-logo-dark>
-        </div>
-      </card-dark>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <gem-logo-light></gem-logo-light>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <gem-symbol></gem-symbol>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <chart-candle-stick></chart-candle-stick>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-      <card-light>
-        <div slot="content">
-          <chart-line></chart-line>
-        </div>
-      </card-light>
-      <spacing-block type="top" :payload="12"></spacing-block>
-    </main>
-  </layout-element>
+  <Layout>
+    <template v-slot:header>
+      <a>
+        <TextRegular>
+          <template v-slot:text>
+            TON Creation
+          </template>
+        </TextRegular>
+      </a>
+    </template>
+    <template v-slot:content>
+      <div class="container">
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TextBlack>
+                  <template v-slot:text>
+                    Text Black
+                  </template>
+                </TextBlack>
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextBlack>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Black White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextBlack>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TextBold>
+                  <template v-slot:text>
+                    Text Bold
+                  </template>
+                </TextBold>
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextBold>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Bold White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextBold>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TextRegular>
+                  <template v-slot:text>
+                    Text Regular Black
+                  </template>
+                </TextRegular>
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TextRegular>
+                  <template v-slot:text>
+                    <TextWhite>
+                      <template v-slot:text>
+                        Text Regular White
+                      </template>
+                    </TextWhite>
+                  </template>
+                </TextRegular>
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <Details />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <Details />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <GemLogoLight />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <GemLogoDark />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <GemSymbol />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <GemSymbol />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TONLogoLight />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TONLogoDark />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+        <Row class="d-flex justify-content-center m-1">
+          <template v-slot:content>
+            <CardLight>
+              <template v-slot:content>
+                <TONSymbol />
+              </template>
+            </CardLight>
+            <CardDark class="m-l-1">
+              <template v-slot:content>
+                <TONSymbol />
+              </template>
+            </CardDark>
+          </template>
+        </Row>
+      </div>
+    </template>
+    <template v-slot:footer>
+      <a className="d-flex align-items-center">
+        <TextRegular>
+          <template v-slot:text>
+            Based on
+          </template>
+        </TextRegular>
+        <img class="w-20 m-l-1" src="/icons/ton-logo-light.svg" alt="Logo" />
+        </a>
+    </template>
+  </Layout>
 </template>

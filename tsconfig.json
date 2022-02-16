@@ -12,6 +12,8 @@
     "lib": ["esnext", "dom"],
     "allowJs": true,
     "types": ["@peeky/test"],
+    "skipLibCheck": true,
+    "baseUrl": "./"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
