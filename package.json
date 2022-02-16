@@ -4,7 +4,7 @@
   "files": [
     "src/index.css"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "dev:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css --env development --watch --verbose",
     "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
