@@ -2,10 +2,6 @@
   "name": "@designervoid/ton-design-system",
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "files": [
-    "dist/fonts",
-    "dist/icons",
-    "dist/index.es.js",
-    "src/assets/styles",
     "src/index.css"
   ],
   "version": "0.0.5",

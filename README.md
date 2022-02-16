@@ -23,7 +23,7 @@ npm run dev
 2:
 
 ```zsh
-make prod
+make preview
 npm run serve -- --host
 ```
 
