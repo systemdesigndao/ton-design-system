@@ -1,7 +1,7 @@
 preview:
 	npm run build
 	cp src/index.css dist
-	cp index-prod.html dist/index.html
+	cp preview.html dist/index.html
 
 publish:
 	npm version patch
