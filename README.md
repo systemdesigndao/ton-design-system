@@ -41,6 +41,12 @@ Atomary CSS
 }
 ```
 
+Usage of class:
+
+```html
+<div class="atom"></div>
+```
+
 ## License
 
 MIT
