@@ -2,7 +2,7 @@
   "name": "@designervoid/ton-design-system",
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "files": [
-    "src/index.css"
+    "src/stories/styles/**/*.css"
   ],
   "version": "0.0.8",
   "scripts": {
