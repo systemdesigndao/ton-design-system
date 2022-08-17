@@ -5,5 +5,6 @@ preview:
 
 publish:
 	npm version patch
+	npm run prod:postcss
 	npm run batch-pcss:prod
 	npm publish
