@@ -2,7 +2,7 @@
   "name": "@designervoid/ton-design-system",
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "files": [
-    "src/stories/styles/**/*.css"
+    "src/stories/styles/dist/**/*.css"
   ],
   "version": "0.0.9",
   "scripts": {
@@ -13,9 +13,10 @@
     "serve": "vite preview",
     "test:open": "peeky open",
     "test": "peeky run",
-    "storybook": "concurrently --kill-others \"yarn batch-pcss\" \"start-storybook -p 6006\"",
+    "storybook:dev": "concurrently --kill-others \"yarn batch-pcss:dev\" \"start-storybook -p 6006\"",
     "build-storybook": "build-storybook",
-    "batch-pcss": "node --loader ts-node/esm ./scripts/batching-pcss.mts"
+    "batch-pcss:dev": "node --loader ts-node/esm ./scripts/batching-pcss.mts --type dev",
+    "batch-pcss:prod": "node --loader ts-node/esm ./scripts/batching-pcss.mts --type prod"
   },
   "dependencies": {
     "ts-node": "^10.9.1",
@@ -25,13 +26,13 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@peeky/test": "^0.10.2",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-vite": "^0.2.2",
     "@storybook/testing-library": "^0.0.13",
-    "@storybook/vue3": "^6.5.9",
+    "@storybook/vue3": "^6.5.10",
     "@types/node": "^17.0.8",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/test-utils": "^2.0.0-rc.18",
