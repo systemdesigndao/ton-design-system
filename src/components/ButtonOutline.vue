@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {openLinkInNewTab} from '../helpers';
+import '../stories/styles/button.css';
 
 type Props = { link?: string };
 
