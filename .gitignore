@@ -5,3 +5,4 @@ dist-ssr
 *.local
 .npmrc
 src/index.css
+src/stories/styles/**
