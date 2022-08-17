@@ -1,0 +1,34 @@
+.text-white {
+    color: #FFFFFF;
+}
+.text-black {
+    color: #000000;
+}
+.text-default-family {
+    font-family: "mulish";
+}
+.text-bold-family {
+    font-family: "mulish-bold";
+}
+.text-black-family {
+    font-family: "mulish-black";
+}
+.text-weight-normal {
+    font-weight: normal;
+}
+.text-weight-bold {
+    font-weight: bold;
+}
+.text-regular {
+    font-family: "mulish";
+    font-weight: normal;
+}
+.text-bold {
+    font-family: "mulish-bold";
+    font-weight: normal;
+}
+.text-black {
+    font-family: "mulish-black";
+    font-weight: normal;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL2Fzc2V0cy9zdHlsZXMvdGV4dC5wY3NzIiwiPG5vIHNvdXJjZT4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7SUFDSSxjQUFxQjtBQUN6QjtBQUVBO0lBQ0ksY0FBcUI7QUFDekI7QUFFQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUVBO0lBQ0ksMEJBQTBCO0FBQzlCO0FBRUE7SUFDSSwyQkFBMkI7QUFDL0I7QUFFQTtJQUNJLG1CQUFtQjtBQUN2QjtBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCO0FBRUE7SUM5QkEsc0JBQUE7SUFBQSxvQkFBQTtBRGlDQTtBQUVBO0lDbkNBLDJCQUFBO0lBQUEsb0JBQUE7QURzQ0E7QUFFQTtJQ3hDQSw0QkFBQTtJQUFBLG9CQUFBO0FEMkNBIiwiZmlsZSI6InRleHQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAndmFyaWFibGVzLnBjc3MnO1xuXG4udGV4dC13aGl0ZSB7XG4gICAgY29sb3I6ICQod2hpdGUtY29sb3IpO1xufVxuXG4udGV4dC1ibGFjayB7XG4gICAgY29sb3I6ICQoYmxhY2stY29sb3IpO1xufVxuXG4udGV4dC1kZWZhdWx0LWZhbWlseSB7XG4gICAgZm9udC1mYW1pbHk6IFwibXVsaXNoXCI7XG59XG5cbi50ZXh0LWJvbGQtZmFtaWx5IHtcbiAgICBmb250LWZhbWlseTogXCJtdWxpc2gtYm9sZFwiO1xufVxuXG4udGV4dC1ibGFjay1mYW1pbHkge1xuICAgIGZvbnQtZmFtaWx5OiBcIm11bGlzaC1ibGFja1wiO1xufVxuXG4udGV4dC13ZWlnaHQtbm9ybWFsIHtcbiAgICBmb250LXdlaWdodDogbm9ybWFsO1xufVxuXG4udGV4dC13ZWlnaHQtYm9sZCB7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi50ZXh0LXJlZ3VsYXIge1xuICAgIEBhcHBseSAudGV4dC1kZWZhdWx0LWZhbWlseTtcbiAgICBAYXBwbHkgLnRleHQtd2VpZ2h0LW5vcm1hbDtcbn1cblxuLnRleHQtYm9sZCB7XG4gICAgQGFwcGx5IC50ZXh0LWJvbGQtZmFtaWx5O1xuICAgIEBhcHBseSAudGV4dC13ZWlnaHQtbm9ybWFsO1xufVxuXG4udGV4dC1ibGFjayB7XG4gICAgQGFwcGx5IC50ZXh0LWJsYWNrLWZhbWlseTtcbiAgICBAYXBwbHkgLnRleHQtd2VpZ2h0LW5vcm1hbDtcbn0iLG51bGxdfQ== */

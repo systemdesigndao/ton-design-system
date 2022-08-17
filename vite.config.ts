@@ -11,7 +11,7 @@ const htmlPlugin = () => {
       return html.replace(
         /<title>(.*?)<\/title>/,
         `<link rel="stylesheet" href="${pathToStyle}">
-    <title>Vite App</title>`
+        <title>Vite App</title>`
       )
     }
   }
