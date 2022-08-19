@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path';
+import ViteFonts from 'vite-plugin-fonts'
 
 const htmlPlugin = () => {
   return {
@@ -21,7 +22,17 @@ const htmlPlugin = () => {
 export default defineConfig({
   plugins: [
     vue(),
-    htmlPlugin()
+    htmlPlugin(),
+    ViteFonts({
+      custom: {
+        families: {
+          'mulish': './public/fonts/Mulish-Regular.ttf',
+          'mulish-black': './public/fonts/Mulish-Black.ttf',
+          'mulish-extrabold': './public/fonts/Mulish-ExtraBold.ttf',
+          'mulish-bold': './public/fonts/Mulish-Bold.ttf',
+        },
+      },
+    }),
   ],
   build: {
     lib: {
