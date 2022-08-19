@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path';
 
@@ -39,4 +39,12 @@ export default defineConfig({
       },
     }
   },
+  test: {
+    // Use the DOM environment for all tests by default
+    runtimeEnv: 'dom',
+  },
+} as UserConfigExport & {
+  test: {
+    runtimeEnv: 'dom'
+  }
 })
