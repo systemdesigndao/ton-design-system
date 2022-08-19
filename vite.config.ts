@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path';
-import ViteFonts from 'vite-plugin-fonts'
 
 const htmlPlugin = () => {
   return {
@@ -12,6 +11,10 @@ const htmlPlugin = () => {
       return html.replace(
         /<title>(.*?)<\/title>/,
         `<link rel="stylesheet" href="${pathToStyle}">
+        <link rel="preload" as="font" type="font/ttf" href="/fonts/Mulish-Regular.ttf" crossorigin="">
+        <link rel="preload" as="font" type="font/ttf" href="/fonts/Mulish-Black.ttf" crossorigin="">
+        <link rel="preload" as="font" type="font/ttf" href="/fonts/Mulish-ExtraBold.ttf" crossorigin="">
+        <link rel="preload" as="font" type="font/ttf" href="/fonts/Mulish-Bold.ttf" crossorigin="">
         <title>Vite App</title>`
       )
     }
@@ -23,16 +26,6 @@ export default defineConfig({
   plugins: [
     vue(),
     htmlPlugin(),
-    ViteFonts({
-      custom: {
-        families: {
-          'mulish': './public/fonts/Mulish-Regular.ttf',
-          'mulish-black': './public/fonts/Mulish-Black.ttf',
-          'mulish-extrabold': './public/fonts/Mulish-ExtraBold.ttf',
-          'mulish-bold': './public/fonts/Mulish-Bold.ttf',
-        },
-      },
-    }),
   ],
   build: {
     lib: {
