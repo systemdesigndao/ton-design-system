@@ -4,7 +4,7 @@ preview:
 	cp preview.html dist/index.html
 
 publish:
+	yarn prod:postcss
+	yarn batch-pcss:prod
 	npm version patch
-	npm run prod:postcss
-	npm run batch-pcss:prod
 	npm publish
