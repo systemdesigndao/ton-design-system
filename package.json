@@ -11,7 +11,6 @@
     "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
     "dev": "concurrently --kill-others \"yarn dev:postcss\" \"vite\"",
     "build": "yarn prod:postcss && vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
     "test:open": "peeky open",
     "test": "peeky run",
     "storybook:dev": "concurrently --kill-others \"yarn batch-pcss:dev\" \"start-storybook -p 6006\"",
