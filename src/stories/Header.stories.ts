@@ -9,7 +9,7 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template = (args: { user: { name: string; wallet: string; }}) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { MyHeader },
   // The story's `args` need to be mapped into the template through the `setup()` method
@@ -22,13 +22,25 @@ const Template = (args) => ({
 });
 
 export const LoggedIn = Template.bind({});
-LoggedIn.args = {
+
+type T = ReturnType<typeof LoggedIn>;
+
+interface K extends T {
+  args: {
+    user: {
+      wallet: string;
+    } | null;
+  }
+}
+
+
+(LoggedIn as unknown as K).args = {
   user: {
-    name: 'Jane Doe',
+    wallet: 'EQ...0-',
   },
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {
+(LoggedOut as unknown as K).args = {
   user: null,
 };
