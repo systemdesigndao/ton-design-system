@@ -5,13 +5,12 @@
     "src/index.css",
     "src/stories/styles/dist/**/*.css"
   ],
-  "version": "0.0.12",
+  "version": "0.0.18",
   "scripts": {
     "dev:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css --env development --watch --verbose",
     "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
     "dev": "concurrently --kill-others \"yarn dev:postcss\" \"vite\"",
     "build": "yarn prod:postcss && vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
     "test:open": "peeky open",
     "test": "peeky run",
     "storybook:dev": "concurrently --kill-others \"yarn batch-pcss:dev\" \"start-storybook -p 6006\"",
