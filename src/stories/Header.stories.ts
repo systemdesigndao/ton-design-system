@@ -1,5 +1,7 @@
 import MyHeader from './Header.vue';
 
+export type User = { user: { name: string; wallet: string; }};
+
 export default {
   title: 'Design_System/Header',
   component: MyHeader,
@@ -9,7 +11,9 @@ export default {
   },
 };
 
-const Template = (args: { user: { name: string; wallet: string; }}) => ({
+export type PagesArgs = & User;
+
+const Template = (args: PagesArgs) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { MyHeader },
   // The story's `args` need to be mapped into the template through the `setup()` method
@@ -25,7 +29,7 @@ export const LoggedIn = Template.bind({});
 
 type T = ReturnType<typeof LoggedIn>;
 
-interface K extends T {
+export interface K extends T {
   args: {
     user: {
       wallet: string;
