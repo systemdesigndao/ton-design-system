@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@peeky/test": "^0.10.2",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
