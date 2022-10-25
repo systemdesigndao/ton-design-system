@@ -5,7 +5,7 @@
     "src/index.css",
     "src/stories/styles/dist/**/*.css"
   ],
-  "version": "0.0.18",
+  "version": "1.0.1",
   "scripts": {
     "dev:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css --env development --watch --verbose",
     "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
