@@ -14,7 +14,6 @@ const Template = (args: {
   components: { ButtonOutline },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    console.log(args);
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`

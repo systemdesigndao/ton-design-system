@@ -1,3 +1,5 @@
+const purgecss = require('@fullhuman/postcss-purgecss');
+
 module.exports = (cfg) => {
   const devMode = (cfg.env === 'development');
 
@@ -10,7 +12,11 @@ module.exports = (cfg) => {
       require('postcss-nested')(),
       devMode ? null : require('cssnano')(),
       require('postcss-apply-class'),
-      require('postcss-simple-vars')({ silent: true })
+      require('postcss-simple-vars')({ silent: true }),
+      purgecss({
+        content: ['./src/**/*.vue'],
+        whitelist: ["html", "body"],
+      })
     ]
   };
 };
