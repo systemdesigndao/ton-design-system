@@ -43,7 +43,7 @@
     @apply .text-weight-normal;
 }
 
-@each $align in left, center, right {
+@each $align in (left, center, right) {
     .text-$(align) {
       text-align: $(align);
     }

@@ -1,11 +1,11 @@
-.grid {
-    &-gap {
-        &-1 {
-            gap: 0.25rem; /* 4px */
-        }
+@for $i from 0 to 4 {
+    .gap-$(i) { gap: calc((0.125 * 16) * $(i)rem); }
+}
 
-        &-2 {
-            gap: 0.5rem; /* 8px */
-        }
-    }
+@for $i from 0 to 4 {
+    .gap-x-$(i) { column-gap: calc((0.125 * 16) * $(i)rem); }
+}
+
+@for $i from 0 to 4 {
+    .gap-y-$(i) { row-gap: calc((0.125 * 16) * $(i)rem); }
 }

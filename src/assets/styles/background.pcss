@@ -1,5 +1,7 @@
 @import 'variables.pcss';
 
-.bg-dark {
-    background-color: $(gray-dark1);
-}
+@each $typeBackground, $color in (dark, white), (gray-dark1, white-color) {
+    .bg-$(typeBackground) {
+      background-color: $($(color));
+    }
+  }
