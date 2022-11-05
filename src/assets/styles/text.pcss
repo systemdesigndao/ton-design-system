@@ -42,3 +42,9 @@
     @apply .text-black-family;
     @apply .text-weight-normal;
 }
+
+@each $align in left, center, right {
+    .text-$(align) {
+      text-align: $(align);
+    }
+}
