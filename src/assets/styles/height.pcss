@@ -1,3 +1,22 @@
-.vh-100 {
+@for $i from 0 to 96 {
+    .h-$(i) { height: calc(0.125 * $(i)rem); }
+}
+
+.h-auto	{
+    height: auto;
+}
+.h-full	{
+    height: 100%;
+}
+.h-screen	{
     height: 100vh;
+}
+.h-min	{
+    height: min-content;
+}
+.h-max	{
+    height: max-content;
+}
+.h-fit	{
+    height: fit-content;
 }

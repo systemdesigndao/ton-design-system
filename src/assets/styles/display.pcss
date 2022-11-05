@@ -1,9 +1,5 @@
-.d {
-    &-flex {
-        display: flex;
-    }
-
-    &-grid {
-        display: grid;
+@each $type in (flex, grid) {
+    .d-$(type) {
+        display: $(type);
     }
 }
