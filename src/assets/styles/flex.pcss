@@ -1,19 +1,19 @@
-.col {
-    flex-direction: column;
+@each $type in (column, row) {
+    .$(type) {
+        flex-direction: $(type);
+    }
 }
 
-.justify-content-center {
-    justify-content: center;
-}
+@each $type in (justify-content, align-self, align-items) {
+    @each $direction in (flex-start, center, flex-end) {
+        .$(type)-$(direction) {
+          $(type): $(direction);
+        }
+      }
+  }
 
-.align-self-center {
-    align-self: center;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
+@each $type in (nowrap, align-self, align-items) {
+    .flex-$(type) {
+        flex-wrap: $(type);
+    }
 }
