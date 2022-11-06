@@ -1,19 +1,39 @@
-@for $i from 1 to 20 {
-    .m-$(i) { margin: calc(0.125 * $(i)rem); }
+@for $i from 0 to 20 {
+    .m-$(i) { margin: calc((1/8) * $(i)rem); }
 }
 
-@for $i from 1 to 20 {
-    .m-t-$(i) { margin: calc(0.125 * $(i)rem); }
+@for $i from 0 to 20 {
+    .m-t-$(i) { margin-top: calc((1/8) * $(i)rem); }
 }
 
-@for $i from 1 to 20 {
-    .m-r-$(i) { margin: calc(0.125 * $(i)rem); }
+@for $i from 0 to 20 {
+    .m-r-$(i) { margin-right: calc((1/8) * $(i)rem); }
 }
 
-@for $i from 1 to 20 {
-    .m-b-$(i) { margin: calc(0.125 * $(i)rem); }
+@for $i from 0 to 20 {
+    .m-b-$(i) { margin-bottom: calc((1/8) * $(i)rem); }
 }
 
-@for $i from 1 to 20 {
-    .m-l-$(i) { margin: calc(0.125 * $(i)rem); }
+@for $i from 0 to 20 {
+    .m-l-$(i) { margin-left: calc((1/8) * $(i)rem); }
+}
+
+@for $i from 0 to 20 {
+    .p-$(i) { padding: calc((1/8) * $(i)rem); }
+}
+
+@for $i from 0 to 20 {
+    .p-t-$(i) { padding-top: calc((1/8) * $(i)rem); }
+}
+
+@for $i from 0 to 20 {
+    .p-r-$(i) { padding-right: calc((1/8) * $(i)rem); }
+}
+
+@for $i from 0 to 20 {
+    .p-b-$(i) { padding-bottom: calc((1/8) * $(i)rem); }
+}
+
+@for $i from 0 to 20 {
+    .p-l-$(i) { padding-left: calc((1/8) * $(i)rem); }
 }
