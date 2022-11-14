@@ -15,6 +15,7 @@ module.exports = (cfg) => {
       devMode ? null : require('cssnano')(),
       require('postcss-apply-class'),
       require('postcss-simple-vars')({ silent: true }),
+      require('tailwindcss')(),
       /*
         TODO:
         1. purgecss in runtime outside the package 

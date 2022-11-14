@@ -1,5 +1,7 @@
 # TON Design System
 
+https://ton.org/en/brand-assets
+
 ## Development environment
 
 ### Prerequisites

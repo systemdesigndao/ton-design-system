@@ -9,7 +9,7 @@
   "scripts": {
     "dev:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css --env development --watch --verbose",
     "prod:postcss": "postcss ./src/assets/styles/index.pcss --output ./src/index.css",
-    "dev": "concurrently --kill-others \"yarn dev:postcss\" \"vite\"",
+    "dev": "vite",
     "build": "yarn prod:postcss && vue-tsc --noEmit && vite build",
     "test:open": "peeky open",
     "test": "peeky run",
@@ -46,6 +46,7 @@
     "postcss-load-config": "^3.1.1",
     "postcss-nested": "^6.0.0",
     "postcss-simple-vars": "^6.0.3",
+    "tailwindcss": "^3.2.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.4.3",
     "vite": "^3.0.4",
