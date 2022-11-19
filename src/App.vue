@@ -1,5 +1,6 @@
 <script setup lang="ts">
 /*
+    // take from ton.org
     --background_light_icon: rgba(0,136,204,0.06);
     --background_light_blue: rgba(0,136,204,0.1);
     --background_dark_main: #232328;
