@@ -35,13 +35,15 @@ npm run serve -- --host
 
 ## Main idea
 
-Atomary CSS based on Tailwind.css
+Atomary CSS
 
 ```css
 .atom {
   @apply ... (tw-classes)
 }
 ```
+
+![Screenshot](./docs/images/App.jpeg)
 
 ## Usage package
 
