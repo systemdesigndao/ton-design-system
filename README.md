@@ -47,7 +47,7 @@ Atomary CSS
 
 ## Usage package
 
-Example of usage with [`vite-vanilla-ts`](https://github.com/designervoid/ton-design-system-vite-vanilla-ts)
+Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)
 
 ## Troubleshooting with tests
 
