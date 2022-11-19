@@ -88,12 +88,60 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      'white': '#ffffff',
-      'black': '#000000',
-      'mainLight': '#0088CC',
-      'mainDark': '#07A0EC',
-      'grayLight': '#F7F9FB',
-      'grayDark': '#232328',
+      'white': {
+        1: '#ffffff',
+      },
+      'black': {
+        1: '#000000',
+      },
+      'main': {
+        1: {
+          light: '#0088CC',
+          dark: '#07A0EC',
+        }
+      },
+      'gray': {
+        1: {
+          light: '#f7f9fb',
+          dark: '#232328',
+        },
+        2: {
+          light: '#dee0e1',
+          dark: '#1f1f24',
+        },
+        3: {
+          light: '#c5c7c8',
+          dark: '#1c1c20',
+        },
+        4: {
+          light: '#acaeaf',
+          dark: '#18181c',
+        },
+        5: {
+          light: '#949596',
+          dark: '#151518',
+        },
+        6: {
+          light: '#7b7c7d',
+          dark: '#111114',
+        },
+        7: {
+          light: '#626364',
+          dark: '#0e0e10',
+        },
+        8: {
+          light: '#4a4a4b',
+          dark: '#0a0a0c',
+        },
+        9: {
+          light: '#7b7c7d',
+          dark: '#070708',
+        },
+        10: {
+          light: '#313132',
+          dark: '#030304',
+        },
+      },
     },
   },
   plugins: [],
