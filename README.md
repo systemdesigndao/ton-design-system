@@ -35,23 +35,13 @@ npm run serve -- --host
 
 ## Main idea
 
-Atomary CSS
+Atomary CSS based on Tailwind.css
 
 ```css
 .atom {
-  /*
-    ... properties
-  */
+  @apply ... (tw-classes)
 }
 ```
-
-Usage of class:
-
-```html
-<div class="atom"></div>
-```
-
-![Screenshot](./docs/images/storybook_dev_showcase.png)
 
 ## Usage package
 
