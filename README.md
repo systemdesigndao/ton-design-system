@@ -31,8 +31,6 @@ make preview
 npm run serve -- --host
 ```
 
-`
-
 ## Main idea
 
 Atomary CSS
