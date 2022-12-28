@@ -33,7 +33,7 @@ npm run serve -- --host
 
 ## Main idea
 
-Atomary CSS
+Atomic CSS
 
 ```css
 .atom {
