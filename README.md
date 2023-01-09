@@ -1,3 +1,8 @@
+[![Telegram Community Group][telegram-community-badge]][telegram-community-url]
+
+[telegram-community-badge]: https://img.shields.io/badge/-tds%20Chat-2CA5E0?style=flat&logo=telegram&logoColor=white
+[telegram-community-url]: https://t.me/tondesignsystemchat
+
 # TON Design System
 
 https://ton.org/en/brand-assets
