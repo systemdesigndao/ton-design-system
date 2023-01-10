@@ -1,7 +1,10 @@
 [![Telegram Community Group][telegram-community-badge]][telegram-community-url]
+[![Telegram Design DAO Group][telegram-design-dao-badge]][telegram-design-dao-url]
 
-[telegram-community-badge]: https://img.shields.io/badge/-tds%20Chat-2CA5E0?style=flat&logo=telegram&logoColor=white
+[telegram-community-badge]: https://img.shields.io/badge/-TON%20Design%20System%20Chat-2CA5E0?style=flat&logo=telegram&logoColor=white
 [telegram-community-url]: https://t.me/tondesignsystemchat
+[telegram-design-dao-badge]: https://img.shields.io/badge/-TON%20Design%20DAO%20Chat-2CA5E0?style=flat&logo=telegram&logoColor=white
+[telegram-design-dao-url]: https://t.me/tondesigndao
 
 # TON Design System
 
