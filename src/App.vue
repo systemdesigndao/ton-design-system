@@ -17,7 +17,7 @@ import DeDustLogo from './components/DeDustLogo.vue';
       Dark theme
     </h1>
     <div className="flex flex-col h-screen bg-gray-dark-5 p-2">
-      <h1 className="text-title1 text-main-dark-1 p-1">
+      <h1 className="text-title1 text-main-dark-4 p-1">
         Typography
       </h1>
       <h1 className="text-title1 text-white-1 p-1">
@@ -46,7 +46,7 @@ import DeDustLogo from './components/DeDustLogo.vue';
       <p className="text-caption1 text-white-1 p-1">Caption1/0.92rem/Meduim - 0.92rem/1.07rem</p>
       <p className="text-caption2 text-white-1 p-1">Caption2/0.85rem/Regular - 0.85rem/0.92rem</p>
       <p className="text-caption3 text-white-1 p-1">Caption3/0.78rem/Regular - 0.78rem/0.92rem</p>
-      <h1 className="text-title1 text-main-dark-1 p-1">
+      <h1 className="text-title1 text-main-dark-4 p-1">
         Cards
       </h1>
       <div className="flex gap-3">
