@@ -74,32 +74,32 @@ import DeDustLogo from './components/DeDustLogo.vue';
       <h1 className="text-title1 text-main-light-4 p-1">
         Typography
       </h1>
-      <h1 className="text-title1 text-black-9 p-1">
+      <h1 className="text-title1 text-black-5 p-1">
         Title1/2rem/Medium - 2rem/2.35rem
       </h1>
-        <h2 className="text-title2 text-black-9 p-1">
+        <h2 className="text-title2 text-black-5 p-1">
         Title2/1.42rem/Medium - 1.42rem/1.64rem
       </h2>
-      <h3 className="text-title3 text-black-9 p-1">
+      <h3 className="text-title3 text-black-5 p-1">
         Title3/1.21rem/Medium - 1.21rem/1.42rem
       </h3>
-      <h4 className="text-headline1 text-black-9 p-1">
+      <h4 className="text-headline1 text-black-5 p-1">
         Headline1/1.14rem/Regular - 1.14rem/1.35rem
       </h4>
-      <h5 className="text-headline2 text-black-9 p-1">
+      <h5 className="text-headline2 text-black-5 p-1">
         Headline2/1.14rem/Medium - 1.14rem/1.35rem
       </h5>
-      <h6 className="text-headline3 text-black-9 p-1">
+      <h6 className="text-headline3 text-black-5 p-1">
         Headline3/1.07rem/Medium - 1.07rem/1.28rem
       </h6>
-      <p className="text-regular1 text-black-9 p-1">Regular1/1.14rem/Regular - 1.14rem/1.35rem</p>
-      <p className="text-regular2 text-black-9 p-1">Regular2/1.07rem/Regular - 1.07rem/1.28rem</p>
-      <p className="text-subtitle1 text-black-9 p-1">Subtitle1/1rem/Regular - 1rem/1.14rem</p>
-      <p className="text-subtitle2 text-black-9 p-1">Subtitle2/1rem/Medium - 1rem/1.14rem</p>
-      <p className="text-subtitle3 text-black-9 p-1">Subtitle3/0.92rem/Regular - 0.92rem/1.07rem</p>
-      <p className="text-caption1 text-black-9 p-1">Caption1/0.92rem/Meduim - 0.92rem/1.07rem</p>
-      <p className="text-caption2 text-black-9 p-1">Caption2/0.85rem/Regular - 0.85rem/0.92rem</p>
-      <p className="text-caption3 text-black-9 p-1">Caption3/0.78rem/Regular - 0.78rem/0.92rem</p>
+      <p className="text-regular1 text-black-5 p-1">Regular1/1.14rem/Regular - 1.14rem/1.35rem</p>
+      <p className="text-regular2 text-black-5 p-1">Regular2/1.07rem/Regular - 1.07rem/1.28rem</p>
+      <p className="text-subtitle1 text-black-5 p-1">Subtitle1/1rem/Regular - 1rem/1.14rem</p>
+      <p className="text-subtitle2 text-black-5 p-1">Subtitle2/1rem/Medium - 1rem/1.14rem</p>
+      <p className="text-subtitle3 text-black-5 p-1">Subtitle3/0.92rem/Regular - 0.92rem/1.07rem</p>
+      <p className="text-caption1 text-black-5 p-1">Caption1/0.92rem/Meduim - 0.92rem/1.07rem</p>
+      <p className="text-caption2 text-black-5 p-1">Caption2/0.85rem/Regular - 0.85rem/0.92rem</p>
+      <p className="text-caption3 text-black-5 p-1">Caption3/0.78rem/Regular - 0.78rem/0.92rem</p>
       <h1 className="text-title1 text-main-light-4 p-1">
         Cards
       </h1>
