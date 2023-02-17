@@ -104,19 +104,19 @@ import DeDustLogo from './components/DeDustLogo.vue';
         Cards
       </h1>
       <div className="flex gap-3">
-        <div className="bg-gray-light-5 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
+        <div className="bg-gray-light-6/10 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
           <TONLogoLight />
         </div>
-        <div className="bg-gray-light-5 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
+        <div className="bg-gray-light-6/10 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
           <GemLogoLight />
         </div>
-        <div className="bg-gray-light-5 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
+        <div className="bg-gray-light-6/10 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
           <TONSymbol />
         </div>
-        <div className="bg-gray-light-5 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
+        <div className="bg-gray-light-6/10 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
           <GemSymbol />
         </div>
-        <div className="bg-gray-light-5 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
+        <div className="bg-gray-light-6/10 rounded-[1.7rem] p-4 flex justify-center w-fit items-center">
           <DeDustLogo />
         </div>
       </div>
