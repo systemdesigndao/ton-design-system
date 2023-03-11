@@ -5,7 +5,7 @@
     "dist-package/**/*"
   ],
   "types": "dist-package/index.d.ts",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "scripts": {
     "build": "tsc"
   },
