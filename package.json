@@ -2,9 +2,9 @@
   "name": "@designervoid/ton-design-system",
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "files": [
-    "dist-package/index.js"
+    "./dist-package/index.js"
   ],
-  "types": "dist-package/index.d.ts",
+  "types": "./dist-package/index.d.ts",
   "version": "1.0.16",
   "scripts": {
     "build": "tsc"
