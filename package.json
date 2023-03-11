@@ -2,7 +2,7 @@
   "name": "@designervoid/ton-design-system",
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "files": [
-    "dist-package/tdsTheme.js"
+    "dist-package/**/*"
   ],
   "types": "dist-package/index.d.ts",
   "version": "1.0.12",
