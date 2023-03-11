@@ -1,4 +1,4 @@
-module.exports = {
+export const tdsTheme = {
   fontFamily: {
     sans: ['Mulish'],
   },
