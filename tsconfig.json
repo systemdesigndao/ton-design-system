@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "declaration": true,
-    "outDir": "./dist-package",
-    "strict": true
+    "lib": ["es2022"],
+    "module": "es2022",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "lib",
+    "declaration": true
   },
   "include": ["package"],
   "exclude": ["node_modules", "**/__tests__/*"]
