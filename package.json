@@ -3,7 +3,7 @@
   "repository": "git://github.com/designervoid/ton-design-system.git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "scripts": {
     "build": "tsc"
   },
