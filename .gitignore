@@ -4,5 +4,4 @@ dist
 dist-ssr
 *.local
 .npmrc
-src/stories/styles/**
 lib
