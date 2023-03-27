@@ -9,7 +9,7 @@
     "clean": "rm -rf www",
     "dev:stencil": "stencil build --dev --watch --serve",
     "dev:tailwind": "tailwindcss -i ./src/all.pcss -o ./www/tailwind.css --watch",
-    "build:stencil": "stencil build",
+    "build:stencil": "stencil build --docs",
     "build:tailwind": "tailwindcss -i ./src/all.pcss -o ./www/tailwind.css --minify",
     "prepare": "husky install",
     "lint": "eslint 'src/**/*{.tsx,.ts}'"
