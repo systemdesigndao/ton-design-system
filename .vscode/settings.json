@@ -1,0 +1,5 @@
+{
+    "eslint.workingDirectories": [
+        "web-components-stencil-v2"
+    ]
+}
