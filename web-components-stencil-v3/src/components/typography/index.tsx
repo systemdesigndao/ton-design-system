@@ -1,5 +1,5 @@
 import { tdsTheme } from '@designervoid/ton-design-system'
-import { Component, h, Prop, Host } from '@stencil/core'
+import { Component, h, Prop } from '@stencil/core'
 import { Tailwindest } from 'tailwindest'
 import { StyledHost } from '../../helpers'
 

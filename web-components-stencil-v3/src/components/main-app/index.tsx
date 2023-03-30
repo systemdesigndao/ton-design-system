@@ -1,5 +1,4 @@
 import { Component, getAssetPath, h } from '@stencil/core';
-import { StyledHost } from '../../helpers';
 
 @Component({
   tag: 'main-app',

@@ -21,7 +21,7 @@
     "dev:stencil": "stencil build --dev --watch --serve",
     "dev:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./src/components/main-app/assets/tailwind.css --watch",
     "build:stencil": "stencil build --docs",
-    "build:tailwind": "tailwindcss -i ./src/all.pcss -o ./www/tailwind.css --minify",
+    "build:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./www/tailwind.css --minify",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
