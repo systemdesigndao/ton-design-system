@@ -1,5 +1,4 @@
-import { Component, Host, h, FunctionalComponent, Element, State, getAssetPath } from '@stencil/core';
-import { StyledHost } from '../../helpers';
+import { Component, h, FunctionalComponent, Element, State, getAssetPath } from '@stencil/core';
 import { Link } from '../internal/Link';
 
 const IconLink: FunctionalComponent<{ to: string }> = ({ to }, children) => {
@@ -37,7 +36,6 @@ export class TopNavBar {
     const logoDedustSrc = getAssetPath(`./assets/icons/dedust.svg`);
 
     return (
-      <StyledHost>
         <div class={{
           'fixed inset-x-0 top-0 z-50 w-full transition duration-200 ease-in-out border-b border-transparent': true,
         }}>
@@ -53,7 +51,6 @@ export class TopNavBar {
             </div>
           </div>
         </div>
-      </StyledHost>
     );
   }
 

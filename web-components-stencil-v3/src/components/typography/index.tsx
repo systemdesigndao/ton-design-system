@@ -1,7 +1,6 @@
 import { tdsTheme } from '@designervoid/ton-design-system'
 import { Component, h, Prop } from '@stencil/core'
 import { Tailwindest } from 'tailwindest'
-import { StyledHost } from '../../helpers'
 
 export type TDSTailwind = Tailwindest<
   {
@@ -40,11 +39,9 @@ export class TdsTypography {
     const { variant, color, align, weight, uppercase, content, classCustom } = this;
 
     return (
-      <StyledHost>
         <span class={`${variant ?? ''} ${color ?? ''} ${align ?? ''} ${weight ?? ''} ${uppercase ? 'uppercase' : ''} ${classCustom ?? ''} font-mulish`}>
           {content}
         </span>
-      </StyledHost>
     )
   }
 }
