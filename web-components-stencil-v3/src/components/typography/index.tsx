@@ -26,7 +26,6 @@ export type TDSTailwind = Tailwindest<
 @Component({
   tag: 'tds-typography',
   styleUrl: 'index.css',
-  shadow: false,
 })
 export class TdsTypography {
   @Prop() variant: TDSTailwind['fontSize'];

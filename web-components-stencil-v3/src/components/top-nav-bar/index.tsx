@@ -24,11 +24,14 @@ const LinkToStencil: FunctionalComponent<{ to: string }> = ({ to }) => {
 @Component({
   tag: 'top-nav-bar',
   styleUrl: 'index.css',
-  shadow: true,
 })
 export class TopNavBar {
   @Element() el: HTMLElement;
   @State() isScrolled = false;
+
+  componentWillLoad() {
+    console.log(document.querySelector('style'));
+  }
 
   render() {
     const logoDedustSrc = getAssetPath(`./assets/icons/dedust.svg`);

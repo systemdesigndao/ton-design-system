@@ -3,7 +3,6 @@ import { Component, getAssetPath, h } from '@stencil/core';
 @Component({
   tag: 'main-app',
   styleUrl: 'index.css',
-  shadow: true,
   assetsDirs: ['assets'],
 })
 export class MainApp {

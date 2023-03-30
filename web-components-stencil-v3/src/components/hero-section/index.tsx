@@ -4,7 +4,6 @@ import { StyledHost } from '../../helpers';
 @Component({
   tag: 'hero-section',
   styleUrl: 'index.css',
-  shadow: false,
 })
 export class HeroSection {
 
