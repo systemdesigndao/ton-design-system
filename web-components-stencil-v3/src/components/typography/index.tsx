@@ -1,5 +1,5 @@
 import { tdsTheme } from '@designervoid/ton-design-system'
-import { Component, h, Prop } from '@stencil/core'
+import { Component, h, Prop, Host } from '@stencil/core'
 import { Tailwindest } from 'tailwindest'
 import { StyledHost } from '../../helpers'
 
@@ -25,7 +25,7 @@ export type TDSTailwind = Tailwindest<
 
 @Component({
   tag: 'tds-typography',
-  styleUrl: './index.css',
+  styleUrl: 'index.css',
   shadow: false,
 })
 export class TdsTypography {

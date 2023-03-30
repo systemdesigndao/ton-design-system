@@ -1,4 +1,5 @@
-import { Component, Host, h, FunctionalComponent, Element, State } from '@stencil/core';
+import { Component, Host, h, FunctionalComponent, Element, State, getAssetPath } from '@stencil/core';
+import { StyledHost } from '../../helpers';
 import { Link } from '../internal/Link';
 
 const IconLink: FunctionalComponent<{ to: string }> = ({ to }, children) => {
@@ -29,39 +30,27 @@ export class TopNavBar {
   @Element() el: HTMLElement;
   @State() isScrolled = false;
 
-  componentDidLoad() {
-    window.document.onscroll = this.onScroll;
-  }
-
-  private onScroll = async () => {
-    console.log(window.scrollY, this.el.offsetTop);
-    this.isScrolled = window.scrollY > this.el.offsetTop;
-  };
-
   render() {
-    const { isScrolled } = this;
+    const logoDedustSrc = getAssetPath(`./assets/icons/dedust.svg`);
+
     return (
-      <Host>
+      <StyledHost>
         <div class={{
           'fixed inset-x-0 top-0 z-50 w-full transition duration-200 ease-in-out border-b border-transparent': true,
-          'bg-transparent': !isScrolled,
-          'bg-zinc-100': isScrolled
         }}>
           <div class={{
             'flex items-center justify-between w-full p-2 h-hero': true,
-            'text-slate-100': !isScrolled,
-            'text-slate-800': isScrolled
           }}>
             <div class="flex items-center p-4">
-              {/* <tds-typography content={<span class="font-title text-black-5">Example<span class="font-extrabold text-purple-900">UI</span></span>} /> */}
-              <tds-typography variant='text-title1' content="DeDust UI" classCustom='text-transparent bg-clip-text bg-gradient-to-br from-orange-600/50 to-orange-400/80' />
+              <img src={logoDedustSrc} class="h-6 w-6 m-2" />
+              <tds-typography variant='text-title2' content="DeDust UI" classCustom='text-transparent bg-clip-text bg-gradient-to-br from-orange-600/50 to-orange-400/80' />
             </div>
-            <div class="items-center hidden gap-3 p-4 sm:flex">
+            <div class="items-center gap-3 p-4 sm:flex">
               <LinkToStencil to="https://stenciljs.com/" />
             </div>
           </div>
         </div>
-      </Host>
+      </StyledHost>
     );
   }
 

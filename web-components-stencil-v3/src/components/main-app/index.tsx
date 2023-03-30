@@ -1,4 +1,5 @@
 import { Component, getAssetPath, h } from '@stencil/core';
+import { StyledHost } from '../../helpers';
 
 @Component({
   tag: 'main-app',
@@ -10,20 +11,27 @@ export class MainApp {
   componentWillLoad() {
     const fontDeclarationElement: HTMLStyleElement = document.createElement('style');
 
-    fontDeclarationElement.textContent += `@font-face{font-family:Mulish;src:url(${getAssetPath('./assets/fonts/Mulish-Regular.ttf')})  format("truetype");}`;
+    fontDeclarationElement.textContent += `html{font-size:16px}\n` + `@font-face{font-family:Mulish;src:url(${getAssetPath('./assets/fonts/Mulish-Regular.ttf')})  format("truetype");}\n`;
 
     document.head.append(fontDeclarationElement);
+
+    const linkTailwind: HTMLLinkElement = document.createElement('link');
+
+    linkTailwind.href = getAssetPath('./assets/tailwind.css');
+    linkTailwind.rel = 'stylesheet';
+
+    document.head.append(linkTailwind);
   }
 
   render() {
     return (
-      <div>
-        <main>
-          <top-nav-bar></top-nav-bar>
-          <hero-section></hero-section>
-          <footer-nav></footer-nav>
-        </main>
-      </div>
+        <div>
+          <main>
+            <top-nav-bar></top-nav-bar>
+            <hero-section></hero-section>
+            <footer-nav></footer-nav>
+          </main>
+        </div>
     );
   }
 }

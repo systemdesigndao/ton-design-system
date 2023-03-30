@@ -60,3 +60,5 @@ www
 docs
 
 loader
+
+src/components/main-app/assets/tailwind.css

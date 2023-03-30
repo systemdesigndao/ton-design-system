@@ -5,6 +5,7 @@ import tailwindcss from 'tailwindcss';
 import tailwindConf from './tailwind.config';
 import autoprefixer from 'autoprefixer';
 
+
 setPluginConfigurationDefaults({
   // @ts-ignore
   tailwindConf,
@@ -12,7 +13,7 @@ setPluginConfigurationDefaults({
   postcss: {
     plugins: [
       tailwindcss(),
-      autoprefixer()
+      autoprefixer(),
     ]
   }
 });
