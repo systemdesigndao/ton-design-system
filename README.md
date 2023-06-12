@@ -5,7 +5,11 @@
 
 # TON Design System
 
-https://ton.org/en/brand-assets
+<https://ton.org/en/brand-assets>
+
+[![Telegram Design DAO Group][bundle-size]][bundle-size]
+
+[bundle-size]: https://deno.bundlejs.com/?q=@designervoid/ton-design-system&badge
 
 ## Main idea
 
