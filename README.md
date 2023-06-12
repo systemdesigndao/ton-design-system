@@ -7,9 +7,9 @@
 
 <https://ton.org/en/brand-assets>
 
-[![Telegram Design DAO Group][bundle-size]][bundle-size]
+[![Package raw size](https://deno.bundlejs.com/?q=@designervoid/ton-design-system&badge=detailed&badge-style=for-the-badge)][bundlejs-ton-design-system-link]
 
-[bundle-size]: https://deno.bundlejs.com/?q=@designervoid/ton-design-system&badge
+[bundlejs-ton-design-system-link]: https://bundlejs.com/?q=@designervoid/ton-design-system
 
 ## Main idea
 
