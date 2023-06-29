@@ -1,7 +1,7 @@
-[![Telegram Design DAO Group][telegram-design-dao-badge]][telegram-design-dao-url]
+[![Telegram System Design DAO Forum][telegram-system-design-dao-badge]][telegram-system-design-dao-url]
 
-[telegram-design-dao-badge]: https://img.shields.io/badge/-TON%20Design%20DAO%20Chat-2CA5E0?style=flat&logo=telegram&logoColor=white
-[telegram-design-dao-url]: https://t.me/tondesigndao
+[telegram-system-design-dao-badge]: https://img.shields.io/badge/-System%20Design%20DAO%20Forum-2CA5E0?style=flat&logo=telegram&logoColor=white
+[telegram-system-design-dao-url]: https://t.me/systemdesigndao_forum
 
 # TON Design System
 
