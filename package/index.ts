@@ -145,4 +145,11 @@ export const tdsTheme = {
       },
     },
   },
+  spacing: {
+    '1': '0.125rem',
+    '2': '0.375rem',
+    '3': '0.5rem',
+    '4': '0.75rem',
+    '5': '1rem',
+  },
 };
