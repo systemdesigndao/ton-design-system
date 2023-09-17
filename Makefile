@@ -20,10 +20,10 @@ publish-patch:
 
 publish-minor:
 	make clean
-	make patch
+	make minor
 	make publish
 
 publish-major:
 	make clean
-	make patch
+	make major
 	make publish
