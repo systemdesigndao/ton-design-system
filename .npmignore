@@ -1,0 +1,12 @@
+.vscode
+docs
+Makefile
+README.md
+tsconfig.json
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.npmrc
+.gitignore
