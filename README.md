@@ -30,7 +30,11 @@ Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-desi
 
 ## Use CLI
 
-`npx "@designervoid/ton-design-system"@"latest" cli -g`
+### Quick start
+
+1. Copy component from Github - `npx "@designervoid/ton-design-system"@"latest" cli -g`
+2. Init Tailwind `npx "@designervoid/ton-design-system"@"latest" cli -t`
+3. Init TDS `npx "@designervoid/ton-design-system"@"latest" cli -tds`
 
 ## License
 
