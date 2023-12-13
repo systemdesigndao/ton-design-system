@@ -16,37 +16,56 @@ type GitHubItem = {
 
 type GitHubApiResponse = {
   payload: {
-      tree: {
-          items: GitHubItem[];
-      },
-      blob: {
-          rawLines: string[];
-      }
+    tree: {
+        items: GitHubItem[];
+    },
+    blob: {
+        rawLines: string[];
+    }
   };
 };
+
+function determinePackageManager(projectDir: string): string | undefined {
+  const exists = (pckMngr: 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json') => {
+    return fs.existsSync(path.join(projectDir, pckMngr));
+  }
+
+  if (exists('pnpm-lock.yaml')) {
+    console.log('Detected pnpm!');
+    return 'pnpm';
+  } else if (exists('yarn.lock')) {
+    console.log('Detected yarn!');
+    return 'yarn';
+  } else if (exists('package-lock.json')) {
+    console.log('Detected npm!');
+    return 'npm';
+  }
+}
 
 async function installDependencies(content: string, projectDir: string) {
     // only es6 imports support
     const packageNames = content.match(/import.*from\s+['"]([^'"]+)['"]/g)
         ?.map((line: any) => line.match(/['"]([^'"]+)['"]/)[1])
-        .filter((pkg: string) => !pkg.startsWith('.') && !pkg.startsWith('/') && !pkg.startsWith('@') && !pkg.startsWith('~'));
+        .filter((pkg: string) => !pkg.startsWith('.') && !pkg.startsWith('/') && !pkg.startsWith('~'));
 
-        if (packageNames && packageNames.length) {
-            try {
-                console.log('Installing dependencies:', packageNames.join(', '));
-                const childProcess = require('child_process');
-                childProcess.execSync(`npm install ${packageNames.join(' ')}`, { stdio: 'inherit', cwd: projectDir });
-                console.log('Dependencies installed successfully.');
-                process.exit(0);
-            } catch (error) {
-                console.error('Error installing dependencies:', error);
-                process.exit(1);
-            }
-        }
+    if (packageNames && packageNames.length) {
+      try {
+        const packageManager = determinePackageManager(projectDir);
+        const installCommand = `${packageManager} install ${packageNames.join(' ')}`;
+        console.log(`Installing dependencies with ${packageManager}:`, packageNames.join(', '));
+        const childProcess = require('child_process');
+        childProcess.execSync(installCommand, { stdio: 'inherit', cwd: projectDir });
+        console.log('Dependencies installed successfully.');
+        process.exit(0);
+      } catch (error) {
+        console.error('Error installing dependencies:', error);
+        process.exit(1);
+      }
+    }
 }
 
 function removeMetaContent(content: string) {
-    return content.split('\n').slice(content.split('\n').findIndex(line => line.includes('// --'))).join('\n');
+  return content.split('\n').slice(content.split('\n').findIndex(line => line.includes('// --'))).join('\n');
 }
 
 async function saveFile(content: string, filename: string) {
@@ -63,7 +82,7 @@ async function saveFile(content: string, filename: string) {
   }
 }
 
-async function parseComponentFromGitHub() {
+async function parseComponentsFromGitHub() {
   console.log('Exploring GitHub...');
 
   const registryBaseUrl = 'https://github.com/systemdesigndao/ton-design-system/tree/master/registry';
@@ -102,14 +121,14 @@ async function main() {
     .version("0.0.0", "-v, --version", "Display the version number")
     .option('-g, --github', 'Load from GitHub')
 
-    program.parse();
-    const options = program.opts();
+  program.parse();
+  const options = program.opts();
 
-    if (options.github) {
-      await parseComponentFromGitHub();
-    } else {
-      console.log('Please specify a source: --github');
-    }
+  if (options.github) {
+    await parseComponentsFromGitHub();
+  } else {
+    console.log('Please specify a source: --github');
+  }
 }
 
 main()
