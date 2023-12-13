@@ -49,33 +49,15 @@ function removeMetaContent(content: string) {
     return content.split('\n').slice(content.split('\n').findIndex(line => line.includes('// --'))).join('\n');
 }
 
-async function findRootDirectory(currentDir: string): Promise<string> {
-  const hasPackageJson = fs.existsSync(path.join(currentDir, 'package.json'));
-  
-  if (hasPackageJson) {
-    return currentDir;
-  }
-
-  const parentDir = path.dirname(currentDir);
-  if (parentDir === currentDir) {
-    throw new Error('package.json not found in any of the parent directories');
-  }
-
-  return await findRootDirectory(parentDir);
-}
-
 async function saveFile(content: string, filename: string) {
   try {
-    const rootDir = await findRootDirectory(__dirname);
-    const filePath = path.join(rootDir, 'src', filename);
-
+    const userCwd = process.cwd();
+    const filePath = path.join(userCwd, 'src', filename);
     const cleanedContent = removeMetaContent(content);
-
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
     await fs.promises.writeFile(filePath, cleanedContent);
     console.log(`File saved: ${filePath}`);
-
-    await installDependencies(cleanedContent, rootDir);
+    await installDependencies(cleanedContent, userCwd);
   } catch (error) {
     console.error(error);
   }
