@@ -1,5 +1,5 @@
 clean:
-	rm -rf ./dist && yarn build
+	rm -rf ./dist && npm run build
 
 patch:
 	npm version patch
