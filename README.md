@@ -28,6 +28,10 @@ Atomic CSS
 Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)  
 Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)
 
+## Use CLI
+
+`npx "@designervoid/ton-design-system"@"latest" cli -g`
+
 ## License
 
 MIT
