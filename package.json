@@ -12,7 +12,9 @@
     "@types/node": "^20.10.4",
     "commander": "^11.1.0",
     "prompts": "^2.4.2",
-    "ton3-core": "^1.0.1",
     "typescript": "^5.2.2"
+  },
+  "bin": {
+    "cli": "./lib/cli.js"
   }
 }
