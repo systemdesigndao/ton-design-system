@@ -9,6 +9,8 @@ const os = require('os');
 process.on("SIGINT", () => process.exit(0))
 process.on("SIGTERM", () => process.exit(0))
 
+let packageManager: string | undefined;
+
 type GitHubItem = {
   name: string;
   path: string;
@@ -25,20 +27,27 @@ type GitHubApiResponse = {
   };
 };
 
-function determinePackageManager(projectDir: string): string | undefined {
-  const exists = (pckMngr: 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json') => {
-    return fs.existsSync(path.join(projectDir, pckMngr));
-  }
-
-  if (exists('pnpm-lock.yaml')) {
-    console.log('Detected pnpm!');
-    return 'pnpm';
-  } else if (exists('yarn.lock')) {
-    console.log('Detected yarn!');
-    return 'yarn';
-  } else if (exists('package-lock.json')) {
-    console.log('Detected npm!');
-    return 'npm';
+function determinePackageManager(projectDir: string): string | undefined {  
+  if (packageManager === undefined) {
+    const exists = (pckMngr: 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json') => {
+      return fs.existsSync(path.join(projectDir, pckMngr));
+    }
+  
+    if (exists('pnpm-lock.yaml')) {
+      packageManager = 'pnpm';
+      console.log('Detected pnpm!');
+      return 'pnpm';
+    } else if (exists('yarn.lock')) {
+      packageManager = 'yarn';
+      console.log('Detected yarn!');
+      return 'yarn';
+    } else if (exists('package-lock.json')) {
+      packageManager = 'npm';
+      console.log('Detected npm!');
+      return 'npm';
+    }
+  } else {
+    return packageManager;
   }
 }
 
@@ -51,7 +60,7 @@ async function installDependencies(content: string, projectDir: string) {
     if (packageNames && packageNames.length) {
       try {
         const packageManager = determinePackageManager(projectDir);
-        const installCommand = `${packageManager} install ${packageNames.join(' ')}`;
+        const installCommand = `${packageManager} add ${packageNames.join(' ')}`;
         console.log(`Installing dependencies with ${packageManager}:`, packageNames.join(', '));
         const childProcess = require('child_process');
         childProcess.execSync(installCommand, { stdio: 'inherit', cwd: projectDir });
@@ -114,20 +123,119 @@ async function parseComponentsFromGitHub() {
   await saveFile(componentData.payload.blob.rawLines.join('\n'), `${componentsData.payload.tree.items[selectedComponentResponse.componentIndex].name}`);
 }
 
+async function initTDS(projectDir: string) {
+  console.log('Initializing TON Design System...');
+
+  const packageManager = determinePackageManager(projectDir);
+  const commands = [
+    `${packageManager} add @designervoid/ton-design-system`,
+  ];
+
+  const tailwindConfigJsPath = path.join(projectDir, 'tailwind.config.js');
+  const tailwindConfigTsPath = path.join(projectDir, 'tailwind.config.ts');
+  let tailwindConfigPath = '';
+
+  if (fs.existsSync(tailwindConfigTsPath)) {
+    tailwindConfigPath = tailwindConfigTsPath;
+  } else if (fs.existsSync(tailwindConfigJsPath)) {
+    tailwindConfigPath = tailwindConfigJsPath;
+  } else {
+    tailwindConfigPath = tailwindConfigJsPath;
+  }
+
+  const tailwindConfigContent = `
+const { tdsTheme } = require('@designervoid/ton-design-system');
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      ...tdsTheme,
+    },
+  },
+  plugins: [],
+}
+  `.trim();
+
+  const indexPath = path.join(projectDir, 'src', 'index.css');
+  const indexContent = `
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+  `.trim();
+
+  try {
+    const childProcess = require('child_process');
+    for (const cmd of commands) {
+      childProcess.execSync(cmd, { stdio: 'inherit', cwd: projectDir });
+    }
+
+    console.log(`Creating or updating ${tailwindConfigPath}...`);
+    fs.writeFileSync(tailwindConfigPath, tailwindConfigContent);
+
+    console.log(`Creating or updating ${indexPath}...`);
+    fs.writeFileSync(indexPath, indexContent);
+
+    console.log('TON Design System initialized successfully.');
+  } catch (error) {
+    console.error('Error initializing TON Design System:', error);
+    throw error;
+  }
+}
+
+
+async function initTailwind(projectDir: string) {
+  console.log('Initializing Tailwind CSS...');
+
+  const commands = [
+    `${determinePackageManager(projectDir)} add tailwindcss postcss autoprefixer -D`,
+    `npx tailwindcss init -p`,
+  ];
+
+  try {
+    const childProcess = require('child_process');
+    for (const cmd of commands) {
+      childProcess.execSync(cmd, { stdio: 'inherit', cwd: projectDir });
+    }
+    console.log('Tailwind CSS initialized successfully.');
+  } catch (error) {
+    console.error('Error initializing Tailwind CSS:', error);
+    throw error;
+  }
+}
+
 async function main() {
   const program = new Command()
     .name("tds/cli")
     .description("Add components and dependencies to your project")
     .version("0.0.0", "-v, --version", "Display the version number")
     .option('-g, --github', 'Load from GitHub')
+    .option('-t, --tailwind', 'Initialize Tailwind CSS in your project')
+    .option('-tds, --tondesignsystem', 'Initialize TON Design System in your project');
 
   program.parse();
   const options = program.opts();
+  const userCwd = process.cwd();
 
   if (options.github) {
     await parseComponentsFromGitHub();
+  } else if (options.tailwind) {
+    await initTailwind(userCwd);
+  } else if (options.tondesignsystem) {
+    await initTDS(userCwd);
   } else {
-    console.log('Please specify a source: --github');
+    console.log('Please specify a source: --github, --tailwindCustom or --help');
   }
 }
 
