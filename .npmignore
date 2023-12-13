@@ -10,3 +10,4 @@ dist-ssr
 *.local
 .npmrc
 .gitignore
+registry
