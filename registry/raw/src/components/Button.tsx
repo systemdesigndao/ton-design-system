@@ -27,7 +27,5 @@ const buttonVariants = cva(
 )
 
 export const Button = ({ className, variant, size, children, ...props }: any) => {
-  const Comp = "button";
-
-  return <Comp class={cn(buttonVariants({ variant, size, className }))} {...props}>{children}</Comp>
+  return <button class={cn(buttonVariants({ variant, size, className }))} {...props}>{children}</button>
 }
