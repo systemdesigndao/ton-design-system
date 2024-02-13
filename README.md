@@ -3,6 +3,10 @@
 [telegram-system-design-dao-badge]: https://img.shields.io/badge/-System%20Design%20DAO%20Forum-2CA5E0?style=flat&logo=telegram&logoColor=white
 [telegram-system-design-dao-url]: https://t.me/systemdesigndao_forum
 
+[![Socket Badge](https://socket.dev/api/badge/npm/package/@designervoid/ton-design-system)](https://socket.dev/npm/package/@designervoid/ton-design-system)
+
+[![@designervoid/ton-design-system](https://snyk.io/advisor/npm-package/@designervoid/ton-design-system/badge.svg)](https://snyk.io/advisor/npm-package/@designervoid/ton-design-system)
+
 # TON Design System
 
 <https://ton.org/en/brand-assets>
