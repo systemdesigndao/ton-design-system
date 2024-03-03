@@ -1,7 +1,13 @@
+# js/ts
 node_modules
 .DS_Store
 dist
 dist-ssr
 *.local
-.npmrc
 lib
+
+# rust
+target
+
+# npm
+.npmrc

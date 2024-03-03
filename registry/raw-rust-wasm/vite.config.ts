@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import wasm from 'vite-plugin-wasm';
+import topLevelAwait from 'vite-plugin-top-level-await';
 
 export default defineConfig({
   esbuild: {
@@ -10,4 +12,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  plugins: [wasm(), topLevelAwait()]
 });

@@ -259,6 +259,15 @@ async function main() {
     .option('-t, --tailwind', 'Initialize Tailwind CSS in your project')
     .option('-tds, --tondesignsystem', 'Initialize TON Design System in your project');
 
+    // install rust 
+      // curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    // init rust
+      // cargo new rust_wasm_module
+    // install wasm-pack
+      // curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+    // install cargo-generate
+      // cargo install cargo-generate
+
   program.parse();
   const options = program.opts();
   const userCwd = process.cwd();

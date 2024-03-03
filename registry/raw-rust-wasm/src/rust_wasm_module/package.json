@@ -1,0 +1,14 @@
+{
+  "name": "rust_wasm_module",
+  "version": "0.0.1",
+  "files": [
+    "rust_wasm_module_bg.wasm",
+    "rust_wasm_module.js",
+    "rust_wasm_module.d.ts"
+  ],
+  "module": "rust_wasm_module.js",
+  "types": "rust_wasm_module.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
