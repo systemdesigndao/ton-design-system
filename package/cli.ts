@@ -267,7 +267,23 @@ async function main() {
       // curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
     // install cargo-generate
       // cargo install cargo-generate
-
+    // install wasm-opt
+      // # Optimize for size.
+      // wasm-opt -Os -o output.wasm input.wasm
+      
+      // # Optimize aggressively for size.
+      // wasm-opt -Oz -o output.wasm input.wasm
+      
+      // # Optimize for speed.
+      // wasm-opt -O -o output.wasm input.wasm
+      
+      // # Optimize aggressively for speed.
+      // wasm-opt -O3 -o output.wasm input.wasm
+    // install twiggy (profiler for wasm builded files)
+      // twiggy top -n 20 pkg/wasm_game_of_life_bg.wasm
+    // manually inspecting llvm-ir
+      // cargo rustc --release -- --emit llvm-ir
+      // find target/release -type f -name '*.ll'
   program.parse();
   const options = program.opts();
   const userCwd = process.cwd();
