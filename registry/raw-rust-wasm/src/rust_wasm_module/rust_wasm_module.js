@@ -17,6 +17,22 @@ function getStringFromWasm0(ptr, len) {
     ptr = ptr >>> 0;
     return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
 }
+
+function logError(f, args) {
+    try {
+        return f.apply(this, args);
+    } catch (e) {
+        let error = (function () {
+            try {
+                return e instanceof Error ? `${e.message}\n\nStack:\n${e.stack}` : e.toString();
+            } catch(_) {
+                return "<failed to stringify thrown value>";
+            }
+        }());
+        console.error("wasm-bindgen: imported JS function that was not marked as `catch` threw an error:", error);
+        throw e;
+    }
+}
 /**
 */
 export function greet() {
@@ -57,9 +73,9 @@ async function __wbg_load(module, imports) {
 function __wbg_get_imports() {
     const imports = {};
     imports.wbg = {};
-    imports.wbg.__wbg_alert_6959031fd7ab0ba6 = function(arg0, arg1) {
+    imports.wbg.__wbg_alert_6959031fd7ab0ba6 = function() { return logError(function (arg0, arg1) {
         alert(getStringFromWasm0(arg0, arg1));
-    };
+    }, arguments) };
 
     return imports;
 }
