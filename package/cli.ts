@@ -6,7 +6,7 @@ const prompts = require('prompts');
 const os = require('os');
 const simpleGit = require('simple-git');
 const git = simpleGit();
-const { spawn, spawnOptions } = require('child_process');
+const { spawn } = require('child_process');
 const fse = require('fs-extra');
 
 interface Library {
