@@ -1,0 +1,92 @@
+import { cva } from 'class-variance-authority';
+import { jsx } from '../package/jsx';
+import { JSXType, JSXChild } from "../package/types/jsx"
+// --
+
+const defaultElement = 'span';
+
+const typographyVariants = cva(
+    "text-black-0 dark:text-white-0",
+    {
+        variants: {
+            type: {
+                title1: "text-title-1",
+                title2: "text-title-2",
+                title3: "text-title-3",
+                headline1: "text-headline-1",
+                headline2: "text-headline-2",
+                headline3: "text-headline-3",
+                regular1: "text-regular-1",
+                regular2: "text-regular-2",
+                subtitle1: "text-subtitle-1",
+                subtitle2: "text-subtitle-2",
+                subtitle3: "text-subtitle-3",
+                subtitle4: "text-subtitle-4",
+                caption1: "text-caption-1",
+                caption2: "text-caption-2",
+                caption3: "text-caption-3",
+                caption4: "text-caption-4",
+            },
+        },
+    }
+);
+  
+export const Title1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'title1' }) }, children);
+}
+
+export const Title2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'title2' }) }, children);
+}
+
+export const Title3 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'title3' }) }, children);
+}
+
+export const Headline1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'headline1' }) }, children);
+}
+
+export const Headline2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'headline2' }) }, children);
+}
+
+export const Headline3 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'headline3' }) }, children);
+}
+
+export const Regular1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'regular1' }) }, children);
+}
+
+export const Regular2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'regular2' }) }, children);
+}
+
+export const Subtitle1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'subtitle1' }) }, children);
+}
+
+export const Subtitle2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'subtitle2' }) }, children);
+}
+
+export const Subtitle3 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'subtitle3' }) }, children);
+}
+
+export const Caption1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'caption1' }) }, children);
+}
+
+export const Caption2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'caption2' }) }, children);
+}
+
+export const Caption3 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'caption3' }) }, children);
+}
+
+export const Caption4 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'caption4' }) }, children);
+}
