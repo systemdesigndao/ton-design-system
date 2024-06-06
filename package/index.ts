@@ -1,65 +1,71 @@
+// 0 < value < any unsigned int
+const generateGoldenRatioSquareSqrt = (value: number) => {
+  const phi = (1 + Math.sqrt(5)) / 2;
+  return Math.sqrt(phi ** value);
+}
+
 export const tdsTheme = {
   fontFamily: {
     sans: ['Mulish'],
   },
   fontSize: {
-    title1: ['calc(3.8rem * 1.618)', {
+    title1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(14)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    title2: ['calc(3.6rem * 1.618)', {
+    title2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(13)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    title3: ['calc(3.4rem * 1.618)', {
+    title3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(12)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    headline1: ['calc(3.2rem * 1.618)', {
+    headline1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(11)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    headline2: ['calc(3rem * 1.618)', {
+    headline2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(10)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    headline3: ['calc(2.8rem * 1.618)', {
+    headline3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(9)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    regular1: ['calc(2.6rem * 1.618)', {
+    regular1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(8)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    regular2: ['calc(2.4rem * 1.618)', {
+    regular2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(7)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    subtitle1: ['calc(2.2rem * 1.618)', {
+    subtitle1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(6)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    subtitle2: ['calc(2rem * 1.618)', {
+    subtitle2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(5)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    subtitle3: ['calc(1.8rem * 1.618)', {
+    subtitle3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(4)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    caption1: ['calc(1.6rem * 1.618)', {
+    caption1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(3)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    caption2: ['calc(1.4rem * 1.618)', {
+    caption2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(3)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    caption3: ['calc(1.2rem * 1.618)', {
+    caption3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(2)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    caption4: ['calc(1rem * 1.618)', {
+    caption4: [`calc(1rem + ${generateGoldenRatioSquareSqrt(1)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],

@@ -63,11 +63,11 @@ export const App = () => {
         <Regular2>Regular2</Regular2>
         <Subtitle1>Subtitle1</Subtitle1>
         <Subtitle2>Subtitle2</Subtitle2>
-        <Subtitle3>Subtitle 3</Subtitle3>
+        <Subtitle3>Subtitle3</Subtitle3>
         <Caption1>Caption1</Caption1>
-        <Caption2>Caption 2</Caption2>
-        <Caption3>Caption 3</Caption3>
-        <Caption4>Caption 4</Caption4>
+        <Caption2>Caption2</Caption2>
+        <Caption3>Caption3</Caption3>
+        <Caption4>Caption4</Caption4>
       </div>
 
       <Button className="custom-classname w-fit" onClick={async () => {
