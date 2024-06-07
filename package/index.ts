@@ -1,7 +1,14 @@
-// 0 < value < any unsigned int
+const baseRem = 0.5;
+const scale = 1.01;
+
+const makeTemplateRem = (value: number) => `${value}rem`;
+
+const baseRemTemplate = makeTemplateRem(baseRem * scale);
+
+// value ∈ any unsigned int
 const generateGoldenRatioSquareSqrt = (value: number) => {
   const phi = (1 + Math.sqrt(5)) / 2;
-  return Math.sqrt(phi ** value);
+  return Math.sqrt(phi ** value).toFixed(2);
 }
 
 export const tdsTheme = {
@@ -9,63 +16,63 @@ export const tdsTheme = {
     sans: ['Mulish'],
   },
   fontSize: {
-    title1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(14)}px)`, {
+    title1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(15)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    title2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(13)}px)`, {
+    title2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(14)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    title3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(12)}px)`, {
+    title3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(13)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    headline1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(11)}px)`, {
-      letterSpacing: '0rem',
-      fontWeight: '400',
-    }],
-    headline2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(10)}px)`, {
-      letterSpacing: '0rem',
-      fontWeight: '400',
-    }],
-    headline3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(9)}px)`, {
-      letterSpacing: '0rem',
-      fontWeight: '400',
-    }],
-    regular1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(8)}px)`, {
+    headline1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(12)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    regular2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(7)}px)`, {
+    headline2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(11)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    subtitle1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(6)}px)`, {
+    headline3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(10)}px)`, {
+      letterSpacing: '0rem',
+      fontWeight: '400',
+    }],
+    regular1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(9)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    subtitle2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(5)}px)`, {
+    regular2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(8)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    subtitle3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(4)}px)`, {
-      letterSpacing: '0rem',
-      fontWeight: '400',
-    }],
-    caption1: [`calc(1rem + ${generateGoldenRatioSquareSqrt(3)}px)`, {
+    subtitle1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(7)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '600',
     }],
-    caption2: [`calc(1rem + ${generateGoldenRatioSquareSqrt(3)}px)`, {
+    subtitle2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(6)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    caption3: [`calc(1rem + ${generateGoldenRatioSquareSqrt(2)}px)`, {
+    subtitle3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(5)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
-    caption4: [`calc(1rem + ${generateGoldenRatioSquareSqrt(1)}px)`, {
+    caption1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(4)}px)`, {
+      letterSpacing: '0rem',
+      fontWeight: '600',
+    }],
+    caption2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(3)}px)`, {
+      letterSpacing: '0rem',
+      fontWeight: '400',
+    }],
+    caption3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(2)}px)`, {
+      letterSpacing: '0rem',
+      fontWeight: '400',
+    }],
+    caption4: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(1)}px)`, {
       letterSpacing: '0rem',
       fontWeight: '400',
     }],
@@ -136,11 +143,4 @@ export const tdsTheme = {
       },
     },
   },
-  spacing: {
-    '1': '0.125rem',
-    '2': '0.375rem',
-    '3': '0.5rem',
-    '4': '0.75rem',
-    '5': '1rem',
-  },
-};
+} as const;
