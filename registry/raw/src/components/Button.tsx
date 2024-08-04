@@ -1,12 +1,7 @@
-import { jsx } from "../package/jsx"
-// --
-import { cva } from "class-variance-authority"
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+import { jsx } from "@/package/jsx";
+import { JSXProps } from "@/package/types";
+import { cnMerge } from "@/utils";
+import { cva } from "class-variance-authority";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium",
@@ -26,6 +21,6 @@ const buttonVariants = cva(
   }
 )
 
-export const Button = ({ className, variant, size, children, ...props }: any) => {
-  return <button class={cn(buttonVariants({ variant, size, className }))} {...props}>{children}</button>
+export const Button = ({ className, variant, size, children, ...props }: JSXProps) => {
+  return <button class={cnMerge(buttonVariants({ variant, size, className }))} {...props}>{children}</button>
 }

@@ -1,7 +1,6 @@
+import { jsx } from '@/package/jsx';
+import { JSXType, JSXChild } from "@/package/types/jsx";
 import { cva } from 'class-variance-authority';
-import { jsx } from '../package/jsx';
-import { JSXType, JSXChild } from "../package/types/jsx"
-// --
 
 const defaultElement = 'span';
 

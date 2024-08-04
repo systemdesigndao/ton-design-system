@@ -1,38 +1,41 @@
 import { jsx } from './package/jsx'
+import { Caption4, Headline1, Regular1, Regular2 } from './components/Typography'
 
-import { Button } from "./components/Button"
-import { Caption1, Caption2, Caption3, Caption4, Headline1, Headline2, Headline3, Regular1, Regular2, Subtitle1, Subtitle2, Subtitle3, Title1, Title2, Title3 } from './components/Typography'
+import json from '../package.json';
+import { Link } from './components/Link';
 
 export const App = () => {
   return (
-    <div className='px-2 py-2 h-full flex flex-col'>
-      <Button className="custom-classname w-fit">Cross-platform button (default)</Button>
-      <div className="flex flex-col">
-        <div className='mt-2'>
-          <Title1>Title1</Title1>
+    <div className='px-2 py-2 h-screen flex flex-col relative'>
+      <div className="flex flex-col h-full">
+        <Headline1>Making frontend in TON Ecosystem since 2022</Headline1>
+        <Regular1>👷‍♂️ Maintainers</Regular1>
+        <div className="flex flex-col">
+          <Regular2>designervoid <Link href="https://t.me/designervoid">telegram</Link> | <Link href="https://github.com/designervoid">github</Link></Regular2>
         </div>
-        <Title2>Title2</Title2>
-        <Title3>Title3</Title3>
-        <div className='mt-2'>
-          <Headline1>Headline1</Headline1>
+        <Regular1>💻 Code</Regular1>
+        <div className="flex flex-col">
+          <Regular2>systemdesigndao/ton-design-system <Link href="https://github.com/systemdesigndao/ton-design-system">github</Link></Regular2>
         </div>
-        <Headline2>Headline2</Headline2>
-        <Headline3>Headline3</Headline3>
-        <div className='mt-2'>
-          <Regular1>Regular1</Regular1>
+        <Regular1>🎨 Art</Regular1>
+        <div className="flex flex-col">
+          <Regular2>G-Bots Stickers <Link href="https://t.me/addstickers/GBots">telegram</Link></Regular2>
+          <Regular2>DeDust Emojis <Link href="https://t.me/addemoji/ScaletonDeDustEmojis">telegram</Link></Regular2>
         </div>
-        <Regular2>Regular2</Regular2>
-        <div className='mt-2'>
-          <Subtitle1>Subtitle1</Subtitle1>
+        <Regular1>🌟 Contributions</Regular1>
+        <div className="flex flex-col">
+          <Regular2>G-Bots <Link href="https://t.me/gbotston_en">telegram</Link></Regular2>
+          <Regular2>DeDust <Link href="https://t.me/dedust_en">telegram</Link></Regular2>
         </div>
-        <Subtitle2>Subtitle2</Subtitle2>
-        <Subtitle3>Subtitle3</Subtitle3>
-        <div className='mt-2'>
-          <Caption1>Caption1</Caption1>
+        <Regular1>🏗️ Infrastructure</Regular1>
+        <div className='mt-1 flex flex-col'>
+          <Regular2>Web2 ✅</Regular2>
+          <Regular2>Web3 ✅</Regular2>
         </div>
-        <Caption2>Caption2</Caption2>
-        <Caption3>Caption3</Caption3>
-        <Caption4>Caption4</Caption4>
+        <div>
+          {/* untrusted version view currently, just using json property */}
+          <Caption4>Site version: {json.version}</Caption4>
+        </div>
       </div>
     </div>
   )

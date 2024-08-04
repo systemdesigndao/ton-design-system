@@ -1,1 +1,1 @@
-export type JSXChild = string | HTMLElement | (() => string);
+export type JSXChild = JSX.Element | (() => JSX.Element);

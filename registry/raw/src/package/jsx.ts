@@ -1,6 +1,6 @@
 import { JSXChild, JSXProps, JSXType } from "./types";
 
-export function jsx(type: JSXType, props: JSXProps, ...children: JSXChild[]): HTMLElement | DocumentFragment {
+export function jsx(type: JSXType, props: JSXProps, ...children: JSXChild[]): JSX.Element {
   if (typeof type === "function") {
     props = { ...props, children } as JSXProps;
     return type(props);
@@ -18,11 +18,11 @@ export function jsx(type: JSXType, props: JSXProps, ...children: JSXChild[]): HT
     }
   });
 
-  const appendChild = (parent: Node, child: JSXChild) => {
+  const appendChild = (parent: JSXParent, child: JSXChild) => {
     if (Array.isArray(child)) {
       child.forEach(nestedChild => appendChild(parent, nestedChild));
-    } else if (typeof child === 'string' || child instanceof String) {
-      parent.appendChild(document.createTextNode(child as string));
+    } else if (typeof child === 'string') {
+      parent.appendChild(document.createTextNode(child));
     } else if (child instanceof HTMLElement) {
       parent.appendChild(child);
     } else if (typeof child === 'function') {
@@ -30,7 +30,9 @@ export function jsx(type: JSXType, props: JSXProps, ...children: JSXChild[]): HT
     }
   };
 
-  children.forEach(child => appendChild(element, child));
+  const fragment = document.createDocumentFragment();
+  children.forEach(child => appendChild(fragment, child));
+  element.appendChild(fragment);
 
   return element;
 }

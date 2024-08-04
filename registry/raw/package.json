@@ -1,6 +1,6 @@
 {
   "name": "raw",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npx tailwindcss -i src/style.css -o ./dist/output.css --watch\" \"vite\"",

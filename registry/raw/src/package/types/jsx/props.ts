@@ -1,5 +1,5 @@
 export type JSXProps = {
   [key: string]: any;
-  children?: (HTMLElement | string)[];
+  children?: (JSX.Element | string)[];
   className?: string;
 };
