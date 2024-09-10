@@ -5,7 +5,7 @@ import { cva } from 'class-variance-authority';
 const defaultElement = 'span';
 
 const typographyVariants = cva(
-    "text-black-0 dark:text-white-0",
+    "text-dark-1 dark:text-white", // not properly working in 'raw'
     {
         variants: {
             type: {
@@ -17,6 +17,7 @@ const typographyVariants = cva(
                 headline3: "text-headline3",
                 regular1: "text-regular1",
                 regular2: "text-regular2",
+                regular3: "text-regular3",
                 subtitle1: "text-subtitle1",
                 subtitle2: "text-subtitle2",
                 subtitle3: "text-subtitle3",
@@ -61,6 +62,11 @@ export const Regular1 = ({ type = defaultElement, children }: { type?: JSXType, 
 export const Regular2 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
     return jsx(type, { className: typographyVariants({ type: 'regular2' }) }, children);
 }
+
+export const Regular3 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
+    return jsx(type, { className: typographyVariants({ type: 'regular3' }) }, children);
+}
+
 
 export const Subtitle1 = ({ type = defaultElement, children }: { type?: JSXType, children: JSXChild }) => {
     return jsx(type, { className: typographyVariants({ type: 'subtitle1' }) }, children);

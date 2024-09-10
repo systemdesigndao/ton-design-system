@@ -5,7 +5,7 @@ import { JSXChild } from "@/package/types";
 import { cnMerge } from "@/utils";
 
 const linkVariants = cva(
-  "whitespace-nowrap rounded-md text-sm font-medium",
+  "whitespace-nowrap rounded-md text-regular-3 font-medium",
   {
     variants: {
       variant: {

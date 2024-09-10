@@ -1,85 +1,85 @@
-const baseRem = 0.5;
-const scale = 1.01;
-
-const makeTemplateRem = (value: number) => `${value}rem`;
-
-const baseRemTemplate = makeTemplateRem(baseRem * scale);
-
-// value ∈ any unsigned int
+// value ∈ [~(-3), +∞]
+// https://t.me/s/tondesignsystem/220
 const generateGoldenRatioSquareSqrt = (value: number) => {
   const phi = (1 + Math.sqrt(5)) / 2;
   return Math.sqrt(phi ** value).toFixed(2);
 }
 
 export const tdsTheme = {
+  darkMode: 'class',
   fontFamily: {
     sans: ['Mulish'],
   },
   fontSize: {
-    title1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(15)}px)`, {
-      letterSpacing: '0rem',
+    title1: [`${generateGoldenRatioSquareSqrt((1.68**1.5))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '600',
     }],
-    title2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(14)}px)`, {
-      letterSpacing: '0rem',
+    title2: [`${generateGoldenRatioSquareSqrt((1.68**1.4))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    title3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(13)}px)`, {
-      letterSpacing: '0rem',
+    title3: [`${generateGoldenRatioSquareSqrt((1.68**1.3))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    headline1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(12)}px)`, {
-      letterSpacing: '0rem',
+    headline1: [`${generateGoldenRatioSquareSqrt((1.68**1.2))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '600',
     }],
-    headline2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(11)}px)`, {
-      letterSpacing: '0rem',
+    headline2: [`${generateGoldenRatioSquareSqrt((1.68**1.1))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    headline3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(10)}px)`, {
-      letterSpacing: '0rem',
+    headline3: [`${generateGoldenRatioSquareSqrt((1.68**0))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    regular1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(9)}px)`, {
-      letterSpacing: '0rem',
+    regular1: [`${generateGoldenRatioSquareSqrt(0)}rem`, {
+      lineHeight: 'normal',
       fontWeight: '600',
     }],
-    regular2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(8)}px)`, {
-      letterSpacing: '0rem',
+    regular2: [`${generateGoldenRatioSquareSqrt(0)}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    subtitle1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(7)}px)`, {
-      letterSpacing: '0rem',
+    regular3: [`${generateGoldenRatioSquareSqrt(-(1.68**1))}rem`, {
+      lineHeight: 'normal',
+      fontWeight: '400',
+    }],
+    subtitle1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.1))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '600',
     }],
-    subtitle2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(6)}px)`, {
-      letterSpacing: '0rem',
+    subtitle2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.2))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    subtitle3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(5)}px)`, {
-      letterSpacing: '0rem',
+    subtitle3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.3))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    caption1: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(4)}px)`, {
-      letterSpacing: '0rem',
+    caption1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.4))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '600',
     }],
-    caption2: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(3)}px)`, {
-      letterSpacing: '0rem',
+    caption2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.5))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    caption3: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(2)}px)`, {
-      letterSpacing: '0rem',
+    caption3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.6))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
-    caption4: [`calc(${baseRemTemplate} + ${generateGoldenRatioSquareSqrt(1)}px)`, {
-      letterSpacing: '0rem',
+    caption4: [`${generateGoldenRatioSquareSqrt(-(1.68**1.7))}rem`, {
+      lineHeight: 'normal',
       fontWeight: '400',
     }],
   },
   colors: {
     transparent: 'transparent',
     current: 'currentColor',
+    orange: '#CC9900',
     white: {
       1: "#ffffff",
       2: "#cccccc",
