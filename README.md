@@ -7,9 +7,13 @@
 
 <https://ton.org/en/brand-assets>
 
+## Package size
 [![Package raw size](https://deno.bundlejs.com/?q=@designervoid/ton-design-system&badge=detailed&badge-style=for-the-badge)][bundlejs-ton-design-system-link]
 
 [bundlejs-ton-design-system-link]: https://bundlejs.com/?q=@designervoid/ton-design-system
+
+## Repository size
+![GitHub repo size](https://img.shields.io/github/repo-size/systemdesigndao/ton-design-system)
 
 ## Main idea
 
