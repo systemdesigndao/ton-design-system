@@ -1,6 +1,5 @@
 import { jsx } from "@/package/jsx";
 import { JSXProps } from "@/package/types";
-import { cnMerge } from "@/utils";
 import { cva } from "class-variance-authority";
 
 const buttonVariants = cva(
@@ -22,5 +21,5 @@ const buttonVariants = cva(
 )
 
 export const Button = ({ className, variant, size, children, ...props }: JSXProps) => {
-  return <button class={cnMerge(buttonVariants({ variant, size, className }))} {...props}>{children}</button>
+  return <button class={buttonVariants({ variant, size, className })} {...props}>{children}</button>
 }

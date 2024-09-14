@@ -5,27 +5,27 @@ import { cva } from 'class-variance-authority';
 const defaultElement = 'span';
 
 const typographyVariants = cva(
-    "text-dark-1 dark:text-white", // not properly working in 'raw'
+    "text-black-5 dark:text-black-1",
     {
         variants: {
             type: {
-                title1: "text-title1",
-                title2: "text-title2",
-                title3: "text-title3",
-                headline1: "text-headline1",
-                headline2: "text-headline2",
-                headline3: "text-headline3",
-                regular1: "text-regular1",
-                regular2: "text-regular2",
-                regular3: "text-regular3",
-                subtitle1: "text-subtitle1",
-                subtitle2: "text-subtitle2",
-                subtitle3: "text-subtitle3",
-                subtitle4: "text-subtitle4",
-                caption1: "text-caption1",
-                caption2: "text-caption2",
-                caption3: "text-caption3",
-                caption4: "text-caption4",
+                title1: "text-title1 font-bolder",
+                title2: "text-title2 font-bolder",
+                title3: "text-title3 font-bolder",
+                headline1: "text-headline1 font-bold",
+                headline2: "text-headline2 font-bold",
+                headline3: "text-headline3 font-bold",
+                regular1: "text-regular1 font-medium",
+                regular2: "text-regular2 font-normal",
+                regular3: "text-regular3 font-normal",
+                subtitle1: "text-subtitle1 font-light",
+                subtitle2: "text-subtitle2 font-light",
+                subtitle3: "text-subtitle3 font-light",
+                subtitle4: "text-subtitle4 font-light",
+                caption1: "text-caption1 font-light",
+                caption2: "text-caption2 font-light",
+                caption3: "text-caption3 font-light",
+                caption4: "text-caption4 font-light",
             },
         },
     }

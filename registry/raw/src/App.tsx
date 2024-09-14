@@ -6,12 +6,19 @@ import { Link } from './components/Link';
 
 export const App = () => {
   return (
-    <div className='px-2 py-2 h-screen flex flex-col relative'>
-      <div className="flex flex-col h-full">
+    <div className='p-sm h-fit min-h-dvh flex flex-col relative bg-white-1 dark:bg-black-5'>
+      <div className="flex flex-col h-full space-y-sm">
         <Headline1>Making frontend in TON Ecosystem since 2022</Headline1>
         <Regular1>👷‍♂️ Maintainers</Regular1>
         <div className="flex flex-col">
           <Regular2>designervoid <Link href="https://t.me/designervoid">telegram</Link> | <Link href="https://github.com/designervoid">github</Link></Regular2>
+        </div>
+        <Regular1>💾 Channels</Regular1>
+        <div className="flex flex-col">
+          <Regular2>@tondesignsystem <Link href="https://t.me/tondesignsystem">telegram</Link></Regular2>
+          <Regular2>@wefunc <Link href="https://t.me/wefunc">telegram</Link></Regular2>
+          <Regular2>@systemdesigndao <Link href="https://t.me/systemdesigndao">telegram</Link></Regular2>
+          <Regular2>@systemdesigndao_forum <Link href="https://t.me/systemdesigndao_forum">telegram</Link></Regular2>
         </div>
         <Regular1>💻 Code</Regular1>
         <div className="flex flex-col">

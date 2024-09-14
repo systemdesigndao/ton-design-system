@@ -6,75 +6,26 @@ const generateGoldenRatioSquareSqrt = (value: number) => {
 }
 
 export const tdsTheme = {
-  darkMode: 'class',
   fontFamily: {
     sans: ['Mulish'],
   },
   fontSize: {
-    title1: [`${generateGoldenRatioSquareSqrt((1.68**1.5))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '600',
-    }],
-    title2: [`${generateGoldenRatioSquareSqrt((1.68**1.4))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    title3: [`${generateGoldenRatioSquareSqrt((1.68**1.3))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    headline1: [`${generateGoldenRatioSquareSqrt((1.68**1.2))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '600',
-    }],
-    headline2: [`${generateGoldenRatioSquareSqrt((1.68**1.1))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    headline3: [`${generateGoldenRatioSquareSqrt((1.68**0))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    regular1: [`${generateGoldenRatioSquareSqrt(0)}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '600',
-    }],
-    regular2: [`${generateGoldenRatioSquareSqrt(0)}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    regular3: [`${generateGoldenRatioSquareSqrt(-(1.68**1))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    subtitle1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.1))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '600',
-    }],
-    subtitle2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.2))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    subtitle3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.3))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    caption1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.4))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '600',
-    }],
-    caption2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.5))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    caption3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.6))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
-    caption4: [`${generateGoldenRatioSquareSqrt(-(1.68**1.7))}rem`, {
-      lineHeight: 'normal',
-      fontWeight: '400',
-    }],
+    title1: [`${generateGoldenRatioSquareSqrt((1.68**1.5))}rem`],
+    title2: [`${generateGoldenRatioSquareSqrt((1.68**1.4))}rem`],
+    title3: [`${generateGoldenRatioSquareSqrt((1.68**1.3))}rem`],
+    headline1: [`${generateGoldenRatioSquareSqrt((1.68**1.2))}rem`],
+    headline2: [`${generateGoldenRatioSquareSqrt((1.68**1.1))}rem`],
+    headline3: [`${generateGoldenRatioSquareSqrt((1.68**0))}rem`],
+    regular1: [`${generateGoldenRatioSquareSqrt(0)}rem`],
+    regular2: [`${generateGoldenRatioSquareSqrt(0)}rem`],
+    regular3: [`${generateGoldenRatioSquareSqrt(-(1.68**1))}rem`],
+    subtitle1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.1))}rem`],
+    subtitle2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.2))}rem`],
+    subtitle3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.3))}rem`],
+    caption1: [`${generateGoldenRatioSquareSqrt(-(1.68**1.4))}rem`],
+    caption2: [`${generateGoldenRatioSquareSqrt(-(1.68**1.5))}rem`],
+    caption3: [`${generateGoldenRatioSquareSqrt(-(1.68**1.6))}rem`],
+    caption4: [`${generateGoldenRatioSquareSqrt(-(1.68**1.7))}rem`],
   },
   colors: {
     transparent: 'transparent',
@@ -143,4 +94,43 @@ export const tdsTheme = {
       },
     },
   },
+  spacing: {
+    none: '0',
+    xs: `${generateGoldenRatioSquareSqrt(-3)}rem`,
+    sm: `${generateGoldenRatioSquareSqrt(-2)}rem`,
+    md: `${generateGoldenRatioSquareSqrt(-1)}rem`,
+    lg: `${generateGoldenRatioSquareSqrt(0)}rem`,
+    xl: `${generateGoldenRatioSquareSqrt(1)}rem`,
+    '2xl': `${generateGoldenRatioSquareSqrt(2)}rem`,
+    '3xl': `${generateGoldenRatioSquareSqrt(3)}rem`,
+  },
+  fontWeight: {
+    light: +generateGoldenRatioSquareSqrt(20.5),
+    normal: +generateGoldenRatioSquareSqrt(22.5),
+    medium: +generateGoldenRatioSquareSqrt(25.5),
+    bold: +generateGoldenRatioSquareSqrt(26.5),
+    bolder: +generateGoldenRatioSquareSqrt(28.5),
+  },
+  lineHeight: {
+    short: `${generateGoldenRatioSquareSqrt(1)}rem`,
+    normal: `${generateGoldenRatioSquareSqrt(2)}rem`,
+    tall: `${generateGoldenRatioSquareSqrt(3)}rem`,
+  },
+  borderRadius: {
+    none: '0',
+    sm: `${generateGoldenRatioSquareSqrt(-1)}rem`,
+    md: `${generateGoldenRatioSquareSqrt(1)}rem`,
+    lg: `${generateGoldenRatioSquareSqrt(3)}rem`,
+    xl: `${generateGoldenRatioSquareSqrt(5)}rem`,
+  },
+  borderWidth: {
+    thin: `${generateGoldenRatioSquareSqrt(-2)}px`,
+    medium: `${generateGoldenRatioSquareSqrt(0)}px`,
+    thick: `${generateGoldenRatioSquareSqrt(2)}px`,
+  },
+  height: {
+    'dvh': '100dvh',
+    'lvh': '100lvh',
+    'svh': '100svh',
+  }
 } as const;

@@ -21,5 +21,6 @@ namespace JSX {
       a: HTMLAttributes<HTMLAnchorElement>;
       button: HTMLAttributes<HTMLButtonElement>;
       div: HTMLAttributes<HTMLDivElement>;
+      p: HTMLAttributes<HTMLParagraphElement>;
   }
 }
