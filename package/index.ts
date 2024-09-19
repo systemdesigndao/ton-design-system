@@ -30,7 +30,15 @@ export const tdsTheme = {
   colors: {
     transparent: 'transparent',
     current: 'currentColor',
-    orange: '#CC9900',
+    blue: {
+      1: '#1ac9ff',
+      2: '#2d83ec',
+    },
+    orange: {
+      1: '#cc9900',
+      2: '#ffbe1e19',
+      3: '#ff900019',
+    },
     white: {
       1: "#ffffff",
       2: "#cccccc",

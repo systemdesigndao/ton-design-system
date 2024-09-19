@@ -5,7 +5,7 @@ import { cva } from 'class-variance-authority';
 const defaultElement = 'span';
 
 const typographyVariants = cva(
-    "text-black-5 dark:text-black-1",
+    "text-black-5 dark:text-white-1",
     {
         variants: {
             type: {

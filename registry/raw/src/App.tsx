@@ -6,7 +6,7 @@ import { Link } from './components/Link';
 
 export const App = () => {
   return (
-    <div className='p-sm h-fit min-h-dvh flex flex-col relative bg-white-1 dark:bg-black-5'>
+    <div className='p-sm h-fit min-h-dvh flex flex-col relative dark:bg-black-5 bg-gradient-to-r from-orange-2 to-orange-3'>
       <div className="flex flex-col h-full space-y-sm">
         <Headline1>Making frontend in TON Ecosystem since 2022</Headline1>
         <Regular1>👷‍♂️ Maintainers</Regular1>

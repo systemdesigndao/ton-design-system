@@ -4,7 +4,7 @@ import classes from './Link.module.css';
 import { JSXChild } from "@/package/types";
 
 const linkVariants = cva(
-  "whitespace-nowrap text-regular-3 font-medium",
+  "whitespace-nowrap text-regular-3 font-medium bg-gradient-to-r from-blue-2 to-blue-1",
   {
     variants: {
       variant: {
