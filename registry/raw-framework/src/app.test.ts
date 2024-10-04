@@ -58,7 +58,8 @@ describe('tag', () => {
 
     it('should append children to the element', () => {
         const child1 = document.createElement('span');
-        const child2 = 'Hello World';const element = tag('div', {}, child1, child2);
+        const child2 = 'Hello World';
+        const element = tag('div', {}, child1, child2);
         expect(element.children[0]).toBe(child1);
         expect(element.textContent).toContain('Hello World');
     });
