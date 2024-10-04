@@ -25,9 +25,30 @@ Atomic CSS
 }
 ```
 
+## Usage
+
+Atomic Components using Declarative components with [Raw Framework](https://github.com/systemdesigndao/ton-design-system/tree/master/registry/raw-framework#raw-ui-framework)
+
+```ts
+import { tags } from './package/raw'
+
+const { div, button } = tags;
+
+export const Button = () => {
+  return (
+    div(
+      { className='px-2 py-2 h-full flex' }, 
+      button(
+        { class: "custom-classname", variant="default" }, 
+        'Cross-platform button (default)'
+      )
+    );
+};
+```
+
 ![Screenshot](./docs/images/App.jpeg)
 
-## Usage package
+## More examples
 
 Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)  
 Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)

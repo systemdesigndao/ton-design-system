@@ -36,7 +36,7 @@ npm run build
 
 #### Button
 ```ts
-import { tags } from '@designervoid/raw.js'
+import { tags } from './package/raw'
 
 const { div, button } = tags;
 
@@ -59,7 +59,7 @@ The component factory allows the creation of DOM elements using TypeScript synta
 Big thanks to [VanJS](https://github.com/vanjs-org/van) for the inspiration and the declarative pattern of using Vanilla JS elements!
 
 ```ts
-import { tags } from '@designervoid/raw.js';
+import { tags } from './package/raw';
 
 const { span } = tags;
 
