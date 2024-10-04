@@ -46,9 +46,9 @@ export const Button = () => {
 };
 ```
 
-![Screenshot](./docs/images/App.jpeg)
-
 ## More examples
+
+![Screenshot](./docs/images/App.jpeg)
 
 Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)  
 Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)
