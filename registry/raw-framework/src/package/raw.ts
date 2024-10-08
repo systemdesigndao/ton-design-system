@@ -51,9 +51,23 @@ export const tags = new Proxy({} as Record<keyof HTMLElementTagNameMap, TagFunct
     }
 });
 
+export const binder = <T>(state: State<T>, renderFunction: () => HTMLElement) => {
+  const updateComponent = () => {
+      const newElement = renderFunction();
+      component.replaceWith(newElement);
+      component = newElement;
+  };
+  
+  let component = renderFunction();
+  state.subscribers.add(updateComponent);
+  
+  return component;
+};
+
 export const raw = {
     tag,
     createState,
+    binder,
 };
 
 export const render = (app: HTMLElement) => {
