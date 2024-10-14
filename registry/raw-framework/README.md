@@ -52,6 +52,24 @@ export const Button = () => {
 };
 ```
 
+#### Like/dislike
+
+```ts
+import { signal, tags } from './package/raw';
+
+const { div, span, button } = tags;
+
+function Counter() {
+    let count = signal(0);
+
+    return div({},
+        span({}, "❤️ ", count, " "),
+        button({ onclick: () => count.set(count.get() + 1) }, "👍"),
+        button({ onclick: () => count.set(count.get() - 1) }, tags.span({}, '👎')),
+    );
+}
+```
+
 #### Component Factory
 
 The component factory allows the creation of DOM elements using TypeScript syntax by declarative way.

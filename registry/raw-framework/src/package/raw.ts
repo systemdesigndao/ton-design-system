@@ -1,79 +1,127 @@
-export type Props = { [key: string]: any };
-export type TagFunction = (props?: Props, ...children: (HTMLElement | string)[]) => HTMLElement;
+type TagFunction = (props?: Record<string, any>, ...children: any[]) => HTMLElement;
+type CleanupFunction = () => void;
 
-export type State<T> = {
-    val: T;
-    subscribers: Set<() => void>;
-    set: (newValue: T) => void;
-    unsubscribe: (subscriber: () => void) => void;
+type Computation = {
+    fn: () => void;
+    cleanup: CleanupFunction;
+    stop?: CleanupFunction;
 };
 
-export const createState = <T>(initialValue: T): State<T> => {
-    const state: State<T> = {
-        val: initialValue,
-        subscribers: new Set(),
-        set(newValue: T) {
-            this.val = newValue;
-            this.subscribers.forEach(subscriber => subscriber());
-        },
-        unsubscribe(subscriber: () => void) {
-            this.subscribers.delete(subscriber);
+let currentComputation: Computation | undefined;
+
+class Signal<T> {
+    private value: T;
+    private subs = new Set<Computation>();
+
+    constructor(initialValue: T) {
+        this.value = initialValue;
+    }
+
+    get(): T {
+        if (currentComputation) {
+            this.subs.add(currentComputation);
+            currentComputation.stop = () => {
+                this.subs.delete(currentComputation!);
+            };
         }
-    };
+        return this.value;
+    }
+
+    set(newValue: T) {
+        if (this.value !== newValue) {
+            this.value = newValue;
+            this.notify();
+        }
+    }
     
-    return state;
-};
+    private notify() {
+        let subsArray = Array.from(this.subs);
+        queueMicrotask(() => {
+            subsArray.forEach(sub => {
+                sub.cleanup();
+                runComputation(sub);
+            });
+        });
+    }
+}
 
-export const tag = <K extends keyof HTMLElementTagNameMap>(name: K, props: Props = {}, ...children: (HTMLElement | string)[]): HTMLElement => {
-    const element = document.createElement(name);
+export function signal<T>(initial: T): Signal<T> {
+    return new Signal(initial);
+}
+
+export function effect(fn: () => void) {
+    let cleanupFn: CleanupFunction = () => {};
+    let computation: Computation = {
+        fn,
+        cleanup: () => {
+            cleanupFn();
+        },
+        stop: () => {}
+    };
+
+    runComputation(computation);
+    cleanupFn = computation.stop!;
+}
+
+function runComputation(computation: Computation) {
+    let parent = currentComputation;
+    currentComputation = computation;
+    try {
+        computation.fn();
+    } finally {
+        currentComputation = parent;
+    }
+}
+
+function h(tag: string, props: Record<string, any> = {}, ...children: any[]): HTMLElement {
+    let el = document.createElement(tag);
+    
     Object.entries(props).forEach(([key, value]) => {
-        if (key.startsWith("on")) {
-            const event = key.slice(2).toLowerCase();
-            element.addEventListener(event, value);
+        if (key.startsWith('on')) {
+            let event = key.slice(2).toLowerCase();
+            el.addEventListener(event, value);
+        } else if (value instanceof Signal) {
+            effect(() => {
+                el.setAttribute(key, value.get().toString());
+            });
         } else {
-            element.setAttribute(key, value);
+            el.setAttribute(key, value.toString());
         }
     });
-    children.forEach(child => {
-        if (child) {
-            element.append(child);
+
+    children.flat(Infinity).forEach(child => {
+        if (child instanceof Signal) {
+            let textNode = document.createTextNode('');
+            effect(() => {
+                textNode.textContent = child.get().toString();
+            });
+            el.appendChild(textNode);
+        } else if (child instanceof Node) {
+            el.appendChild(child);
+        } else if (child !== null) {
+            if (typeof child === 'object') {
+                el.appendChild(child);
+            }
+            if (typeof child === 'string') {
+                el.appendChild(document.createTextNode(child.toString()));
+            }
         }
     });
-    return element;
-};
+    
+    return el;
+}
 
-export const tags = new Proxy({} as Record<keyof HTMLElementTagNameMap, TagFunction>, {
-    get: <K extends keyof HTMLElementTagNameMap>(target: Record<K, TagFunction>, name: K): TagFunction => {
-        if (!(name in target)) {
-            target[name] = (props?: Props, ...children: (HTMLElement | string)[]) => tag(name, props, ...children);
-        }
-        return target[name];
+export let tags = new Proxy({}, {
+    get: (_, tag: string): TagFunction => 
+        (props = {}, ...children) =>
+            h(tag, props, ...children)
+}) as Record<string, TagFunction>;
+
+export function mount(component: () => HTMLElement, root: HTMLElement | null = document.getElementById('app')) {
+    if (!root) {
+        root = document.createElement('div');
+        root.id = 'app';
+        document.body.appendChild(root);
     }
-});
-
-export const binder = <T>(state: State<T>, renderFunction: () => HTMLElement) => {
-  const updateComponent = () => {
-      const newElement = renderFunction();
-      component.replaceWith(newElement);
-      component = newElement;
-  };
-  
-  let component = renderFunction();
-  state.subscribers.add(updateComponent);
-  
-  return component;
-};
-
-export const raw = {
-    tag,
-    createState,
-    binder,
-};
-
-export const render = (app: HTMLElement) => {
-    const appElement = document.getElementById('app')!;
-    appElement.replaceChildren(app);
-    if (!document.body.contains(appElement)) {
-        document.body.append(appElement);
-    }
-};
+    root.appendChild(component());
+}
