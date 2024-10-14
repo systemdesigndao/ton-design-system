@@ -7,7 +7,7 @@ The syntax is based on TypeScript.
 ## Features
 
 - **Simple Component Factory**: Allows the use of JSX without additional dependencies.
-- **Reactivity via Listeners**: You can write state anywhere you want
+- **Reactivity via Signals**: You can write state anywhere you want
 - **Tailwind CSS Integration**: Provides convenient utilities for styling.
 - **Minimalist Approach**: No use of large dependencies or complex configurations.
 - **Easy Testing**: Testing components and functions is straightforward with Vitest and JSDOM. This setup allows you to write and run tests for your TypeScript code easily, without complex configurations. Vitest provides a simple syntax, while JSDOM simulates a browser environment for validating UI interactions and DOM manipulations.
@@ -125,6 +125,6 @@ Current example app only with Counter and Typography Title1:
 
 ```
 dist/index.html                 0.45 kB │ gzip: 0.29 kB
-dist/assets/index-${hash0}.css  5.63 kB │ gzip: 1.76 kB
-dist/assets/index-${hash1}.js   2.50 kB │ gzip: 1.26 kB
+dist/assets/index-${rand0}.css  5.63 kB │ gzip: 1.76 kB
+dist/assets/index-${rand1}.js   2.50 kB │ gzip: 1.26 kB
 ```
