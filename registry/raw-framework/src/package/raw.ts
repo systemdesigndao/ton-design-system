@@ -1,4 +1,4 @@
-type TagFunction = (props?: Record<string, any>, ...children: any[]) => HTMLElement;
+export type TagFunction = (props?: Record<string, any>, ...children: any[]) => HTMLElement;
 type CleanupFunction = () => void;
 
 type Computation = {
