@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { JSDOM } from 'jsdom';
 import { tags, signal, mount } from './package/raw';
 import { beforeAll } from 'vitest';
@@ -15,6 +15,14 @@ beforeAll(() => {
     global.Node = dom.window.Node;
     global.HTMLElement = dom.window.HTMLElement;
 });
+
+afterEach(() => {
+    const appElement = document.getElementById('app');
+    if (appElement) {
+        appElement.innerHTML = '';
+    }
+});
+
 const { div, span, em, button } = tags;
 
 const createNestedElements = (count: number) => {
@@ -82,12 +90,16 @@ describe('tag', () => {
 });
 
 describe('Performance tests', () => {
-    it('should render 10 nodes', () => {
-        const main = div({});
-        const elements = createNestedElements(1e1);
-        elements.map(el => main.append(el()));
-        mount(() => main);
-        const appElement = document.getElementById('app');
-        expect(appElement?.children.length);
+    const nodeCounts = [1e1, 1e2, 1e3, 1e4, 1e5];
+
+    nodeCounts.forEach(count => {
+        it(`should render ${count} nodes`, () => {
+            const main = div({});
+            const elements = createNestedElements(count);
+            elements.map(el => main.append(el()));
+            mount(() => main);
+            const appElement = document.getElementById('app');
+            expect(appElement?.firstChild?.childNodes.length).toBe(count);
+        });
     });
 });
