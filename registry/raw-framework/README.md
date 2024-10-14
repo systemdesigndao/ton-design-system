@@ -124,7 +124,7 @@ By default these TW Classes are removed from tds/raw build.
 Current example app only with Counter and Typography Title1:
 
 ```
-dist/index.html                 0.48 kB │ gzip: 0.31 kB
-dist/assets/index-${hash0}.css  5.62 kB │ gzip: 1.76 kB
-dist/assets/index-${hash1}.js   2.03 kB │ gzip: 1.09 kB
+dist/index.html                 0.45 kB │ gzip: 0.29 kB
+dist/assets/index-${hash0}.css  5.63 kB │ gzip: 1.76 kB
+dist/assets/index-${hash1}.js   2.50 kB │ gzip: 1.26 kB
 ```
