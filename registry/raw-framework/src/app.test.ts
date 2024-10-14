@@ -48,6 +48,18 @@ describe('createState', () => {
         const state = signal(0);
         expect(state.get()).toBe(0);
     });
+
+    it('should increment signal value', () => {
+        const state = signal(0);
+        state.set(state.get() + 1);
+        expect(state.get()).toBe(1);
+    });
+
+    it('should decrement signal value', () => {
+        const state = signal(0);
+        state.set(state.get() - 1);
+        expect(state.get()).toBe(-1);
+    });
 });
 
 describe('tag', () => {
