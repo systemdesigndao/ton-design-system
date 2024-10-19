@@ -23,13 +23,13 @@ pnpm install
 To run the project in development mode, use the command:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 For building the project, use:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### Component Examples
