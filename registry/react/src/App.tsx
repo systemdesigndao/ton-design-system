@@ -1,4 +1,4 @@
-// import "./theme";
+import "./theme";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 
 import { routeTree } from "./routeTree.gen";
