@@ -1,26 +1,22 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect } from 'react'
 import { Button } from '@/components/Button'
 import { dark, light, matchMediaCasted, themeBaseKey } from '@/theme'
 
 import { createLazyFileRoute } from '@tanstack/react-router'
+import { useThemeStore } from '@/stores/theme'
 
 export const Route = createLazyFileRoute('/theme')({
   component: ThemeComponent,
 })
 
 function ThemeComponent() {
-  const prefersDark = matchMediaCasted('(prefers-color-scheme: dark)').matches
-
-  const [theme, setTheme] = useState(() => {
-    const storedTheme = localStorage.getItem(themeBaseKey)
-    return storedTheme || (prefersDark ? dark : light)
-  })
+  const [{ theme }, { updateTheme }] = useThemeStore();
 
   const toggleTheme = () => {
     const newTheme = theme === dark ? light : dark
-    setTheme(newTheme)
     localStorage.setItem(themeBaseKey, newTheme)
     document.documentElement.classList.toggle(dark, newTheme === dark)
+    updateTheme(newTheme)
   }
 
   useLayoutEffect(() => {
@@ -30,7 +26,7 @@ function ThemeComponent() {
       '(prefers-color-scheme: dark)',
     ).addEventListener('change', ({ matches }) => {
       if (!localStorage.getItem(themeBaseKey)) {
-        setTheme(matches ? dark : light)
+        updateTheme(matches ? dark : light)
       }
     })
 
@@ -46,7 +42,7 @@ function ThemeComponent() {
       <Button onClick={() => {
         localStorage.removeItem(themeBaseKey);
         const prefersDark = matchMediaCasted('(prefers-color-scheme: dark)').matches
-        setTheme(prefersDark ? dark : light);
+        updateTheme(prefersDark ? dark : light);
       }} className="mt-1 w-fit">
         to 🖥
       </Button>

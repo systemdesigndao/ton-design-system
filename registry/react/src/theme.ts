@@ -5,7 +5,7 @@ export const matchMediaCasted = (query: MediaQuery) => {
 	return window.matchMedia(query);
 };
 
-const themes = ["light", "dark"];
+const themes = ["light", "dark"] as const;
 
 export const [light, dark] = themes;
 
