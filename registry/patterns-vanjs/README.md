@@ -8,9 +8,7 @@ The syntax is based on `TypeScript`.
 
 - System Fonts CSS
 - TailwindCSS & TDS (phi based design system font sizes, spacings)
-- System & Force Theme
-- Lazy routes (`src/theme.lazy.tsx`)
-- Joint state between components using `@tanstack/react-store` (`src/stores/theme`)
+- Joint state between components out of the box using `van.state`
 
 ## Quick Start
 

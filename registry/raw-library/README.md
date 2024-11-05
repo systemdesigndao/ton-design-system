@@ -31,24 +31,20 @@ To see more capable for reactive interfaces templates:
 - **Tailwind CSS Integration**: Provides convenient utilities for styling.
 - **Minimalist Approach**: No use of large dependencies or complex configurations.
 
-## Installation
-
-Install the necessary dependencies via npm:
+## Quick Start
 
 ```bash
-pnpm install
-```
+git clone git@github.com:systemdesigndao/ton-design-system.git
 
-To run the project in development mode, use the command:
+cd ton-design-system/registry/raw-library
 
-```bash
-npm run dev
-```
+pnpm i
 
-For building the project, use:
+# dev
+pnpm run dev
 
-```bash
-npm run build
+# preview
+pnpm run build && pnpm run preview 
 ```
 
 ### Component Examples
