@@ -7,7 +7,7 @@ export default defineConfig({
 	},
 	source: {
 		entry: {
-			index: "./src/main.ts",
+			index: "./main.ts",
 		},
 	},
 });

@@ -7,7 +7,7 @@ The syntax is based on `TypeScript`.
 # Contain
 
 - System Fonts CSS
-- TailwindCSS & TDS (phi based design system font sizes, spacings)
+- ~~TailwindCSS & TDS (phi based design system font sizes, spacings)~~ (currently unstable)
 - Joint state between components out of the box using `van.state`
 - Dev mode includes a convenient biome-js check and lint feature.
 
