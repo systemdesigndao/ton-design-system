@@ -1,35 +1,47 @@
-# Raw UI Framework
+# Raw Framework
 
-Raw UI Framework is a small framework for creating user interfaces using pure TypeScript and Tailwind CSS.
+Raw Framework - is a small framework for creating user interfaces using pure TypeScript and Tailwind CSS.
 
 The syntax is based on TypeScript.
 
-## Features
+Usually on TON Sites we want to use minimal kb's to share our sites, so, in context of TON Sites this solution maybe will be better understand why this is written and where it can be used.
+
+**Raw Library** (`ton-design-system/registry/raw-library`) was born with that idea, but **Raw Library** it's like 1.0 version, I can try add support of Reactivity, bridges with popular frameworks, but JSX is useless layer of app, we can use frameworks like **VanJS** or **Raw**.
+
+This framework should follow that way too, create bridges with popular frameworks, less resources, more convinience.
+
+## Contain
+
+- **Only Typescript files**: Your components are Typescript files, no JSX.
 
 - **Simple Component Factory**: Allows the use of JSX without additional dependencies.
-- **Reactivity via Signals**: You can write state anywhere you want
+
+- **Reactivity via Signals**: You can write state anywhere you want. **Joint state** between components.
+
 - **Tailwind CSS Integration**: Provides convenient utilities for styling.
+
 - **Minimalist Approach**: No use of large dependencies or complex configurations.
+
+- **Lightweight**: 2kb no gzipped.
+
+- **Pretty scalable**: Can handle more components than react on one page, on i5 React can handle near 10k with not so poor performance, this thing allow's to use applications with 100k nodes per page.
+
 - **Easy Testing**: Testing components and functions is straightforward with Vitest and JSDOM. This setup allows you to write and run tests for your TypeScript code easily, without complex configurations. Vitest provides a simple syntax, while JSDOM simulates a browser environment for validating UI interactions and DOM manipulations.
 
-## Installation
-
-Install the necessary dependencies via npm:
+## Quick Start
 
 ```bash
-pnpm install
-```
+git clone git@github.com:systemdesigndao/ton-design-system.git
 
-To run the project in development mode, use the command:
+cd ton-design-system/registry/raw-framework
 
-```bash
+pnpm i
+
+# dev
 pnpm run dev
-```
 
-For building the project, use:
-
-```bash
-pnpm run build
+# preview
+pnpm run build && pnpm run preview 
 ```
 
 ### Component Examples

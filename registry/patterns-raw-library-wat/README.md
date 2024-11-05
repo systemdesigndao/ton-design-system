@@ -1,34 +1,34 @@
-# Raw UI Library
+# Patterns Raw Library Wat
 
-Raw UI Library is a small library for creating user interfaces using JSX, Tailwind CSS (сurrenly available only in `dev` mode).
+Example contains simple page based on `ton-design-system/raw-library` plus `WebAssebmly text format` (`WAT`).
 
-The syntax of components is typically compatible with React, Vue 3, and Solid.js.
+`WAT` format it is `.wat` files with next syntax:
 
-## Features
-
-- **Simple JSX Factory**: Allows the use of JSX without additional dependencies.
-- **Tailwind CSS Integration**: Provides convenient utilities for styling.
-- **Minimalist Approach**: No use of large dependencies or complex configurations.
-- **Wabt**: Easy to use WebAssembly modules via WebAssebly Text with Wabt.
-
-## Installation
-
-Install the necessary dependencies via npm:
-
-```bash
-pnpm install
+```wat
+(module
+  (func $add_i32 (param $x i32) (param $y i32) (result i32)
+    local.get $x
+    local.get $y
+    i32.add
+  )
+  (export "add_i32" (func $add_i32))
+)
 ```
 
-To run the project in development mode, use the command:
+## Quick Start
 
 ```bash
-npm run dev
-```
+git clone git@github.com:systemdesigndao/ton-design-system.git
 
-For building the project, use:
+cd ton-design-system/registry/patterns-raw-library-wat
 
-```bash
-npm run build
+pnpm i
+
+# dev
+pnpm run dev
+
+# preview
+pnpm run build && pnpm run preview 
 ```
 
 ### Component Examples

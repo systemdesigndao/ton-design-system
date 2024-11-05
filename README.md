@@ -29,6 +29,7 @@ Atomic CSS
 
 Atomic Components using Declarative components with [Raw Framework](https://github.com/systemdesigndao/ton-design-system/tree/master/registry/raw-framework#raw-ui-framework)
 
+
 ```ts
 import { tags } from './package/raw'
 
@@ -48,10 +49,11 @@ export const Button = () => {
 
 ## More examples
 
-![Screenshot](./docs/images/App.jpeg)
+- Examples of usages within [`ton-design-system/registry`](https://github.com/systemdesigndao/ton-design-system/blob/master/registry/README.md#contain)
+- Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)
+- Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)
 
-Example of usage with [`next-typescript`](https://github.com/designervoid/ton-design-system-next-typescript)  
-Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)
+![Screenshot](./docs/images/App.jpeg)
 
 ## Use CLI
 
