@@ -3,11 +3,11 @@ import { defineConfig } from "@rsbuild/core";
 export default defineConfig({
 	plugins: [],
 	html: {
-		template: "./index.html",
+		template: "./src/index.html",
 	},
 	source: {
 		entry: {
-			index: "./main.ts",
+			index: "./src/main.ts",
 		},
 	},
 });
