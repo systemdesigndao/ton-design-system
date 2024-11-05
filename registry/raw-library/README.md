@@ -11,25 +11,36 @@ This micro-library capable for landing pages.
 To see more capable for reactive interfaces templates:
 
 1. Raw Pattern React (`ton-design-system/registry/patterns-react`)
+
   - Capable for quick MVP's, Ideas, a lot of solutions
 
     [Read docs](https://github.com/systemdesigndao/ton-design-system/blob/master/registry/patterns-react/README.md#contain)
 
 2. Raw Pattern Vanjs (`ton-design-system/registry/patterns-vanjs`)
-  - Capable for very lightweight clients, but weight 2kb all things like components with reactive joint state between components (out from the box), **not so powerful and optimised as vanjs**
+
+  - Capable for very lightweight clients, but weight 2kb all things like components with reactive joint state between components (out from the box)
 
     [Read docs](https://github.com/systemdesigndao/ton-design-system/blob/master/registry/patterns-vanjs/README.md#contain)
 
 3. Raw Framework (`ton-design-system/registry/raw-framework`)
-  - Also capable for very lightweight clients, but weight 2kb all things like components with reactive joint state between components (out from the box), **not so powerful and optimised as vanjs (based on i5 Performance)**
 
-  [Read docs](https://github.com/systemdesigndao/ton-design-system/blob/master/registry/raw-framework/README.md#contain)
+  - Also capable for very lightweight clients, but weight 2kb all things like components with reactive joint state between components (out from the box), **not so powerful and optimised as VanJS (based on i5 Performance)**
+
+    [Read docs](https://github.com/systemdesigndao/ton-design-system/blob/master/registry/raw-framework/README.md#contain)
 
 ## Contain
 
-- **Simple JSX Factory**: Allows the use of JSX without additional dependencies.
-- **Tailwind CSS Integration**: Provides convenient utilities for styling.
-- **Minimalist Approach**: No use of large dependencies or complex configurations.
+- **Simple JSX Factory**
+
+  Allows the use of JSX without additional dependencies.
+
+- **Tailwind CSS Integration**: 
+  
+  Provides convenient utilities for styling.
+
+- **Minimalist Approach**
+
+  No use of large dependencies or complex configurations.
 
 ## Quick Start
 

@@ -12,21 +12,49 @@ This framework should follow that way too, create bridges with popular framework
 
 ## Contain
 
-- **Only Typescript files**: Your components are Typescript files, no JSX.
+- **Only Typescript files**
+  
+  Your components are Typescript files, no JSX.
 
-- **Simple Component Factory**: Allows the use of JSX without additional dependencies.
+- **Simple Component Factory**
 
-- **Reactivity via Signals**: You can write state anywhere you want. **Joint state** between components.
+  Allows the use of HTML Tags without additional dependencies.
 
-- **Tailwind CSS Integration**: Provides convenient utilities for styling.
+  ```ts
+  import { tags } from './package/raw';
 
-- **Minimalist Approach**: No use of large dependencies or complex configurations.
+  const { span } = tags;
 
-- **Lightweight**: 2kb no gzipped.
+  span({}, 'Hello World 🌎');
+  ```
 
-- **Pretty scalable**: Can handle more components than react on one page, on i5 React can handle near 10k with not so poor performance, this thing allow's to use applications with 100k nodes per page.
+- **Reactivity via Signals**
 
-- **Easy Testing**: Testing components and functions is straightforward with Vitest and JSDOM. This setup allows you to write and run tests for your TypeScript code easily, without complex configurations. Vitest provides a simple syntax, while JSDOM simulates a browser environment for validating UI interactions and DOM manipulations.
+  You can write state anywhere you want. **Joint state** between components.
+
+- **Tailwind CSS Integration**
+
+  Provides convenient utilities for styling.
+
+- **Minimalist Approach**
+
+  No use of large dependencies or complex configurations.
+
+- **Lightweight**
+
+  2.5kb no gzipped.
+
+- **Pretty scalable**
+
+  Can handle more components than react on one page, on i5 React can handle near 10k with not so poor performance, this thing allow's to use applications with 100k nodes per page.
+
+- **Easy Testing**
+
+  Testing components and functions is straightforward with Vitest and JSDOM. 
+  
+  This setup allows you to write and run tests for your TypeScript code easily, without complex configurations. 
+  
+  Vitest provides a simple syntax, while JSDOM simulates a browser environment for validating UI interactions and DOM manipulations.
 
 ## Quick Start
 
