@@ -1,5 +1,5 @@
 {
-  "name": "raw-rust-wasm",
+  "name": "patters-raw-library-rust-wasm",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
