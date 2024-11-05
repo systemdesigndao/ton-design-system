@@ -9,7 +9,7 @@ The syntax is based on `TypeScript`.
 - System Fonts CSS
 - TailwindCSS & TDS (phi based design system font sizes, spacings)
 - Joint state between components out of the box using `van.state`
-- Dev mode contains pretty convinient biome-js check and lint
+- Dev mode includes a convenient biome-js check and lint feature.
 
 ## Quick Start
 
