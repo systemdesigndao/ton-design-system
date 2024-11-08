@@ -1,7 +1,7 @@
-import { useTmaRun } from "./useTmaRun";
+import { useTmaAfterRun } from "./useTmaAfterRun";
 import { useTmaTailwindPluginMountAppInject } from "./useTmaTailwindPluginMountAppInject";
 
 export const useCore = () => {
 	useTmaTailwindPluginMountAppInject();
-	useTmaRun();
+	useTmaAfterRun();
 };

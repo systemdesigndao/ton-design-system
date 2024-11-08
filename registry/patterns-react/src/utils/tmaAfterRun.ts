@@ -1,7 +1,6 @@
 import WebApp from "@twa-dev/sdk";
 
-export const tmaRun = () => {
+export const tmaAfterRun = () => {
 	WebApp.expand();
 	WebApp.disableVerticalSwipes();
-	WebApp.ready();
 };
