@@ -7,7 +7,33 @@ const generateGoldenRatioSquareSqrt = (value: number) => {
 
 export const tdsTheme = {
   fontFamily: {
-    sans: ['Mulish'],
+    sans: [
+      'ui-sans-serif',
+      'system-ui',
+      'sans-serif',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji'
+    ],
+    serif: [
+      'ui-serif',
+      'Georgia',
+      'Cambria',
+      'Times New Roman',
+      'Times',
+      'serif'
+    ],
+    mono: [
+      'ui-monospace',
+      'SFMono-Regular',
+      'Menlo',
+      'Monaco',
+      'Consolas',
+      'Liberation Mono',
+      'Courier New',
+      'monospace'
+    ]
   },
   fontSize: {
     title1: [`${generateGoldenRatioSquareSqrt((1.68**1.5))}rem`],
