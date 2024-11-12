@@ -14,6 +14,9 @@ importers:
       '@tanstack/react-store':
         specifier: ^0.5.6
         version: 0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@twa-dev/sdk':
+        specifier: ^7.10.1
+        version: 7.10.1(react@18.3.1)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -533,6 +536,14 @@ packages:
   '@tanstack/virtual-file-routes@1.64.0':
     resolution: {integrity: sha512-soW+gE9QTmMaqXM17r7y1p8NiQVIIECjdTaYla8BKL5Flj030m3KuxEQoiG1XgjtA0O7ayznFz2YvPcXIy3qDg==}
     engines: {node: '>=12'}
+
+  '@twa-dev/sdk@7.10.1':
+    resolution: {integrity: sha512-mY9JaBPspYfLdzoaARVmr0GKXUO3X4hi1vuP+04UUFWST2lB50xGSxExOFz5I3vBaxnrdLregBGiaitvvWaX6w==}
+    peerDependencies:
+      react: ^18.3.1
+
+  '@twa-dev/types@7.10.0':
+    resolution: {integrity: sha512-BXHyNLXy+cPbOZ2qQq5ArPKcP4kUfuX3YBSFT0XUxtMNWAzvyMuYAiq59UTfQ8OnELXlfChrAoIT3c2pujBtcQ==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1588,6 +1599,13 @@ snapshots:
   '@tanstack/store@0.5.5': {}
 
   '@tanstack/virtual-file-routes@1.64.0': {}
+
+  '@twa-dev/sdk@7.10.1(react@18.3.1)':
+    dependencies:
+      '@twa-dev/types': 7.10.0
+      react: 18.3.1
+
+  '@twa-dev/types@7.10.0': {}
 
   '@types/babel__core@7.20.5':
     dependencies:

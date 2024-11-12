@@ -8,7 +8,7 @@ The syntax is based on `TypeScript`.
 
 - System Fonts CSS
 - Rsbuild
-- TailwindCSS & TDS (phi based design system font sizes, spacings)
+- TailwindCSS & TDS (phi based design system font sizes, spacings) & Custom TMA TailwindCSS Plugins
 - System & Force Theme
 - Router (`TanStackRouterRspack`) & Lazy routes (`src/theme.lazy.tsx`)
 - Joint state between components using `@tanstack/react-store` (`src/stores/theme`)
