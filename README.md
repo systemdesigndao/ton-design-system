@@ -8,22 +8,79 @@
 <https://ton.org/en/brand-assets>
 
 ## Package size
-[![Package raw size](https://deno.bundlejs.com/?q=@designervoid/ton-design-system&badge=detailed&badge-style=for-the-badge)][bundlejs-ton-design-system-link]
 
-[bundlejs-ton-design-system-link]: https://bundlejs.com/?q=@designervoid/ton-design-system
+```sh
+/
+@designervoid/ton-design-system
+/
+lib/
+folder
+20.8 kB
+package/
+folder
+13.3 kB
+public/
+folder
+28.3 kB
+LICENSE.md
+text/markdown
+1.09 kB
+README.md
+text/markdown
+2.03 kB
+package.json
+application/json
+516 B
+```
+
+[verify on the npm code tab](https://www.npmjs.com/package/@designervoid/ton-design-system?activeTab=code)
 
 ## Repository size
-![GitHub repo size](https://img.shields.io/github/repo-size/systemdesigndao/ton-design-system)
 
-## Main idea
-
-Atomic CSS
-
-```css
-.atom {
-  @apply ... (tw-classes)
-}
+```sh
+git count-objects -vH
+count: 733
+size: 3.45 MiB
+in-pack: 1666
+packs: 2
+size-pack: 3.20 MiB
+prune-packable: 55
+garbage: 0
+size-garbage: 0 bytes
 ```
+
+## TDS Highlights
+
+- Advantages of TailwindCSS
+
+  TailwindCSS offers flexibility and scalability with its utility-first approach.  
+  It allows for fast, customizable UI development without imposing design constraints.
+
+- Awesome DX (Developer Experience)
+
+  TailwindCSS improves developer experience by offering instant feedback, comprehensive documentation, and tools like `rsbuild` for optimized development workflows.
+
+- Atomic CSS
+
+  TailwindCSS automates the generation of atomic classes, where each class does one specific thing, ensuring small, reusable, and predictable CSS.
+
+- Design Tokens
+
+  Design tokens provide a system for values like colors, typography, and spacing.  
+  The example includes the golden ratio for generating dynamic spacing, font sizes, and more, ensuring design consistency across the app.
+
+- Lightweight
+
+  TailwindCSS is lightweight, especially with tools like patterns-vanjs, which offer a lean, production-ready solution for creating fast and optimized products.
+
+- Ready to go patterns
+
+  A folder (registry/patterns) with pre-built, customizable UI patterns, enabling quick prototyping and reusable components for rapid development.  
+Checkout [stable patterns](https://github.com/systemdesigndao/ton-design-system/tree/master/registry#stable-patterns).
+
+- CLI
+
+  You can copy projects and components from the `registry` with the CLI. See [README.md#use-cli](README.md#use-cli).
 
 ## Usage
 
@@ -57,11 +114,125 @@ export const Button = () => {
 
 ## Use CLI
 
-### Quick start
+Don't Trust, Verify
 
-1. Copy component from Github - `npx "@designervoid/ton-design-system"@"latest" cli -g`
-2. Init Tailwind `npx "@designervoid/ton-design-system"@"latest" cli -t`
-3. Init TDS `npx "@designervoid/ton-design-system"@"latest" cli -tds`
+## Quick start
+
+### Copy patterns
+
+1. Init cli
+
+```sh
+npx "@designervoid/ton-design-system"@"4.2.0" cli -g
+```
+
+```sh
+npx "@designervoid/ton-design-system"@"4.2.0" cli -g
+Repository cloned successfully.
+? What do you want to copy? › - Use arrow-keys. Return to submit.
+❯   Project
+    Component
+```
+
+2. Choose pattern
+
+```
+✔ What do you want to copy? › Project
+? Select the project to copy › - Use arrow-keys. Return to submit.
+    README.md
+    patterns-raw-library-rust-wasm
+    patterns-raw-library-wat
+    patterns-react
+❯   patterns-vanjs
+    raw-framework
+    raw-library
+```
+
+3. Enter new project name (instead of `patterns-vanjs`)
+
+```sh
+Repository cloned successfully.
+✔ What do you want to copy? › Project
+✔ Select the project to copy › patterns-vanjs
+? Enter your project name › copied-patterns-vanjs
+```
+
+4. Wait for install
+
+```sh
+Repository cloned successfully.
+✔ What do you want to copy? › Project
+✔ Select the project to copy › patterns-vanjs
+✔ Enter your project name … copied-patterns-vanjs
+Project copied successfully.
+Detected pnpm!
+Lockfile is up to date, resolution step is skipped
+Packages: +261
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 261, reused 261, downloaded 0, added 261, done
+
+dependencies:
++ vanjs-core 1.5.2
+
+devDependencies:
++ @biomejs/biome 1.9.4
++ @rsbuild/core 1.0.19
++ @types/jsdom 21.1.7
++ autoprefixer 10.4.20
++ cssnano 7.0.6
++ jsdom 25.0.1
++ postcss 8.4.47
++ tailwindcss 3.4.14
++ typescript 5.6.2
++ vitest 2.1.2
+
+Done in 5.3s
+Dependencies installed successfully.
+Cleaning up...
+Cleanup complete.
+```
+
+5. Enter `copied-patterns-vanjs`
+
+```sh
+cd copied-patterns-vanjs
+```
+
+6. Install `@designervoid/ton-design-system`
+
+```sh
+pnpm add "@designervoid/ton-design-system"@"4.2.0"   
+```
+
+7. Edit `tailwind.config.js`
+
+```js
+const { tdsTheme } = require("../../package/index");
+```
+
+Change to 
+
+```js
+const { tdsTheme } = require("@designervoid/ton-design-system");
+```
+
+#### Copy components
+
+```sh
+npx "@designervoid/ton-design-system"@"4.2.0" cli -g
+```
+
+### Init tailwind
+
+```sh
+npx "@designervoid/ton-design-system"@"4.2.0" cli -t
+```
+
+### Init TDS
+
+```sh
+npx "@designervoid/ton-design-system"@"4.2.0" cli -tds
+```
 
 ## License
 
