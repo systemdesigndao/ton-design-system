@@ -1,6 +1,9 @@
 clean:
 	rm -rf ./dist && npm run build
 
+prerelease:
+	npm version prerelease
+
 patch:
 	npm version patch
 
@@ -12,6 +15,11 @@ major:
 
 publish:
 	npm publish --access public
+
+publish-prerelease:
+	make clean
+	make prerelease
+	make publish
 
 publish-patch:
 	make clean
