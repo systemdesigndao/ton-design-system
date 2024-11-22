@@ -14,6 +14,7 @@ The syntax is based on `TypeScript`.
 - Joint state between components using `@tanstack/react-store` (`src/stores/theme`)
 - Benchmark overview of 1e4 components (`src/routes/benchmark/likes.lazy.tsx`)
 - Dev mode includes a convenient biome-js check and lint feature.
+- `dotlottie-rs` with lottie packs.
 
 ## Quick Start
 

@@ -11,6 +11,7 @@
 		"preview": "rsbuild preview"
 	},
 	"dependencies": {
+		"@lottiefiles/dotlottie-react": "^0.10.0",
 		"@tanstack/react-router": "^1.82.1",
 		"@tanstack/react-store": "^0.5.6",
 		"@twa-dev/sdk": "^7.10.1",

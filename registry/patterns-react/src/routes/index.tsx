@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
 function HomeComponent() {
 	const navigate = useNavigate();
 	return (
-		<div className="px-2 py-2 h-full flex flex-col space-y-2 justify-center w-full items-center tma:tg-theme-bg-color tma:h-screen">
+		<>
 			<Button
 				className="w-40"
 				onClick={() => {
@@ -26,7 +26,15 @@ function HomeComponent() {
 			>
 				To /theme
 			</Button>
-		</div>
+			<Button
+				className="w-40"
+				onClick={() => {
+					navigate({ to: "/lotties" });
+				}}
+			>
+				To /lotties
+			</Button>
+		</>
 	);
 }
 
