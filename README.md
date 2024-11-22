@@ -216,7 +216,7 @@ Change to
 const { tdsTheme } = require("@designervoid/ton-design-system");
 ```
 
-#### Copy components
+### Copy components
 
 ```sh
 npx "@designervoid/ton-design-system"@"4.2.0" cli -g
