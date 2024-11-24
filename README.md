@@ -7,6 +7,12 @@
 
 <https://ton.org/en/brand-assets>
 
+## TDS Wiki
+
+[Home](https://github.com/systemdesigndao/ton-design-system/wiki)  
+[Quick start](https://github.com/systemdesigndao/ton-design-system/wiki/Quick-start)  
+[dotlottie](https://github.com/systemdesigndao/ton-design-system/wiki/dotlottie)  
+
 ## Package size
 
 ```sh
@@ -111,128 +117,6 @@ export const Button = () => {
 - Example of usage with [`rn-typescript`](https://github.com/designervoid/ton-design-system-rn-typescript)
 
 ![Screenshot](./docs/images/App.jpeg)
-
-## Use CLI
-
-Don't Trust, Verify
-
-## Quick start
-
-### Copy patterns
-
-1. Init cli
-
-```sh
-npx "@designervoid/ton-design-system"@"4.2.0" cli -g
-```
-
-```sh
-npx "@designervoid/ton-design-system"@"4.2.0" cli -g
-Repository cloned successfully.
-? What do you want to copy? › - Use arrow-keys. Return to submit.
-❯   Project
-    Component
-```
-
-2. Choose pattern
-
-```
-✔ What do you want to copy? › Project
-? Select the project to copy › - Use arrow-keys. Return to submit.
-    README.md
-    patterns-raw-library-rust-wasm
-    patterns-raw-library-wat
-    patterns-react
-❯   patterns-vanjs
-    raw-framework
-    raw-library
-```
-
-3. Enter new project name (instead of `patterns-vanjs`)
-
-```sh
-Repository cloned successfully.
-✔ What do you want to copy? › Project
-✔ Select the project to copy › patterns-vanjs
-? Enter your project name › copied-patterns-vanjs
-```
-
-4. Wait for install
-
-```sh
-Repository cloned successfully.
-✔ What do you want to copy? › Project
-✔ Select the project to copy › patterns-vanjs
-✔ Enter your project name … copied-patterns-vanjs
-Project copied successfully.
-Detected pnpm!
-Lockfile is up to date, resolution step is skipped
-Packages: +261
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Progress: resolved 261, reused 261, downloaded 0, added 261, done
-
-dependencies:
-+ vanjs-core 1.5.2
-
-devDependencies:
-+ @biomejs/biome 1.9.4
-+ @rsbuild/core 1.0.19
-+ @types/jsdom 21.1.7
-+ autoprefixer 10.4.20
-+ cssnano 7.0.6
-+ jsdom 25.0.1
-+ postcss 8.4.47
-+ tailwindcss 3.4.14
-+ typescript 5.6.2
-+ vitest 2.1.2
-
-Done in 5.3s
-Dependencies installed successfully.
-Cleaning up...
-Cleanup complete.
-```
-
-5. Enter `copied-patterns-vanjs`
-
-```sh
-cd copied-patterns-vanjs
-```
-
-6. Install `@designervoid/ton-design-system`
-
-```sh
-pnpm add "@designervoid/ton-design-system"@"4.2.0"   
-```
-
-7. Edit `tailwind.config.js`
-
-```js
-const { tdsTheme } = require("../../package/index");
-```
-
-Change to 
-
-```js
-const { tdsTheme } = require("@designervoid/ton-design-system");
-```
-
-### Copy components
-
-```sh
-npx "@designervoid/ton-design-system"@"4.2.0" cli -g
-```
-
-### Init tailwind
-
-```sh
-npx "@designervoid/ton-design-system"@"4.2.0" cli -t
-```
-
-### Init TDS
-
-```sh
-npx "@designervoid/ton-design-system"@"4.2.0" cli -tds
-```
 
 ## License
 
