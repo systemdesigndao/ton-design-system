@@ -86,7 +86,7 @@ Checkout [stable patterns](https://github.com/systemdesigndao/ton-design-system/
 
 - CLI
 
-  You can copy projects and components from the `registry` with the CLI. See [README.md#use-cli](README.md#use-cli).
+  You can copy projects and components from the `registry` with the CLI. See [TDS Wiki Quick Start](https://github.com/systemdesigndao/ton-design-system/wiki/Quick-start).
 
 ## Usage
 
