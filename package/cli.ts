@@ -1,13 +1,9 @@
 #! /usr/bin/env node
 
-const path = require('path');
-const { Command } = require('commander');
-const prompts = require('prompts');
-const os = require('os');
-const simpleGit = require('simple-git');
-const git = simpleGit();
-const { spawn } = require('child_process');
-const fse = require('fs-extra');
+import path from 'path';
+import fs from 'fs/promises';
+import { spawn } from 'child_process';
+import readline from 'readline';
 
 interface Library {
   name: string;
@@ -21,14 +17,10 @@ interface Component {
 
 const rootPath = process.cwd();
 
-process.on("SIGINT", () => process.exit(0))
-process.on("SIGTERM", () => process.exit(0))
+process.on("SIGINT", () => process.exit(0));
+process.on("SIGTERM", () => process.exit(0));
 
 let packageManager: string | undefined;
-
-function removeMetaContent(content: string) {
-  return content.split('\n').slice(content.split('\n').findIndex(line => line.includes('// --'))).join('\n');
-}
 
 function runCommand(command: string, args: string[], options = {}) {
   return new Promise((resolve, reject) => {
@@ -46,63 +38,84 @@ function runCommand(command: string, args: string[], options = {}) {
 
 async function copyDirectory(source: string, destination: string) {
   try {
-    await fse.copy(source, destination);
+    await fs.cp(source, destination, { recursive: true });
     console.log('Project copied successfully.');
   } catch (error) {
     console.error('Error copying the project:', error);
   }
 }
 
+function runGitCommand(args: any, options = {}) {
+  return new Promise((resolve, reject) => {
+    const gitProcess = spawn('git', args, { stdio: 'inherit', ...options });
+
+    gitProcess.on('exit', (code: number) => {
+      if (code === 0) {
+        resolve(null);
+      } else {
+        reject(new Error(`git ${args.join(' ')} exited with code ${code}`));
+      }
+    });
+  });
+}
+
 async function cloneRepository(repoUrl: string, destDir: string) {
   try {
-    if (await fse.pathExists(destDir)) {
-      await fse.remove(destDir);
-    }
-    await git.clone(repoUrl, destDir);
+    try {
+      await fs.rm(destDir, { recursive: true, force: true });
+    } catch {}
+
+    await runGitCommand(['clone', repoUrl, destDir]);
     console.log('Repository cloned successfully.');
   } catch (error) {
     console.error('Failed to clone repository:', error);
   }
 }
 
-function determinePackageManager(projectDir: string): string | undefined {  
-  if (packageManager === undefined) {
-    const exists = (pckMngr: 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json') => {
-      return fse.existsSync(path.join(projectDir, pckMngr));
-    }
-  
-    if (exists('pnpm-lock.yaml')) {
+async function determinePackageManager(projectDir: string): Promise<string | undefined> {
+  if (!packageManager) {
+    const exists = async (pckMngr: 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json') => {
+      try {
+        await fs.access(path.join(projectDir, pckMngr));
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    if (await exists('pnpm-lock.yaml')) {
       packageManager = 'pnpm';
       console.log('Detected pnpm!');
       return 'pnpm';
-    } else if (exists('yarn.lock')) {
+    } else if (await exists('yarn.lock')) {
       packageManager = 'yarn';
       console.log('Detected yarn!');
       return 'yarn';
-    } else if (exists('package-lock.json')) {
+    } else if (await exists('package-lock.json')) {
       packageManager = 'npm';
       console.log('Detected npm!');
       return 'npm';
     }
-  } else {
-    return packageManager;
   }
+  return packageManager;
 }
 
 async function installDependencies(projectDir: string) {
-  const packageManager = determinePackageManager(projectDir);
+  const packageManager = await determinePackageManager(projectDir);
+  if (!packageManager) throw new Error('Package manager not detected.');
 
-  return new Promise((resolve, reject) => {
-    const install = spawn(packageManager, ['install'], { cwd: projectDir, stdio: 'inherit' });
+  await runCommand(packageManager, ['install'], { cwd: projectDir });
+}
 
-    install.on('close', (code: number) => {
-      if (code === 0) {
-        console.log('Dependencies installed successfully.');
-        resolve(null);
-      } else {
-        console.error(`Error installing dependencies. Exit code: ${code}`);
-        reject(new Error('Failed to install dependencies'));
-      }
+async function promptQuestion(query: string): Promise<string> {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+    rl.question(query, (answer) => {
+      rl.close();
+      resolve(answer);
     });
   });
 }
@@ -113,71 +126,51 @@ async function parseComponentsFromGitHub() {
 
   const registryDir = path.join(process.cwd(), destDir, 'registry');
 
-  const libraries: Library[] = fse.readdirSync(registryDir).map((name: string) => {
+  const libraries: Library[] = (await fs.readdir(registryDir)).map((name: string) => {
     return { name, path: path.join(registryDir, name) };
   });
 
-  const selectionResponse = await prompts({
-    type: 'select',
-    name: 'selection',
-    message: 'What do you want to copy?',
-    choices: [
-      { title: 'Project', value: 'project' },
-      { title: 'Component', value: 'component' }
-    ]
-  });
+  const selectionResponse = await promptWithArrowKeys('What do you want to copy?', ['project', 'component']);
 
-  if (selectionResponse.selection === 'project') {
-    const projectResponse = await prompts({
-      type: 'select',
-      name: 'project',
-      message: 'Select the project to copy',
-      choices: libraries.map((lib) => ({ title: lib.name, value: lib.name }))
-    });
+  if (selectionResponse === 'project') {
+    const projectResponse = await promptWithArrowKeys(
+      'Select the project to copy:',
+      libraries.map((lib) => lib.name)
+    );
+    const projectNameResponse = await promptQuestion('Enter your project name: ');
 
-    const projectNameResponse = await prompts({
-      type: 'text',
-      name: 'projectName',
-      message: 'Enter your project name'
-    });
-
-    const sourcePath = path.join(registryDir, projectResponse.project);
-    const destinationPath = path.join(rootPath, projectNameResponse.projectName);
+    const sourcePath = path.join(registryDir, projectResponse);
+    const destinationPath = path.join(rootPath, projectNameResponse);
 
     await copyDirectory(sourcePath, destinationPath);
     await installDependencies(destinationPath);
-  } else if (selectionResponse.selection === 'component') {
-    const selectedLibraryResponse = await prompts({
-      type: 'select',
-      name: 'library',
-      message: 'Select library/framework',
-      choices: libraries.map((lib) => ({ title: lib.name, value: lib.name }))
-    });
-
-    const componentsDir = path.join(registryDir, selectedLibraryResponse.library, 'src/components');
-    const components: Component[] = fse.readdirSync(componentsDir).map((name: string) => {
+  } else if (selectionResponse === 'component') {
+    const selectedLibraryResponse = await promptWithArrowKeys(
+      'Select library/framework:',
+      libraries.map((lib) => lib.name)
+    );
+    const componentsDir = path.join(registryDir, selectedLibraryResponse, 'src/components');
+    const components: Component[] = (await fs.readdir(componentsDir)).map((name: string) => {
       return { name, path: path.join(componentsDir, name) };
     });
 
-    const selectedComponentResponse = await prompts({
-      type: 'select',
-      name: 'component',
-      message: 'Select component',
-      choices: components.map((comp) => ({ title: comp.name, value: comp.name }))
-    });
+    const selectedComponentResponse = await promptWithArrowKeys(
+      'Select component:',
+      components.map((comp) => comp.name)
+    );
 
-    const selectedComponentPath = path.join(componentsDir, selectedComponentResponse.component);
-    const destinationPath = path.join(rootPath, 'src', 'components', selectedComponentResponse.component);
+    const selectedComponentPath = path.join(componentsDir, selectedComponentResponse);
+    const destinationPath = path.join(rootPath, 'src', 'components', selectedComponentResponse);
 
-    const componentContent = fse.readFileSync(selectedComponentPath, 'utf-8');
-    await fse.promises.mkdir(path.dirname(destinationPath), { recursive: true });
-    fse.writeFileSync(destinationPath, componentContent);
-    console.log(`Component ${selectedComponentResponse.component} has been copied to ${destinationPath}`);
+    const componentContent = await fs.readFile(selectedComponentPath, 'utf-8');
+    await fs.mkdir(path.dirname(destinationPath), { recursive: true });
+    await fs.writeFile(destinationPath, componentContent);
+    console.log(`Component ${selectedComponentResponse} has been copied to ${destinationPath}`);
   }
 
   try {
     console.log('Cleaning up...');
-    fse.rmSync(path.join(rootPath, destDir), { recursive: true, force: true });
+    await fs.rm(path.join(rootPath, destDir), { recursive: true, force: true });
     console.log('Cleanup complete.');
   } catch (error) {
     console.error('Error during the cleanup process:', error);
@@ -188,10 +181,8 @@ async function initTDS(projectDir: string) {
   console.log('Initializing TON Design System...');
 
   try {
-    const packageManager = determinePackageManager(projectDir);
-    if (!packageManager) {
-      throw new Error('Could not determine package manager');
-    }
+    const packageManager = await determinePackageManager(projectDir);
+    if (!packageManager) throw new Error('Package manager could not be determined.');
 
     await runCommand(packageManager, ['add', '@designervoid/ton-design-system'], { cwd: projectDir });
 
@@ -209,7 +200,7 @@ module.exports = {
   plugins: [],
 };
     `.trim();
-    fse.writeFileSync(tailwindConfigPath, tailwindConfigContent);
+    await fs.writeFile(tailwindConfigPath, tailwindConfigContent);
 
     const indexPath = path.join(projectDir, 'src', 'index.css');
     const indexContent = `
@@ -224,7 +215,7 @@ module.exports = {
   }
 }
     `.trim();
-    fse.writeFileSync(indexPath, indexContent);
+    await fs.writeFile(indexPath, indexContent);
 
     console.log('TON Design System initialized successfully.');
   } catch (error) {
@@ -236,13 +227,13 @@ async function initTailwind(projectDir: string) {
   console.log('Initializing Tailwind CSS...');
 
   try {
-    const packageManager = determinePackageManager(projectDir);
+    const packageManager = await determinePackageManager(projectDir);
     if (!packageManager) throw new Error('Package manager could not be determined.');
 
-    await runCommand(packageManager, ['add', 'tailwindcss', 'postcss', 'autoprefixer', '-D'], { cwd: projectDir, stdio: 'inherit' });
+    await runCommand(packageManager, ['add', 'tailwindcss', 'postcss', 'autoprefixer', '-D'], { cwd: projectDir });
     console.log('Dependencies installed successfully.');
 
-    await runCommand('npx', ['tailwindcss', 'init', '-p'], { cwd: projectDir, stdio: 'inherit' });
+    await runCommand('npx', ['tailwindcss', 'init', '-p'], { cwd: projectDir });
     console.log('Tailwind CSS initialized successfully.');
   } catch (error) {
     console.error('Error initializing Tailwind CSS:', error);
@@ -250,28 +241,69 @@ async function initTailwind(projectDir: string) {
   }
 }
 
-async function main() {
-  const program = new Command()
-    .name("tds/cli")
-    .description("Add components and dependencies to your project")
-    .version("0.0.0", "-v, --version", "Display the version number")
-    .option('-g, --github', 'Load from GitHub')
-    .option('-t, --tailwind', 'Initialize Tailwind CSS in your project')
-    .option('-tds, --tondesignsystem', 'Initialize TON Design System in your project');
+async function promptWithArrowKeys(question: string, choices: string[]): Promise<string> {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
 
-  program.parse();
-  const options = program.opts();
+    let selectedIndex = 0;
+
+    function renderMenu() {
+      console.clear();
+      console.log(question);
+      choices.forEach((choice, index) => {
+        if (index === selectedIndex) {
+          console.log(`> ${choice}`);
+        } else {
+          console.log(`  ${choice}`);
+        }
+      });
+    }
+
+    function onKeyPress(str: string, key: any) {
+      if (key.name === 'up') {
+        selectedIndex = (selectedIndex - 1 + choices.length) % choices.length;
+        renderMenu();
+      } else if (key.name === 'down') {
+        selectedIndex = (selectedIndex + 1) % choices.length;
+        renderMenu();
+      } else if (key.name === 'return') {
+        rl.removeAllListeners('keypress');
+        rl.close();
+        resolve(choices[selectedIndex]);
+      } else if (key.name === 'escape' || key.name === 'q') {
+        rl.removeAllListeners('keypress');
+        rl.close();
+        resolve('');
+      }
+    }
+
+    readline.emitKeypressEvents(process.stdin);
+    if (process.stdin.isTTY) {
+      process.stdin.setRawMode(true);
+    }
+
+    process.stdin.on('keypress', onKeyPress);
+
+    renderMenu();
+  });
+}
+
+async function main() {
+  const args = process.argv.slice(2);
   const userCwd = process.cwd();
 
-  if (options.github) {
+  if (args.includes('--github')) {
     await parseComponentsFromGitHub();
-  } else if (options.tailwind) {
+  } else if (args.includes('--tailwind')) {
     await initTailwind(userCwd);
-  } else if (options.tondesignsystem) {
+  } else if (args.includes('--tondesignsystem')) {
     await initTDS(userCwd);
   } else {
-    console.log('Please specify a source: --github, --tailwindCustom or --help');
+    console.log('Please specify a source: --github, --tailwind, --tondesignsystem or --help');
   }
 }
 
-main()
+main();
