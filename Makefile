@@ -48,4 +48,4 @@ publish-major:
 	make publish
 
 update-registry-packages:
-	(cd registry && (cd ./raw && pnpm up --latest) && (cd ./raw-framework && pnpm up --latest) && (cd ./raw-rust-wasm && pnpm up --latest) && (cd ./raw-wat && pnpm up --latest) && (cd ./react && pnpm up --latest))
+	find registry -maxdepth 1 -mindepth 1 -type d -exec sh -c 'cd "{}" && pnpm up --latest' \;
