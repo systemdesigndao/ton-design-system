@@ -11,8 +11,8 @@
 		"preview": "rsbuild preview"
 	},
 	"dependencies": {
-		"@lottiefiles/dotlottie-react": "^0.12.3",
-		"@tanstack/react-router": "^1.99.6",
+		"@lottiefiles/dotlottie-react": "^0.13.0",
+		"@tanstack/react-router": "^1.104.1",
 		"@tanstack/react-store": "^0.7.0",
 		"@twa-dev/sdk": "^8.0.2",
 		"class-variance-authority": "^0.7.1",
@@ -23,14 +23,14 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@rsbuild/core": "^1.2.4",
+		"@rsbuild/core": "^1.2.8",
 		"@rsbuild/plugin-react": "^1.1.0",
-		"@tanstack/router-plugin": "^1.99.6",
+		"@tanstack/router-plugin": "^1.104.1",
 		"@types/react": "^19.0.8",
 		"@types/react-dom": "^19.0.3",
 		"autoprefixer": "^10.4.20",
-		"postcss": "^8.5.1",
-		"tailwindcss": "^4.0.3",
+		"postcss": "^8.5.2",
+		"tailwindcss": "^4.0.6",
 		"typescript": "^5.7.3"
 	}
 }
