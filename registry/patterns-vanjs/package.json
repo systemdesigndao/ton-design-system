@@ -7,8 +7,7 @@
 		"build": "rsbuild build",
 		"check": "biome check --write",
 		"format": "biome format --write",
-		"preview": "rsbuild preview",
-		"test": "vitest"
+		"preview": "rsbuild preview"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
@@ -21,11 +20,6 @@
 		"postcss": "^8.5.2",
 		"tailwindcss": "^4.0.6",
 		"typescript": "^5.7.3"
-	},
-	"vitest": {
-		"test": {
-			"environment": "jsdom"
-		}
 	},
 	"dependencies": {
 		"vanjs-core": "^1.5.3"
