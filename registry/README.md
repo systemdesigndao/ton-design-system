@@ -2,7 +2,7 @@
 
 ## Contain 
 
-This registry includes a lightweight library, framework, and a collection of useful patterns.
+This registry includes a collection of useful patterns.
 
 ## Patterns
 
