@@ -5,24 +5,8 @@ const tailwindcss = require('@tailwindcss/postcss');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-async function buildAll() {
-  try {
-    await esbuild.build({
-      entryPoints: ['./src/main.ts'],
-      outfile: './dist/bundle.js',
-      bundle: true,
-      platform: 'browser',
-      target: 'esnext',
-      sourcemap: isDev,
-      minify: !isDev,
-      plugins: [
-        postCssPlugin({
-          plugins: [tailwindcss()]
-        })
-      ],
-    });
-
-    const htmlContent = `<!doctype html>
+function generateHTML() {
+  const htmlContent = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,24 +21,18 @@ async function buildAll() {
   </body>
 </html>`;
 
-    fs.writeFileSync('./dist/index.html', htmlContent, 'utf8');
-
-    console.log('Build completed successfully!');
-  } catch (error) {
-    console.error('Build failed:', error);
-    process.exit(1);
-  }
+  fs.writeFileSync('./dist/index.html', htmlContent, 'utf8');
 }
 
-buildAll();
-
-async function watch() {
+async function startEsbuild() {
   const ctx = await esbuild.context({
-    entryPoints: ["./src/main.ts"],
-    minify: false,
-    outdir: "./dist",
+    entryPoints: ['./src/main.ts'],
+    outfile: './dist/bundle.js',
     bundle: true,
-    loader: { ".ts": "ts", ".css": "css" },
+    platform: 'browser',
+    target: 'esnext',
+    sourcemap: isDev,
+    minify: !isDev,
     plugins: [
       postCssPlugin({
         plugins: [tailwindcss()]
@@ -62,11 +40,11 @@ async function watch() {
     ],
   });
 
-  const server = await ctx.serve({
-    servedir: 'dist',
-  });
+  await ctx.watch();
+  const server = await ctx.serve({ servedir: 'dist', port: 8000 });
 
-  console.log('Served...', `http://localhost:${server.port}`);
+  console.log(`Server running on http://localhost:${server.port}`);
 }
 
-watch();
+generateHTML();
+startEsbuild();
