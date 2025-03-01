@@ -1,1 +1,0 @@
-export type JSXChild = JSX.Element | (() => JSX.Element);

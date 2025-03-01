@@ -1,1 +1,0 @@
-export type JSXChild = string | HTMLElement | (() => string);
