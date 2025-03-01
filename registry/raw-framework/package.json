@@ -1,27 +1,21 @@
 {
   "name": "raw-framework",
-  "version": "0.0.6",
-  "type": "module",
+  "version": "0.0.7",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "test": "vitest"
+    "dev": "node esbuild.config.js"
   },
   "devDependencies": {
-    "@types/jsdom": "^21.1.7",
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
-    "jsdom": "^26.0.0",
-    "postcss": "^8.5.2",
+    "@deanc/esbuild-plugin-postcss": "^1.0.2",
+    "esbuild": "^0.25.0",
     "tailwindcss": "^4.0.6",
-    "typescript": "^5.7.3",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5"
+    "typescript": "^5.7.3"
   },
   "vitest": {
     "test": {
       "environment": "jsdom"
     }
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.9"
   }
 }

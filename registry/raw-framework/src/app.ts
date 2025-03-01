@@ -14,7 +14,7 @@ function Counter() {
 }
 
 export function App() {
-    let content = div({ class: 'p-sm h-dvh flex flex-col relative dark:bg-black-5 bg-gradient-to-r from-orange-2 to-orange-3 overflow-auto' });
+    let content = div({ class: 'p-2 h-dvh flex flex-col relative dark:bg-black-5 bg-gradient-to-r from-orange-2 to-orange-3 overflow-auto' });
     let i = 0;
     let lessThan = (x: number) =>  i < x;
     while (lessThan(1e4)) {
