@@ -48,14 +48,6 @@ This framework should follow that way too, create bridges with popular framework
 
   Can handle more components than react on one page, on i5 React can handle near 10k with not so poor performance, this thing allow's to use applications with 100k nodes per page.
 
-- **Easy Testing**
-
-  Testing components and functions is straightforward with Vitest and JSDOM. 
-  
-  This setup allows you to write and run tests for your TypeScript code easily, without complex configurations. 
-  
-  Vitest provides a simple syntax, while JSDOM simulates a browser environment for validating UI interactions and DOM manipulations.
-
 ## Quick Start
 
 ```bash
