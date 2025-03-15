@@ -5,13 +5,11 @@ export const matchMediaCasted = (query: MediaQuery) => {
 	return window.matchMedia(query);
 };
 
-const themes = ["light", "dark"] as const;
+const themes = ["light", "dark", "tma"] as const;
 
-export const [light, dark] = themes;
+export const [light, dark, tma] = themes;
 
 export const themeBaseKey: BaseKey = "theme";
-
-console.log(matchMediaCasted("(prefers-color-scheme: dark)").matches);
 
 document.documentElement.classList.toggle(
 	dark,

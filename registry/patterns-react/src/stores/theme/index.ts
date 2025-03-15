@@ -1,10 +1,10 @@
-import { dark, light, matchMediaCasted, themeBaseKey } from "@/theme";
+import { dark, light, matchMediaCasted, themeBaseKey, tma } from "@/theme";
 import { Store, useStore } from "@tanstack/react-store";
 import { ThemeState } from "./types";
 
 const storedTheme = localStorage.getItem(themeBaseKey) as
 	| typeof dark
-	| typeof light;
+	| typeof light | typeof tma;
 const prefersDark = matchMediaCasted("(prefers-color-scheme: dark)").matches;
 
 export const themeStore = new Store<ThemeState>({
