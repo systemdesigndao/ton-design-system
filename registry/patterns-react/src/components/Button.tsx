@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium",
+	"inline-flex items-center justify-center whitespace-nowrap rounded-md text-title1 font-medium",
 	{
 		variants: {
 			variant: {

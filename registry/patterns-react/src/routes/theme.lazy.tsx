@@ -34,11 +34,11 @@ function ThemeComponent() {
 	}, [theme]);
 
 	return (
-		<div className="px-2 py-2 flex flex-col bg-orange-2 dark:bg-gray-900 h-screen">
-			<p className="text-white-5 dark:text-white-1">Legend:</p>
-			<p className="text-white-5 dark:text-white-1">🖥 - system theme</p>
-			<p className="text-white-5 dark:text-white-1">🌚 - dark theme</p>
-			<p className="text-white-5 dark:text-white-1">🌝 - light theme</p>
+		<div className="flex flex-col h-dvh w-full">
+			<p className="text-white-5 dark:text-white-1 tma:text-white-1">Legend:</p>
+			<p className="text-white-5 dark:text-white-1 tma:text-white-1">🖥 - system theme</p>
+			<p className="text-white-5 dark:text-white-1 tma:text-white-1">🌚 - dark theme</p>
+			<p className="text-white-5 dark:text-white-1 tma:text-white-1">🌝 - light theme</p>
 			<Button
 				onClick={() => {
 					localStorage.removeItem(themeBaseKey);

@@ -8,5 +8,5 @@ export const Route = createRootRoute({
 function RootComponent() {
 	useCore();
 
-	return <div className="px-2 py-2 h-full flex flex-col space-y-2 justify-center w-full items-center tma:tg-theme-bg-color tma:h-screen"><Outlet /></div>;
+	return <div className="min-h-screen flex flex-col space-y-2 justify-center w-full items-center tma:h-full bg-orange-2 dark:bg-gray-900 px-2 py-2"><Outlet /></div>;
 }

@@ -11,6 +11,8 @@ export const [light, dark] = themes;
 
 export const themeBaseKey: BaseKey = "theme";
 
+console.log(matchMediaCasted("(prefers-color-scheme: dark)").matches);
+
 document.documentElement.classList.toggle(
 	dark,
 	localStorage.theme === dark ||

@@ -6,7 +6,7 @@ export const Route = createLazyFileRoute('/lotties_tonpack')({
 })
 
 function RouteComponent() {
-  return <LottiesTonPackComponent />
+  return <div className="h-full"><LottiesTonPackComponent /></div>;
 }
 
 function LottiesTonPackComponent() {

@@ -1,11 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-	html {
-		font-size: 16px;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-			Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	}
+/* version here without dark-theme and tma support */
+/* react-pattern has dark-theme and tma support */
+/* raw-framework currently without tds-theme */
+
+@theme {
+  /* Font Sizes (Golden Ratio-based) */
+  --font-title1: 1.4981rem;
+  --font-title2: 1.4415rem;
+  --font-title3: 1.3871rem;
+  --font-headline1: 1.3347rem;
+  --font-headline2: 1.303rem;
+  --font-headline3: 1rem;
+  --font-regular1: 1rem;
+  --font-regular2: 1rem;
+  --font-regular3: 0.6675rem;
+  --font-subtitle1: 0.6408rem;
+  --font-subtitle2: 0.6151rem;
+  --font-subtitle3: 0.5919rem;
+  --font-caption1: 0.5681rem;
+  --font-caption2: 0.5454rem;
+  --font-caption3: 0.5248rem;
+  --font-caption4: 0.5037rem;
+
+  /* Colors */
+  --color-blue-1: #1ac9ff;
+  --color-blue-2: #2d83ec;
+  --color-orange-1: #cc9900;
+  --color-orange-2: #ffbe1e19;
+  --color-orange-3: #ff900019;
+  --color-white-1: #ffffff;
+  --color-white-2: #cccccc;
+  --color-white-3: #999999;
+  --color-white-4: #666666;
+  --color-white-5: #333333;
+  --color-black-1: #cccccc;
+  --color-black-2: #999999;
+  --color-black-3: #666666;
+  --color-black-4: #333333;
+  --color-black-5: #000000;
+
+  /* Spacing */
+  --space-none: 0;
+  --space-xs: 0.486rem;
+  --space-sm: 0.618rem;
+  --space-md: 0.786rem;
+  --space-lg: 1rem;
+  --space-xl: 1.272rem;
+  --space-2xl: 1.618rem;
+  --space-3xl: 2.058rem;
+
+  /* Font Weight */
+  --weight-light: 138.715;
+  --weight-normal: 224.446;
+  --weight-medium: 461.947;
+  --weight-bold: 587.606;
+  --weight-bolder: 950.767;
+
+  /* Line Height */
+  --line-short: 1.272rem;
+  --line-normal: 1.618rem;
+  --line-tall: 2.058rem;
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.786rem;
+  --radius-md: 1.272rem;
+  --radius-lg: 2.058rem;
+  --radius-xl: 3.330rem;
+
+  /* Border Width */
+  --border-thin: 0.618px;
+  --border-medium: 1px;
+  --border-thick: 1.618px;
+
+  /* Viewport Heights */
+  --height-dvh: 100dvh;
+  --height-lvh: 100lvh;
+  --height-svh: 100svh;
 }

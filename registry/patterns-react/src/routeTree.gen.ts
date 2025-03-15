@@ -20,7 +20,6 @@ import { Route as IndexImport } from './routes/index'
 const ThemeLazyImport = createFileRoute('/theme')()
 const LottiestonpackLazyImport = createFileRoute('/lotties_tonpack')()
 const LottiesLazyImport = createFileRoute('/lotties')()
-const BenchmarkLikesLazyImport = createFileRoute('/benchmark/likes')()
 
 // Create/Update Routes
 
@@ -49,14 +48,6 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
-
-const BenchmarkLikesLazyRoute = BenchmarkLikesLazyImport.update({
-  id: '/benchmark/likes',
-  path: '/benchmark/likes',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/benchmark/likes.lazy').then((d) => d.Route),
-)
 
 // Populate the FileRoutesByPath interface
 
@@ -90,13 +81,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThemeLazyImport
       parentRoute: typeof rootRoute
     }
-    '/benchmark/likes': {
-      id: '/benchmark/likes'
-      path: '/benchmark/likes'
-      fullPath: '/benchmark/likes'
-      preLoaderRoute: typeof BenchmarkLikesLazyImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -107,7 +91,6 @@ export interface FileRoutesByFullPath {
   '/lotties': typeof LottiesLazyRoute
   '/lotties_tonpack': typeof LottiestonpackLazyRoute
   '/theme': typeof ThemeLazyRoute
-  '/benchmark/likes': typeof BenchmarkLikesLazyRoute
 }
 
 export interface FileRoutesByTo {
@@ -115,7 +98,6 @@ export interface FileRoutesByTo {
   '/lotties': typeof LottiesLazyRoute
   '/lotties_tonpack': typeof LottiestonpackLazyRoute
   '/theme': typeof ThemeLazyRoute
-  '/benchmark/likes': typeof BenchmarkLikesLazyRoute
 }
 
 export interface FileRoutesById {
@@ -124,26 +106,14 @@ export interface FileRoutesById {
   '/lotties': typeof LottiesLazyRoute
   '/lotties_tonpack': typeof LottiestonpackLazyRoute
   '/theme': typeof ThemeLazyRoute
-  '/benchmark/likes': typeof BenchmarkLikesLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/lotties'
-    | '/lotties_tonpack'
-    | '/theme'
-    | '/benchmark/likes'
+  fullPaths: '/' | '/lotties' | '/lotties_tonpack' | '/theme'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lotties' | '/lotties_tonpack' | '/theme' | '/benchmark/likes'
-  id:
-    | '__root__'
-    | '/'
-    | '/lotties'
-    | '/lotties_tonpack'
-    | '/theme'
-    | '/benchmark/likes'
+  to: '/' | '/lotties' | '/lotties_tonpack' | '/theme'
+  id: '__root__' | '/' | '/lotties' | '/lotties_tonpack' | '/theme'
   fileRoutesById: FileRoutesById
 }
 
@@ -152,7 +122,6 @@ export interface RootRouteChildren {
   LottiesLazyRoute: typeof LottiesLazyRoute
   LottiestonpackLazyRoute: typeof LottiestonpackLazyRoute
   ThemeLazyRoute: typeof ThemeLazyRoute
-  BenchmarkLikesLazyRoute: typeof BenchmarkLikesLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -160,7 +129,6 @@ const rootRouteChildren: RootRouteChildren = {
   LottiesLazyRoute: LottiesLazyRoute,
   LottiestonpackLazyRoute: LottiestonpackLazyRoute,
   ThemeLazyRoute: ThemeLazyRoute,
-  BenchmarkLikesLazyRoute: BenchmarkLikesLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -176,8 +144,7 @@ export const routeTree = rootRoute
         "/",
         "/lotties",
         "/lotties_tonpack",
-        "/theme",
-        "/benchmark/likes"
+        "/theme"
       ]
     },
     "/": {
@@ -191,9 +158,6 @@ export const routeTree = rootRoute
     },
     "/theme": {
       "filePath": "theme.lazy.tsx"
-    },
-    "/benchmark/likes": {
-      "filePath": "benchmark/likes.lazy.tsx"
     }
   }
 }

@@ -13,14 +13,6 @@ function HomeComponent() {
 			<Button
 				className="w-40"
 				onClick={() => {
-					navigate({ to: "/benchmark/likes" });
-				}}
-			>
-				To /benchmark/likes
-			</Button>
-			<Button
-				className="w-40"
-				onClick={() => {
 					navigate({ to: "/theme" });
 				}}
 			>

@@ -1,7 +1,7 @@
 {
 	"name": "patterns-react",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "rsbuild dev",
@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@lottiefiles/dotlottie-react": "^0.13.0",
+		"@tailwindcss/postcss": "^4.0.14",
 		"@tanstack/react-router": "^1.104.1",
 		"@tanstack/react-store": "^0.7.0",
 		"@twa-dev/sdk": "^8.0.2",
