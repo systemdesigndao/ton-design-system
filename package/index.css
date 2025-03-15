@@ -1,5 +1,22 @@
+/* 
+
+By default this is supported in rsbuild + react, but not working in rsbuild + van.js:
+```css
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant tma (&:where(.tma, .tma *)); 
+```
+
+So it requires currently to manually add this into index.css 
+
+```css
+@import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant tma (&:where(.tma, .tma *));
+
+@import "@designervoid/ton-design-system/lib/tw_v4.css"
+```
+*/
 
 @theme {
   /* Font Sizes (Golden Ratio-based) */

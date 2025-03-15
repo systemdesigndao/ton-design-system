@@ -1,7 +1,9 @@
+[![NPM Version](https://img.shields.io/npm/v/@designervoid/ton-design-system.svg?style=flat&color=blue)](https://www.npmjs.com/package/@designervoid/ton-design-system)  
 [![Telegram System Design DAO Forum][telegram-system-design-dao-badge]][telegram-system-design-dao-url]
 
-[telegram-system-design-dao-badge]: https://img.shields.io/badge/-System%20Design%20DAO%20Forum-2CA5E0?style=flat&logo=telegram&logoColor=white
+[telegram-system-design-dao-badge]: https://img.shields.io/badge/-System%20Design%20DAO%20Forum-2CA5E0?style=flat&logo=telegram&logoColor=white  
 [telegram-system-design-dao-url]: https://t.me/systemdesigndao_forum
+
 
 # TON Design System
 
@@ -16,44 +18,30 @@
 ## Package size
 
 ```sh
+/@designervoid/ton-design-system/
 /
 @designervoid/ton-design-system
 /
 lib/
 folder
-20.8 kB
+22.7 kB
 package/
 folder
-13.3 kB
+16.3 kB
 public/
 folder
-28.3 kB
+27.4 kB
 LICENSE.md
 text/markdown
 1.09 kB
 README.md
 text/markdown
-2.03 kB
-package.json
-application/json
-516 B
+3.56 kB
+package.json application/json
+608 B
 ```
 
 [verify on the npm code tab](https://www.npmjs.com/package/@designervoid/ton-design-system?activeTab=code)
-
-## Repository size
-
-```sh
-git count-objects -vH
-count: 733
-size: 3.45 MiB
-in-pack: 1666
-packs: 2
-size-pack: 3.20 MiB
-prune-packable: 55
-garbage: 0
-size-garbage: 0 bytes
-```
 
 ## TDS Highlights
 

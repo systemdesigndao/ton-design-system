@@ -195,6 +195,10 @@ async function initTDS(projectDir: string) {
     const indexPath = path.join(projectDir, 'src', 'index.css');
     const indexContent = `
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant tma (&:where(.tma, .tma *));
+
 @import "@designervoid/ton-design-system/lib/tw_v4.css"
 
 @layer base {
