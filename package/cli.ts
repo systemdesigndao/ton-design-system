@@ -177,6 +177,12 @@ async function parseComponentsFromGitHub() {
   }
 }
 
+// To install tailwind css please go to last docs
+// Previously here was command to install Tailwind V3 until V4 breaking changes
+// https://tailwindcss.com/docs/installation/using-postcss
+
+// In react and vanjs patterns I had used this way
+// https://tailwindcss.com/docs/installation/using-postcss
 async function initTDS(projectDir: string) {
   console.log('Initializing TON Design System...');
 
@@ -186,27 +192,10 @@ async function initTDS(projectDir: string) {
 
     await runCommand(packageManager, ['add', '@designervoid/ton-design-system'], { cwd: projectDir });
 
-    const tailwindConfigPath = path.join(projectDir, 'tailwind.config.js');
-    const tailwindConfigContent = `
-const { tdsTheme } = require('@designervoid/ton-design-system');
-
-module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      ...tdsTheme,
-    },
-  },
-  plugins: [],
-};
-    `.trim();
-    await fs.writeFile(tailwindConfigPath, tailwindConfigContent);
-
     const indexPath = path.join(projectDir, 'src', 'index.css');
     const indexContent = `
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@designervoid/ton-design-system/lib/tw_v4.css"
 
 @layer base {
   html {

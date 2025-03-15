@@ -11,6 +11,7 @@
 		"preview": "rsbuild preview"
 	},
 	"dependencies": {
+		"@designervoid/ton-design-system": "^5.0.3",
 		"@lottiefiles/dotlottie-react": "^0.13.0",
 		"@tailwindcss/postcss": "^4.0.14",
 		"@tanstack/react-router": "^1.104.1",

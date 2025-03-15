@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@designervoid/ton-design-system':
+        specifier: ^5.0.3
+        version: 5.0.3
       '@lottiefiles/dotlottie-react':
         specifier: ^0.13.0
         version: 0.13.0(react@19.0.0)
@@ -211,6 +214,10 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@designervoid/ton-design-system@5.0.3':
+    resolution: {integrity: sha512-kaGUOkNIE4NcxKz5yhgehTe7HYTPRbx5MWJuVKNq8hxv67DQEUfbexekIxi2LQgfb5KwcFTtvVbbzPzqCyGbVw==}
+    hasBin: true
 
   '@esbuild/aix-ppc64@0.23.1':
     resolution: {integrity: sha512-6VhYk1diRqrhBAqpJEdjASR/+WVRtfjpqKuNw11cLiaWpAT/Uu+nokB+UJnevzy/P9C/ty6AOe0dwueMrGh/iQ==}
@@ -1166,6 +1173,8 @@ snapshots:
 
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
+
+  '@designervoid/ton-design-system@5.0.3': {}
 
   '@esbuild/aix-ppc64@0.23.1':
     optional: true
