@@ -1,6 +1,6 @@
 # Raw Pattern React
 
-This registry contains example of using `VanJS` + `Rsbuild` + `TailwindCSS`.
+This registry contains example of using `VanJS` + `Rsbuild` + `Tailwind V4`.
 
 The syntax is based on `TypeScript`.
 
@@ -8,13 +8,13 @@ The syntax is based on `TypeScript`.
 
 - System Fonts CSS
 - Rsbuild
-- TailwindCSS & TDS (phi based design system font sizes, spacings) & Custom TMA TailwindCSS Plugins
+- TailwindV4 & TDS (phi based design system font sizes, spacings) & Custom TMA TailwindCSS Plugins
 - System & Force Theme
 - Router (`TanStackRouterRspack`) & Lazy routes (`src/theme.lazy.tsx`)
 - Joint state between components using `@tanstack/react-store` (`src/stores/theme`)
-- Benchmark overview of 1e4 components (`src/routes/benchmark/likes.lazy.tsx`)
-- Dev mode includes a convenient biome-js check and lint feature.
+- Dev mode includes a convenient `biome-js` check and lint feature.
 - `dotlottie-rs` with lottie packs.
+- `tma:` tw plugin (activate classes in TMA applications), [TMA Theme](https://core.telegram.org/bots/webapps#themeparams) Params in Tailwind 
 
 ## Quick Start
 
