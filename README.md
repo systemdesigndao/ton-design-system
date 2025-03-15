@@ -44,7 +44,7 @@
 - Ready to go patterns
 
   A folder (registry/patterns) with pre-built, customizable UI patterns, enabling quick prototyping and reusable components for rapid development.  
-Checkout [stable patterns](https://github.com/systemdesigndao/ton-design-system/tree/master/registry#stable-patterns).
+Checkout [patterns](https://github.com/systemdesigndao/ton-design-system/tree/master/registry#patterns).
 
 - CLI
 
