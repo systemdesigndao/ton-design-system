@@ -6,13 +6,18 @@
   "types": "lib/index.d.ts",
   "version": "5.0.2",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && npm run build-tw-v4",
+    "build-tw-v4": "(cd package && node build_tw_v4.mjs)"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
+    "esbuild": "^0.25.1",
+    "esbuild-css-modules-plugin": "^3.1.4",
     "typescript": "^5.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@designervoid/ton-design-system": "^5.0.2"
+  },
   "bin": {
     "cli": "./lib/cli.js"
   }

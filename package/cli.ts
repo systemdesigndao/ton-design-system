@@ -223,24 +223,6 @@ module.exports = {
   }
 }
 
-async function initTailwind(projectDir: string) {
-  console.log('Initializing Tailwind CSS...');
-
-  try {
-    const packageManager = await determinePackageManager(projectDir);
-    if (!packageManager) throw new Error('Package manager could not be determined.');
-
-    await runCommand(packageManager, ['add', 'tailwindcss', 'postcss', 'autoprefixer', '-D'], { cwd: projectDir });
-    console.log('Dependencies installed successfully.');
-
-    await runCommand('npx', ['tailwindcss', 'init', '-p'], { cwd: projectDir });
-    console.log('Tailwind CSS initialized successfully.');
-  } catch (error) {
-    console.error('Error initializing Tailwind CSS:', error);
-    throw error;
-  }
-}
-
 async function promptWithArrowKeys(question: string, choices: string[]): Promise<string> {
   return new Promise((resolve) => {
     const rl = readline.createInterface({
@@ -297,8 +279,6 @@ async function main() {
 
   if (args.includes('--github')) {
     await parseComponentsFromGitHub();
-  } else if (args.includes('--tailwind')) {
-    await initTailwind(userCwd);
   } else if (args.includes('--tondesignsystem')) {
     await initTDS(userCwd);
   } else {
