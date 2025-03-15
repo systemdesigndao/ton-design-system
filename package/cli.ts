@@ -199,7 +199,7 @@ async function initTDS(projectDir: string) {
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant tma (&:where(.tma, .tma *));
 
-@import "@designervoid/ton-design-system/lib/tw_v4.css"
+@import "@designervoid/ton-design-system/package/index.css"
 
 @layer base {
   html {

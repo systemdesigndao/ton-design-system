@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@designervoid/ton-design-system':
-        specifier: ^5.0.3
-        version: 5.0.3
+        specifier: ^6.0.1
+        version: 6.0.1
       vanjs-core:
         specifier: ^1.5.3
         version: 1.5.3
@@ -138,6 +138,10 @@ packages:
 
   '@designervoid/ton-design-system@5.0.3':
     resolution: {integrity: sha512-kaGUOkNIE4NcxKz5yhgehTe7HYTPRbx5MWJuVKNq8hxv67DQEUfbexekIxi2LQgfb5KwcFTtvVbbzPzqCyGbVw==}
+    hasBin: true
+
+  '@designervoid/ton-design-system@6.0.1':
+    resolution: {integrity: sha512-U13Ey7TIGQiuHiShXIBm392FpgBkI8bpqUJJtBX+lvmVD+o+QihU4gEYzkfYZ1vEfgcawhqjh6c4BYcN64CLKw==}
     hasBin: true
 
   '@module-federation/error-codes@0.8.4':
@@ -988,6 +992,10 @@ snapshots:
   '@csstools/css-tokenizer@3.0.3': {}
 
   '@designervoid/ton-design-system@5.0.3': {}
+
+  '@designervoid/ton-design-system@6.0.1':
+    dependencies:
+      '@designervoid/ton-design-system': 5.0.3
 
   '@module-federation/error-codes@0.8.4': {}
 
