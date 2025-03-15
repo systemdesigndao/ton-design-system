@@ -14,34 +14,8 @@
 [Home](https://github.com/systemdesigndao/ton-design-system/wiki)  
 [Quick start](https://github.com/systemdesigndao/ton-design-system/wiki/Quick-start)  
 [dotlottie](https://github.com/systemdesigndao/ton-design-system/wiki/dotlottie)  
-
-## Package size
-
-```sh
-/@designervoid/ton-design-system/
-/
-@designervoid/ton-design-system
-/
-lib/
-folder
-22.7 kB
-package/
-folder
-16.3 kB
-public/
-folder
-27.4 kB
-LICENSE.md
-text/markdown
-1.09 kB
-README.md
-text/markdown
-3.56 kB
-package.json application/json
-608 B
-```
-
-[verify on the npm code tab](https://www.npmjs.com/package/@designervoid/ton-design-system?activeTab=code)
+[yanot-charts](https://github.com/systemdesigndao/ton-design-system/wiki/yanot-charts)
+[ton-connect](https://github.com/systemdesigndao/ton-design-system/wiki/TON-Connect)
 
 ## TDS Highlights
 
