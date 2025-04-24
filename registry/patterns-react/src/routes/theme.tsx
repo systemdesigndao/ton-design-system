@@ -20,6 +20,16 @@ export function ThemeComponent() {
 		updateTheme(newTheme);
 	};
 
+	const handleSystemTheme = () => {
+		document.documentElement.classList.remove(tma, dark, light);
+		localStorage.removeItem(themeBaseKey);
+		const prefersDark = matchMediaCasted("(prefers-color-scheme: dark)").matches;
+		const systemTheme = prefersDark ? dark : light;
+		updateTheme(systemTheme);
+		document.documentElement.classList.toggle(dark, prefersDark);
+		document.documentElement.classList.toggle(light, !prefersDark);
+	};
+
 	useLayoutEffect(() => {
 		document.documentElement.classList.toggle(dark, theme === dark);
 
@@ -42,14 +52,7 @@ export function ThemeComponent() {
 			<p className="text-white-5 dark:text-white-1 tma:text-tg-theme-text-color">🌝 - light theme</p>
 			{WebApp.initData && <p className="text-white-5 dark:text-white-1 tma:text-tg-theme-text-color">📱 - tma theme</p>}
 			<Button
-				onClick={() => {
-					document.documentElement.classList.remove(tma, dark, light);
-					localStorage.removeItem(themeBaseKey);
-					const prefersDark = matchMediaCasted(
-						"(prefers-color-scheme: dark)"
-					).matches;
-					updateTheme(prefersDark ? dark : light);
-				}}
+				onClick={handleSystemTheme}
 				className="mt-1 w-fit"
 			>
 				to 🖥️
