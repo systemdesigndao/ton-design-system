@@ -9,7 +9,7 @@ The syntax is based on `TypeScript`.
 - System Fonts CSS
 - Rsbuild
 - TailwindV4 & TDS (phi based design system font sizes, spacings) & Custom TMA TailwindCSS Plugins
-- System & Force Theme
+- Different themes. System & Force Theme & TMA Theme.
 - Router (`react-router-dom`)
 - Joint state between components using `zustand` (`src/stores/theme`)
 - Dev mode includes a convenient `biome-js` check and lint feature.
