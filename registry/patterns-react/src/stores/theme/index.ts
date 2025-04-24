@@ -1,5 +1,5 @@
+import { create } from "zustand";
 import { dark, light, matchMediaCasted, themeBaseKey, tma } from "@/theme";
-import { Store, useStore } from "@tanstack/react-store";
 import { ThemeState } from "./types";
 
 const storedTheme = localStorage.getItem(themeBaseKey) as
@@ -7,20 +7,11 @@ const storedTheme = localStorage.getItem(themeBaseKey) as
 	| typeof light | typeof tma;
 const prefersDark = matchMediaCasted("(prefers-color-scheme: dark)").matches;
 
-export const themeStore = new Store<ThemeState>({
+interface ThemeStore extends ThemeState {
+	updateTheme: (theme: ThemeState["theme"]) => void;
+}
+
+export const useThemeStore = create<ThemeStore>((set) => ({
 	theme: storedTheme || (prefersDark ? dark : light),
-});
-
-const updateTheme = (theme: ThemeState["theme"]) => {
-	themeStore.setState((state) => {
-		return {
-			...state,
-			theme,
-		};
-	});
-};
-
-export const useThemeStore = (): [
-	ThemeState,
-	{ updateTheme: typeof updateTheme },
-] => [useStore(themeStore), { updateTheme }];
+	updateTheme: (theme) => set({ theme }),
+}));

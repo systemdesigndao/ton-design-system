@@ -1,6 +1,5 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
-import { TanStackRouterRspack } from "@tanstack/router-plugin/rspack";
 
 export default defineConfig({
 	performance: {
@@ -8,11 +7,6 @@ export default defineConfig({
 		// prefetch: true,
 	},
 	plugins: [pluginReact()],
-	tools: {
-		rspack: {
-			plugins: [TanStackRouterRspack()],
-		},
-	},
 	html: {
 		template: "./index.html",
 	},

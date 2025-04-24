@@ -1,19 +1,14 @@
 import { Button } from "@/components/Button";
+import { useNavigate } from "react-router-dom";
 
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-
-export const Route = createFileRoute("/")({
-	component: HomeComponent,
-});
-
-function HomeComponent() {
+export function HomeComponent() {
 	const navigate = useNavigate();
 	return (
 		<>
 			<Button
 				className="w-40"
 				onClick={() => {
-					navigate({ to: "/theme" });
+					navigate("/theme");
 				}}
 			>
 				To /theme
@@ -21,7 +16,7 @@ function HomeComponent() {
 			<Button
 				className="w-40"
 				onClick={() => {
-					navigate({ to: "/lotties" });
+					navigate("/lotties");
 				}}
 			>
 				To /lotties
@@ -29,5 +24,3 @@ function HomeComponent() {
 		</>
 	);
 }
-
-export default HomeComponent;

@@ -1,17 +1,11 @@
 import { useLayoutEffect } from "react";
 import { Button } from "@/components/Button";
 import { dark, light, matchMediaCasted, themeBaseKey, tma } from "@/theme";
-
-import { createLazyFileRoute } from "@tanstack/react-router";
 import { useThemeStore } from "@/stores/theme";
 import WebApp from "@twa-dev/sdk";
 
-export const Route = createLazyFileRoute("/theme")({
-	component: ThemeComponent,
-});
-
-function ThemeComponent() {
-	const [{ theme }, { updateTheme }] = useThemeStore();
+export function ThemeComponent() {
+	const { theme, updateTheme } = useThemeStore();
 
 	const toggleTheme = (newTheme: typeof light | typeof dark) => {
 		localStorage.setItem(themeBaseKey, newTheme);
@@ -30,7 +24,7 @@ function ThemeComponent() {
 		document.documentElement.classList.toggle(dark, theme === dark);
 
 		const unsubscribe = matchMediaCasted(
-			"(prefers-color-scheme: dark)",
+			"(prefers-color-scheme: dark)"
 		).addEventListener("change", ({ matches }) => {
 			if (!localStorage.getItem(themeBaseKey)) {
 				updateTheme(matches ? dark : light);
@@ -52,7 +46,7 @@ function ThemeComponent() {
 					document.documentElement.classList.remove(tma, dark, light);
 					localStorage.removeItem(themeBaseKey);
 					const prefersDark = matchMediaCasted(
-						"(prefers-color-scheme: dark)",
+						"(prefers-color-scheme: dark)"
 					).matches;
 					updateTheme(prefersDark ? dark : light);
 				}}
@@ -66,16 +60,19 @@ function ThemeComponent() {
 			<Button onClick={() => toggleTheme(light)} className="w-fit mt-1">
 				to 🌝
 			</Button>
-			{WebApp.initData && <Button onClick={() => {
-				localStorage.setItem(themeBaseKey, tma);
-				document.documentElement.classList.remove(dark, light);
-				document.documentElement.classList.add(tma);
-				updateTheme(tma);
-			}} className="w-fit mt-1">
-				to 📱
-			</Button>}
+			{WebApp.initData && (
+				<Button
+					onClick={() => {
+						localStorage.setItem(themeBaseKey, tma);
+						document.documentElement.classList.remove(dark, light);
+						document.documentElement.classList.add(tma);
+						updateTheme(tma);
+					}}
+					className="w-fit mt-1"
+				>
+					to 📱
+				</Button>
+			)}
 		</div>
 	);
 }
-
-export default ThemeComponent;
