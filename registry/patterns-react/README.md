@@ -10,8 +10,8 @@ The syntax is based on `TypeScript`.
 - Rsbuild
 - TailwindV4 & TDS (phi based design system font sizes, spacings) & Custom TMA TailwindCSS Plugins
 - System & Force Theme
-- Router (`TanStackRouterRspack`) & Lazy routes (`src/theme.lazy.tsx`)
-- Joint state between components using `@tanstack/react-store` (`src/stores/theme`)
+- Router (`react-router-dom`)
+- Joint state between components using `zustand` (`src/stores/theme`)
 - Dev mode includes a convenient `biome-js` check and lint feature.
 - `dotlottie-rs` with lottie packs.
 - `tma:` tw plugin (activate classes in TMA applications), [TMA Theme](https://core.telegram.org/bots/webapps#themeparams) Params in Tailwind 
