@@ -14,7 +14,7 @@
 [Home](https://github.com/systemdesigndao/ton-design-system/wiki)  
 [Quick start](https://github.com/systemdesigndao/ton-design-system/wiki/Quick-start)  
 [dotlottie](https://github.com/systemdesigndao/ton-design-system/wiki/dotlottie)  
-[yanot-charts](https://github.com/systemdesigndao/ton-design-system/wiki/yanot-charts)
+[yanot-charts](https://github.com/systemdesigndao/ton-design-system/wiki/yanot-charts)  
 [ton-connect](https://github.com/systemdesigndao/ton-design-system/wiki/TON-Connect)
 
 ## TDS Highlights
