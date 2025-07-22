@@ -39,7 +39,7 @@
 
 - Lightweight
 
-  TailwindCSS is lightweight, especially with tools like patterns-vanjs, which offer a lean, production-ready solution for creating fast and optimized products.
+  TailwindCSS is lightweight, which offer a lean, production-ready solution for creating fast and optimized products.
 
 - Ready to go patterns
 
@@ -49,28 +49,6 @@ Checkout [patterns](https://github.com/systemdesigndao/ton-design-system/tree/ma
 - CLI
 
   You can copy projects and components from the `registry` with the CLI. See [TDS Wiki Quick Start](https://github.com/systemdesigndao/ton-design-system/wiki/Quick-start).
-
-## Usage
-
-Atomic Components using Declarative components with [Raw Framework](https://github.com/systemdesigndao/ton-design-system/tree/master/registry/raw-framework#raw-ui-framework)
-
-
-```ts
-import { tags } from './package/raw'
-
-const { div, button } = tags;
-
-export const Button = () => {
-  return (
-    div(
-      { className='px-2 py-2 h-full flex' }, 
-      button(
-        { class: "custom-classname", variant="default" }, 
-        'Cross-platform button (default)'
-      )
-    );
-};
-```
 
 ## More examples
 
